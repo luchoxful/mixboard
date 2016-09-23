@@ -907,6 +907,7 @@
             this.btna13.TabIndex = 26;
             this.btna13.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna13.UseVisualStyleBackColor = false;
+            this.btna13.Click += new System.EventHandler(this.btna13_Click);
             this.btna13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna13_MouseDown);
             this.btna13.MouseEnter += new System.EventHandler(this.btna13_MouseEnter);
             this.btna13.MouseLeave += new System.EventHandler(this.btna13_MouseLeave);
