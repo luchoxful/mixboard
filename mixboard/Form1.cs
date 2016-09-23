@@ -1,0 +1,776 @@
+﻿using NAudio.Wave;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Media;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+namespace mixboard
+{
+    public partial class form1 : Form
+    {
+        public form1()
+        {
+            InitializeComponent();
+        }
+        //location menu : 730; -8
+        //ventana abierta 923; 562
+        //ventana cerrada 739; 562
+
+        string[] direcA = new string[17];
+        string[] direcB = new string[17];
+        string[] direcC = new string[17];
+        string[] direcD = new string[17];
+
+        Button[] botonesA = new Button[17];
+        Button[] botonesB = new Button[17];
+        Button[] botonesC = new Button[17];
+        Button[] botonesD = new Button[17];
+
+        Color[] colores = new Color[6];
+
+        Image[] btncolores = new Image[6];
+
+        AxWMPLib.AxWindowsMediaPlayer[] WMPA = new AxWMPLib.AxWindowsMediaPlayer[17];
+
+
+
+
+        int colorselecA = 0;
+        int colorselecB = 0;
+        int colorselecC = 0;
+        int colorselecD = 0;
+
+        int colorandom = 0;
+
+        string direccion = "";
+
+        int numeroboton = 0;
+
+        int numsectorr = -1;
+
+        bool modoplay = true;
+
+        string direccionactual = "";
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            this.Size = new System.Drawing.Size(739, 562);
+
+            botonesA[1] = btna1;
+            botonesA[2] = btna2;
+            botonesA[3] = btna3;
+            botonesA[4] = btna4;
+            botonesA[5] = btna5;
+            botonesA[6] = btna6;
+            botonesA[7] = btna7;
+            botonesA[8] = btna8;
+            botonesA[9] = btna9;
+            botonesA[10] = btna10;
+            botonesA[11] = btna11;
+            botonesA[12] = btna12;
+            botonesA[13] = btna13;
+            botonesA[14] = btna14;
+            botonesA[15] = btna15;
+            botonesA[16] = btna16;
+
+
+
+
+
+            colores[0] = Color.PaleGreen;
+            colores[1] = Color.Gold;       //amarillo
+            colores[2] = Color.DarkCyan;
+            colores[3] = Color.Crimson; //rojo
+            colores[4] = Color.Coral;
+
+            btncolores[0] = Properties.Resources.btnverde;
+            btncolores[1] = Properties.Resources.btnamarillo;
+            btncolores[2] = Properties.Resources.btnceleste;
+            btncolores[3] = Properties.Resources.btnrojo;
+            btncolores[4] = Properties.Resources.btnnaranja;
+
+
+            //Array de objetos windows media player
+            WMPA[1] = wmpa1;
+            WMPA[2] = wmpa2;
+            WMPA[3] = wmpa3;
+            WMPA[4] = wmpa4;
+            WMPA[5] = wmpa5;
+            WMPA[6] = wmpa6;
+            WMPA[7] = wmpa7;
+            WMPA[8] = wmpa8;
+            WMPA[9] = wmpa9;
+            WMPA[10] = wmpa10;
+            WMPA[11] = wmpa11;
+            WMPA[12] = wmpa12;
+            WMPA[13] = wmpa13;
+            WMPA[14] = wmpa14;
+            WMPA[15] = wmpa15;
+            WMPA[16] = wmpa16;
+
+
+
+
+        }
+        public void playbotonA(int indice)
+        {
+            if (direcA[indice] == null)
+            {
+                MessageBox.Show("El boton no tiene un sonido asignado");
+            }
+            else
+            {
+                WMPA[indice].URL = direcA[indice];
+                WMPA[indice].Ctlcontrols.play();
+                // LOOP: wmpa1.settings.setMode("loop", true);
+
+                Random random = new Random();
+                int randomNumber = random.Next(0, 5);
+                //colores[5] = colores[randomNumber];
+                btncolores[5] = btncolores[randomNumber];
+                botonesA[indice].Image = btncolores[colorselecA];
+                // botonesA[indice].BackColor = colores[colorselecA];
+            }
+        }
+        public void cargarconclick(int indice)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = "Seleccionar sonido";
+            open.Filter = "Archivo de Audio|*.wav";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txtrutasonido.Text = open.FileName;
+                direccionactual = open.FileName;
+
+            }
+            open.Dispose();
+            direcA[indice] = direccionactual;
+            if (direcA[indice] != null)
+            {
+                botonesA[indice].ForeColor = Color.GreenYellow;
+            }
+
+
+        }
+        public void soltarbotonA(int indice)
+        {
+            botonesA[indice].Image = Properties.Resources.btndefault;
+            // botonesA[indice].BackColor = Color.Silver;
+        }
+
+        private void btncargarboton_Click(object sender, EventArgs e)
+        {
+            if (cmbboton.Text != "Boton" && cmbsector.Text != "Sector")
+            {
+                direccion = txtrutasonido.Text;
+                numeroboton = Convert.ToInt16(cmbboton.Text);
+                switch (cmbsector.Text)
+                {
+                    case "A":
+                        //asignacion de direccion a cada boton
+                        direcA[numeroboton] = direccion;
+                        //cambio de color si esta asignado un sonido
+                        if (direcA[numeroboton] != null)
+                        {
+                            botonesA[numeroboton].ForeColor = Color.GreenYellow;
+                        }
+
+                        break;
+                    case "B":
+                        direcB[numeroboton] = direccion;
+                        break;
+                    case "C":
+                        direcC[numeroboton] = direccion;
+                        break;
+                    case "D":
+                        direcD[numeroboton] = direccion;
+                        break;
+                }
+            }
+        }
+        private void btnrestablecer_Click(object sender, EventArgs e)
+        {
+            direccion = txtrutasonido.Text;
+            numeroboton = Convert.ToInt16(cmbboton.Text);
+            switch (cmbsector.Text)
+            {
+                case "A":
+
+                    if (direcA[numeroboton] == null)
+                    {
+                        MessageBox.Show("El boton ya está vacio");
+                    }
+                    else
+                    {
+                        direcA[numeroboton] = null;
+                        botonesA[numeroboton].ForeColor = Color.White;
+                    }
+                    break;
+                case "B":
+                    direcB[numeroboton] = direccion;
+                    break;
+                case "C":
+                    direcC[numeroboton] = direccion;
+                    break;
+                case "D":
+                    direcD[numeroboton] = direccion;
+                    break;
+            }
+        }
+
+        public void btnbuscar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = "Seleccionar sonido";
+            open.Filter = "Archivo de Audio|*.wav;*.mp3";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txtrutasonido.Text = open.FileName;
+                direccionactual = open.FileName;
+            }
+            open.Dispose();
+
+        }
+
+        public void form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            //SECTOR A
+            if (e.KeyCode == Keys.Q)
+            {
+                if (modoplay == true) playbotonA(1);
+            }
+
+            if (e.KeyCode == Keys.W)
+            {
+                if (modoplay == true) playbotonA(2);
+            }
+            if (e.KeyCode == Keys.E)
+            {
+                if (modoplay == true) playbotonA(3);
+            }
+            if (e.KeyCode == Keys.A)
+            {
+                if (modoplay == true) playbotonA(4);
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                if (modoplay == true) playbotonA(5);
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                if (modoplay == true) playbotonA(6);
+            }
+            if (e.KeyCode == Keys.Z)
+            {
+                if (modoplay == true) playbotonA(7);
+            }
+            if (e.KeyCode == Keys.X)
+            {
+                if (modoplay == true) playbotonA(8);
+            }
+            if (e.KeyCode == Keys.C)
+            {
+                if (modoplay == true) playbotonA(9);
+            }
+
+
+
+        }
+
+        private void form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Q)
+            {
+                none1.BackColor = Color.Silver;
+
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                none2.BackColor = Color.Silver;
+
+            }
+            if (e.KeyCode == Keys.E)
+            {
+                none3.BackColor = Color.Silver;
+
+            }
+            if (e.KeyCode == Keys.A)
+            {
+                none4.BackColor = Color.Silver;
+
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                none5.BackColor = Color.Silver;
+
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                none6.BackColor = Color.Silver;
+
+            }
+            if (e.KeyCode == Keys.Z)
+            {
+                none7.BackColor = Color.Silver;
+
+            }
+            if (e.KeyCode == Keys.X)
+            {
+                none8.BackColor = Color.Silver;
+
+            }
+            if (e.KeyCode == Keys.C)
+            {
+                none9.BackColor = Color.Silver;
+
+            }
+        }
+
+        private void btna2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //tecla maneteniendose presionada
+        }
+
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Se perderán los sonidos cargados al proyecto actual, ¿continuar creando un nuevo proyecto?", "Nuevo Proyecto", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                for (int i = 1; i < 10; i++)
+                {
+                    direcA[i] = null;
+                    botonesA[i].ForeColor = Color.White;
+                    //botonesB[i].ForeColor = Color.White;
+                    //botonesC[i].ForeColor = Color.White;
+                    //botonesD[i].ForeColor = Color.White;
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //hacer otra cosa
+            }
+        }
+
+
+
+
+
+
+        private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btngrabar_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+
+
+
+        public static class Prompt
+        {
+            public static int ShowDialog(string text, string caption)
+            {
+                Form prompt = new Form();
+                prompt.Width = 350;
+                prompt.Height = 200;
+                prompt.Text = caption;
+                Label textLabel = new Label() { Left = 50, Top = 20, Text = text };
+                ComboBox cmbsec = new ComboBox() { Left = 50, Top = 50, Width = 100 };
+                cmbsec.Items.Insert(0, "sector A");
+                cmbsec.Items.Insert(1, "sector B");
+                cmbsec.Items.Insert(2, "sector C");
+                cmbsec.Items.Insert(3, "sector D");
+                Button confirmation = new Button() { Text = "Ok", Left = 180, Width = 100, Top = 50 };
+                confirmation.Click += (sender, e) => { prompt.Close(); };
+                prompt.Controls.Add(confirmation);
+                prompt.Controls.Add(textLabel);
+                prompt.Controls.Add(cmbsec);
+                prompt.ShowDialog();
+
+                //MessageBox.Show(Convert.ToString(cmbsec.SelectedIndex));
+                int numsector = cmbsec.SelectedIndex;
+                return (int)numsector;
+
+            }
+
+        }
+
+        private void mscolorluces_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void amarilloToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces");
+            numsectorr = promptValue;
+            switch (numsectorr)
+            {
+                case 0:
+                    colorselecA = 1;
+                    break;
+                case 1:
+                    colorselecB = 1;
+                    break;
+                case 2:
+                    colorselecC = 1;
+                    break;
+                case 3:
+                    colorselecD = 1;
+                    break;
+            }
+
+        }
+
+        private void celesteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces");
+            numsectorr = promptValue;
+            switch (numsectorr)
+            {
+                case 0:
+                    colorselecA = 2;
+                    break;
+                case 1:
+                    colorselecB = 2;
+                    break;
+                case 2:
+                    colorselecC = 2;
+                    break;
+                case 3:
+                    colorselecD = 2;
+                    break;
+            }
+        }
+
+        private void verdedefaultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces");
+            numsectorr = promptValue;
+            switch (numsectorr)
+            {
+                case 0:
+                    colorselecA = 0;
+                    break;
+                case 1:
+                    colorselecB = 0;
+                    break;
+                case 2:
+                    colorselecC = 0;
+                    break;
+                case 3:
+                    colorselecD = 0;
+                    break;
+            }
+        }
+
+        private void rojoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces");
+            numsectorr = promptValue;
+            switch (numsectorr)
+            {
+                case 0:
+                    colorselecA = 3;
+                    break;
+                case 1:
+                    colorselecB = 3;
+                    break;
+                case 2:
+                    colorselecC = 3;
+                    break;
+                case 3:
+                    colorselecD = 3;
+                    break;
+            }
+        }
+
+        private void naranjaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces");
+            numsectorr = promptValue;
+            switch (numsectorr)
+            {
+                case 0:
+                    colorselecA = 4;
+                    break;
+                case 1:
+                    colorselecB = 4;
+                    break;
+                case 2:
+                    colorselecC = 4;
+                    break;
+                case 3:
+                    colorselecD = 4;
+                    break;
+            }
+        }
+
+        public void randomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces");
+            numsectorr = promptValue;
+
+
+            switch (numsectorr)
+            {
+                case 0:
+                    colorselecA = 5;
+                    break;
+                case 1:
+                    colorselecB = 5;
+                    break;
+                case 2:
+                    colorselecC = 5;
+                    break;
+                case 3:
+                    colorselecD = 5;
+                    break;
+            }
+        }
+
+
+
+
+
+
+        public void pbdesplegar_Click(object sender, EventArgs e)
+        {
+            panelmenu.BringToFront();
+            this.Size = new System.Drawing.Size(914, 562);
+
+        }
+
+        private void pbdesplegado_Click(object sender, EventArgs e)
+        {
+            panelvacio.BringToFront();
+            this.Size = new System.Drawing.Size(739, 562);
+        }
+
+        private void gbvacioo_Enter(object sender, EventArgs e)
+        {
+
+        }
+        private void pbdesplegado_MouseEnter(object sender, EventArgs e)
+        {
+            pbdesplegado.Image = Properties.Resources.atras;
+        }
+
+        private void pbdesplegado_MouseLeave(object sender, EventArgs e)
+        {
+            pbdesplegado.Image = Properties.Resources.logoedicion1;
+        }
+
+        private void pbdesplegar_MouseEnter(object sender, EventArgs e)
+        {
+            pbdesplegar.Image = Properties.Resources.logoedicionhover1;
+        }
+
+        private void pbdesplegar_MouseLeave(object sender, EventArgs e)
+        {
+            pbdesplegar.Image = Properties.Resources.logoedicionorange;
+
+        }
+
+        public void pbmodo_Click(object sender, EventArgs e)
+        {
+            if (modoplay == true)
+            {
+                //MODO EDICION
+                pbmodo.Image = Properties.Resources.botonedicion;
+                modoplay = false;
+                lblmodo.Text = "Modo Edicion";
+                pbdesplegar_Click(sender, e);
+
+
+            }
+            else
+            {
+                //MODO PLAY
+                pbmodo.Image = Properties.Resources.botonsesion;
+                modoplay = true;
+                lblmodo.Text = "Modo Play";
+                pbdesplegado_Click(sender, e);
+
+            }
+
+        }
+
+
+        private void btna1_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(1);
+        }
+
+        private void btna1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(1); else cargarconclick(1);
+        }
+
+
+
+        private void btna2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(2); else cargarconclick(2);
+        }
+
+        private void btna2_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(2);
+        }
+
+        private void btna3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(3); else cargarconclick(3);
+        }
+
+        private void btna3_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(3);
+        }
+
+        private void btna4_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(4); else cargarconclick(4);
+        }
+
+        private void btna4_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(4);
+        }
+
+        private void btna5_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(5); else cargarconclick(5);
+        }
+
+        private void btna5_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(5);
+        }
+
+        private void btna6_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(6); else cargarconclick(6);
+        }
+
+        private void btna6_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(6);
+        }
+
+        private void btna7_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(7); else cargarconclick(7);
+        }
+
+        private void btna7_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(7);
+        }
+
+        private void btna8_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(8); else cargarconclick(8);
+        }
+
+        private void btna8_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(8);
+        }
+
+        private void btna9_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(9); else cargarconclick(9);
+        }
+
+        private void btna9_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(9);
+        }
+        private void btnseleccionarcarpeta_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = "Seleccionar sonido";
+            open.Filter = "Archivo de Audio|*.wav;*.mp3";
+            open.Multiselect = true;
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txtseleccionarcarpeta.Text = open.FileName;
+                int i = 1;
+                string titulosonido = "";
+                string sector = "";
+                foreach (string file in open.FileNames)
+                {
+                    try {
+                        titulosonido = System.IO.Path.GetFileNameWithoutExtension(file);
+                        sector = titulosonido.Substring(0, 1);
+                        numeroboton = Convert.ToInt16(titulosonido.Substring(1, 1));
+                        switch (sector)
+                        {
+                            case "A":
+                                direcA[numeroboton] = file;
+                                botonesA[numeroboton].ForeColor = Color.GreenYellow;
+                                break;
+                            case "B":
+                                direcB[numeroboton] = file;
+                                botonesB[numeroboton].ForeColor = Color.GreenYellow;
+
+                                break;
+                            case "C":
+                                direcC[numeroboton] = file;
+                                botonesC[numeroboton].ForeColor = Color.GreenYellow;
+                                break;
+                            case "D":
+                                direcD[numeroboton] = file;
+                                botonesD[numeroboton].ForeColor = Color.GreenYellow;
+                                break;
+                        }
+
+
+                    }
+
+                    catch (Exception ex)
+                    {
+                        // Could not load the image - probably related to Windows file system permissions.
+                        MessageBox.Show("No se puede cargar el sonido:" + file.Substring(file.LastIndexOf('\\'))
+                            + ". Para cargar todos los sonidos desde carpeta, " +
+                            "El nombre de cada archivo debe ser SECTOR(A,B,C o D) y NUMERO (1 a 9)" +
+                            "\n\nEjemplo: A3.wav o B2.wav" +
+                            "\n\nReported error: " + ex.Message);
+                    }
+                }
+            }
+            open.Dispose();
+        }
+
+
+
+
+
+    }
+}
+    
