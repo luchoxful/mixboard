@@ -1,0 +1,4 @@
+A02:Z:\mixboard\sounds\RAP - Hip Hop\Libreria de Rap\Instru - Kicks (11).wav
+B06:Z:\mixboard\sounds\RAP - Hip Hop\Libreria de Rap\Clap 5.wav
+A11:Z:\mixboard\sounds\RAP - Hip Hop\Libreria de Rap\Kick 8.WAV
+B12:Z:\mixboard\sounds\RAP - Hip Hop\Libreria de Rap\Kick 11.wav

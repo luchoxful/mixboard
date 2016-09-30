@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-
+using System.IO;
 
 namespace mixboard
 {
@@ -68,12 +68,15 @@ namespace mixboard
 
         string tituloboton = "";
 
+        string titulodefault = "Mixboard Pad - ";
+        string nombreproyecto = "proyecto1";
+        string direcproyecto = "";
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Focus();
             this.Size = new System.Drawing.Size(739, 672);
-
+            this.Text = titulodefault + nombreproyecto;
             botonesA[1] = btna1;
             botonesA[2] = btna2;
             botonesA[3] = btna3;
@@ -711,14 +714,19 @@ namespace mixboard
                     }
                     //botonesC[i].ForeColor = Color.White;
                     //botonesD[i].ForeColor = Color.White;
+
                 }
+                //ak
+                string nombrenuevo = Prompt.NuevoNombre("Nombre:", "Indique el nombre del nuevo proyecto", "");
+                nombreproyecto = nombrenuevo;
+                this.Text = titulodefault + nombreproyecto;
             }
             else if (dialogResult == DialogResult.No)
             {
                 //hacer otra cosa
             }
-        }
-
+        
+            }
         private void restablecer_hover(int indice, string sector)
         {
             if (modoplay == false && estadorestablecer == true)
@@ -829,6 +837,28 @@ namespace mixboard
                 //MessageBox.Show(Convert.ToString(cmbsec.SelectedIndex));
                 int numsector = cmbsec.SelectedIndex;
                 return (int)numsector;
+
+            }
+            public static string NuevoNombre(string text, string caption, string info)
+            {
+                Form prompt = new Form();
+                prompt.Width = 420;
+                prompt.Height = 200;
+                prompt.Text = caption;
+                Label textLabel = new Label() { Left = 50, Top = 20, Height = 30, Width = 200, Text = text };
+                TextBox txtnombreproyecto = new TextBox() { Left = 50, Top = 50, Width = 100 };
+                Label txtinfo = new Label() { Left = 50, Top = 80, Height = 60, Width = 300, Text = info };
+                Button confirmation = new Button() { Text = "Ok", Left = 180, Width = 100, Top = 50 };
+                confirmation.Click += (sender, e) => { prompt.Close(); };
+                prompt.Controls.Add(confirmation);
+                prompt.Controls.Add(textLabel);
+                prompt.Controls.Add(txtnombreproyecto);
+                prompt.Controls.Add(txtinfo);
+                prompt.ShowDialog();
+
+                //MessageBox.Show(Convert.ToString(cmbsec.SelectedIndex));
+                string projectname = txtnombreproyecto.Text;
+                return projectname;
 
             }
 
@@ -1891,6 +1921,53 @@ namespace mixboard
         private void ayudacarga1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("CARGA MULTIPLE SINCRONICA: Carga varios sonidos a la vez. Cada sonido es cargado al botón correspondiente al definido en el nombre de su archivo (Del 01 al 16 y los numeros de una sifra con 0 adelante). EJEMPLO: El archivo '07.wav' se cargará en el séptimo botón del sector seleccionado");
+        }
+
+        private void guardarProyectoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Guardar Proyecto
+            
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.Title = "Guardar como";
+            guardar.Filter = "Archivo Mixboard |*.txt";
+            guardar.FileName = nombreproyecto;
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                direcproyecto = guardar.FileName;
+                nombreproyecto = System.IO.Path.GetFileNameWithoutExtension(direcproyecto);
+                guardar.Dispose();
+
+                this.Text = titulodefault + nombreproyecto;
+
+                using (System.IO.StreamWriter escritor = new System.IO.StreamWriter(direcproyecto))
+                {
+                    for (int i = 1; i < 17; i++)
+                    {
+                        if (direcA[i] != null)
+                        {
+                            if (i < 10)
+                            {
+                                escritor.WriteLine("A" + "0" + i + "@" + direcA[i]);
+                            }
+                            else
+                            {
+                                escritor.WriteLine("A" + i + "@" + direcA[i]);
+                            }
+                        }
+                        if (direcB[i] != null)
+                        {
+                            if (i < 10)
+                            {
+                                escritor.WriteLine("B" + "0" + i + "@" + direcB[i]);
+                            }
+                            else
+                            {
+                                escritor.WriteLine("B" + i + "@" + direcB[i]);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

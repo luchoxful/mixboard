@@ -231,6 +231,7 @@
             this.guardarProyectoToolStripMenuItem.Name = "guardarProyectoToolStripMenuItem";
             this.guardarProyectoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.guardarProyectoToolStripMenuItem.Text = "Guardar proyecto";
+            this.guardarProyectoToolStripMenuItem.Click += new System.EventHandler(this.guardarProyectoToolStripMenuItem_Click);
             // 
             // grabarSetToolStripMenuItem
             // 
@@ -1668,8 +1669,8 @@
             this.Controls.Add(this.pbmodo);
             this.Controls.Add(this.msopciones);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panelmenu);
             this.Controls.Add(this.panelvacio);
+            this.Controls.Add(this.panelmenu);
             this.KeyPreview = true;
             this.MainMenuStrip = this.msopciones;
             this.MaximizeBox = false;
