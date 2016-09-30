@@ -54,6 +54,8 @@
             this.pbdesplegar = new System.Windows.Forms.PictureBox();
             this.lblmodo = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.ayudacarga2 = new System.Windows.Forms.PictureBox();
+            this.ayudacarga1 = new System.Windows.Forms.PictureBox();
             this.pbdesplegado = new System.Windows.Forms.PictureBox();
             this.txtseleccionarcarpeta2 = new System.Windows.Forms.TextBox();
             this.txtseleccionarcarpeta = new System.Windows.Forms.TextBox();
@@ -97,6 +99,8 @@
             this.wmpb15 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpb12 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpb16 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btna16 = new System.Windows.Forms.Button();
             this.btna14 = new System.Windows.Forms.Button();
             this.btna15 = new System.Windows.Forms.Button();
@@ -130,11 +134,12 @@
             this.btna1 = new System.Windows.Forms.Button();
             this.btna3 = new System.Windows.Forms.Button();
             this.pbmodo = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.msopciones.SuspendLayout();
             this.panelvacio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
             this.panelmenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa15)).BeginInit();
@@ -168,8 +173,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpb15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpb12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpb16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -368,6 +374,8 @@
             // panelmenu
             // 
             this.panelmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panelmenu.Controls.Add(this.ayudacarga2);
+            this.panelmenu.Controls.Add(this.ayudacarga1);
             this.panelmenu.Controls.Add(this.pbdesplegado);
             this.panelmenu.Controls.Add(this.txtseleccionarcarpeta2);
             this.panelmenu.Controls.Add(this.txtseleccionarcarpeta);
@@ -382,6 +390,29 @@
             this.panelmenu.Name = "panelmenu";
             this.panelmenu.Size = new System.Drawing.Size(211, 580);
             this.panelmenu.TabIndex = 11;
+            // 
+            // ayudacarga2
+            // 
+            this.ayudacarga2.Image = global::mixboard.Properties.Resources.ayuda;
+            this.ayudacarga2.Location = new System.Drawing.Point(174, 104);
+            this.ayudacarga2.Name = "ayudacarga2";
+            this.ayudacarga2.Size = new System.Drawing.Size(19, 18);
+            this.ayudacarga2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ayudacarga2.TabIndex = 9;
+            this.ayudacarga2.TabStop = false;
+            // 
+            // ayudacarga1
+            // 
+            this.ayudacarga1.Image = global::mixboard.Properties.Resources.ayuda;
+            this.ayudacarga1.Location = new System.Drawing.Point(188, 48);
+            this.ayudacarga1.Name = "ayudacarga1";
+            this.ayudacarga1.Size = new System.Drawing.Size(19, 18);
+            this.ayudacarga1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ayudacarga1.TabIndex = 9;
+            this.ayudacarga1.TabStop = false;
+            this.ayudacarga1.Click += new System.EventHandler(this.ayudacarga1_Click);
+            this.ayudacarga1.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
+            this.ayudacarga1.MouseLeave += new System.EventHandler(this.leave_ayuda);
             // 
             // pbdesplegado
             // 
@@ -401,7 +432,7 @@
             this.txtseleccionarcarpeta2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtseleccionarcarpeta2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtseleccionarcarpeta2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtseleccionarcarpeta2.Location = new System.Drawing.Point(12, 130);
+            this.txtseleccionarcarpeta2.Location = new System.Drawing.Point(2, 130);
             this.txtseleccionarcarpeta2.Name = "txtseleccionarcarpeta2";
             this.txtseleccionarcarpeta2.Size = new System.Drawing.Size(147, 20);
             this.txtseleccionarcarpeta2.TabIndex = 8;
@@ -412,17 +443,19 @@
             this.txtseleccionarcarpeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtseleccionarcarpeta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtseleccionarcarpeta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtseleccionarcarpeta.Location = new System.Drawing.Point(7, 75);
+            this.txtseleccionarcarpeta.Location = new System.Drawing.Point(2, 75);
             this.txtseleccionarcarpeta.Name = "txtseleccionarcarpeta";
             this.txtseleccionarcarpeta.Size = new System.Drawing.Size(147, 20);
             this.txtseleccionarcarpeta.TabIndex = 8;
             this.txtseleccionarcarpeta.Text = "SELECCIONAR CARPETA";
+            this.txtseleccionarcarpeta.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
+            this.txtseleccionarcarpeta.MouseLeave += new System.EventHandler(this.leave_ayuda);
             // 
             // btnaleatorio
             // 
             this.btnaleatorio.BackColor = System.Drawing.Color.Maroon;
             this.btnaleatorio.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnaleatorio.Location = new System.Drawing.Point(160, 130);
+            this.btnaleatorio.Location = new System.Drawing.Point(150, 130);
             this.btnaleatorio.Name = "btnaleatorio";
             this.btnaleatorio.Size = new System.Drawing.Size(29, 20);
             this.btnaleatorio.TabIndex = 7;
@@ -434,13 +467,15 @@
             // 
             this.btnseleccionarcarpeta.BackColor = System.Drawing.Color.Maroon;
             this.btnseleccionarcarpeta.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnseleccionarcarpeta.Location = new System.Drawing.Point(155, 74);
+            this.btnseleccionarcarpeta.Location = new System.Drawing.Point(150, 74);
             this.btnseleccionarcarpeta.Name = "btnseleccionarcarpeta";
             this.btnseleccionarcarpeta.Size = new System.Drawing.Size(29, 21);
             this.btnseleccionarcarpeta.TabIndex = 7;
             this.btnseleccionarcarpeta.Text = "•••";
             this.btnseleccionarcarpeta.UseVisualStyleBackColor = false;
             this.btnseleccionarcarpeta.Click += new System.EventHandler(this.btnseleccionarcarpeta_Click);
+            this.btnseleccionarcarpeta.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
+            this.btnseleccionarcarpeta.MouseLeave += new System.EventHandler(this.leave_ayuda);
             // 
             // label4
             // 
@@ -458,7 +493,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label2.Location = new System.Drawing.Point(9, 163);
+            this.label2.Location = new System.Drawing.Point(-2, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 20);
             this.label2.TabIndex = 3;
@@ -469,7 +504,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label3.Location = new System.Drawing.Point(2, 103);
+            this.label3.Location = new System.Drawing.Point(-3, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(180, 20);
             this.label3.TabIndex = 3;
@@ -480,11 +515,13 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label5.Location = new System.Drawing.Point(2, 47);
+            this.label5.Location = new System.Drawing.Point(-4, 47);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(196, 20);
             this.label5.TabIndex = 3;
             this.label5.Text = "CARGA MULTIPLE SINCRONICA:";
+            this.label5.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
+            this.label5.MouseLeave += new System.EventHandler(this.leave_ayuda);
             // 
             // btnrestablecer
             // 
@@ -492,9 +529,9 @@
             this.btnrestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrestablecer.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnrestablecer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btnrestablecer.Location = new System.Drawing.Point(12, 186);
+            this.btnrestablecer.Location = new System.Drawing.Point(2, 186);
             this.btnrestablecer.Name = "btnrestablecer";
-            this.btnrestablecer.Size = new System.Drawing.Size(187, 35);
+            this.btnrestablecer.Size = new System.Drawing.Size(204, 35);
             this.btnrestablecer.TabIndex = 5;
             this.btnrestablecer.Text = "RESTABLECER";
             this.btnrestablecer.UseVisualStyleBackColor = false;
@@ -832,6 +869,26 @@
             this.wmpb16.TabIndex = 4;
             this.wmpb16.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lblayuda);
+            this.panel1.Location = new System.Drawing.Point(0, 602);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(898, 32);
+            this.panel1.TabIndex = 27;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::mixboard.Properties.Resources.ayuda2;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // btna16
             // 
             this.btna16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -907,7 +964,6 @@
             this.btna13.TabIndex = 26;
             this.btna13.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna13.UseVisualStyleBackColor = false;
-            this.btna13.Click += new System.EventHandler(this.btna13_Click);
             this.btna13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna13_MouseDown);
             this.btna13.MouseEnter += new System.EventHandler(this.btna13_MouseEnter);
             this.btna13.MouseLeave += new System.EventHandler(this.btna13_MouseLeave);
@@ -1535,15 +1591,6 @@
             this.pbmodo.TabStop = false;
             this.pbmodo.Click += new System.EventHandler(this.pbmodo_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.panel1.Controls.Add(this.lblayuda);
-            this.panel1.Location = new System.Drawing.Point(0, 602);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(898, 32);
-            this.panel1.TabIndex = 27;
-            // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1621,8 +1668,8 @@
             this.Controls.Add(this.pbmodo);
             this.Controls.Add(this.msopciones);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panelvacio);
             this.Controls.Add(this.panelmenu);
+            this.Controls.Add(this.panelvacio);
             this.KeyPreview = true;
             this.MainMenuStrip = this.msopciones;
             this.MaximizeBox = false;
@@ -1639,6 +1686,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).EndInit();
             this.panelmenu.ResumeLayout(false);
             this.panelmenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa15)).EndInit();
@@ -1672,9 +1721,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpb15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpb12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpb16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1784,6 +1834,9 @@
         private System.Windows.Forms.TextBox txtseleccionarcarpeta2;
         private System.Windows.Forms.Button btnaleatorio;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox ayudacarga1;
+        private System.Windows.Forms.PictureBox ayudacarga2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -136,14 +136,17 @@
   <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoedicionhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoedicionhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnrestablecer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnrestablecer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoedicion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoedicion1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btndefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btndefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ayuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="atras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\atras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,20 +166,23 @@
   <data name="btncargado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btncargado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnrestableceramarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnrestableceramarillo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="botonedicion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\botonedicion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnsinsonido" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnsinsonido1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnrestablecer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnrestablecer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnrestableceramarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnrestableceramarillo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoedicionhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoedicionhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botonsesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\botonsesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnrestablecerOK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnrestablecerOK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="boton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,7 +211,7 @@
   <data name="btnamarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnamarillo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnrestablecerOK" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnrestablecerOK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ayuda2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ayuda2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

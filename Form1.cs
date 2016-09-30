@@ -1835,7 +1835,7 @@ namespace mixboard
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Title = "Seleccionar sonido";
-            open.Filter = "Archivo de Audio|*.wav;*.mp3";
+            open.Filter = "Archivo de Audio|*.wav;*.mp3;*.fxp";
             open.Multiselect = true;
             if (open.ShowDialog() == DialogResult.OK)
             {
@@ -1878,9 +1878,19 @@ namespace mixboard
             }
             }
 
-        private void btna13_Click(object sender, EventArgs e)
+        private void ayudacarga1_MouseEnter(object sender, EventArgs e)
         {
+            lblayuda.Text = "CARGA MULTIPLE SINCRONICA: Carga los botones correspondientes al numero en cada nombre de archivo Ej: '04.wav'";
+        }
 
+        public void leave_ayuda(object sender, EventArgs e)
+        {
+            lblayuda.Text = "•";
+        }
+
+        private void ayudacarga1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("CARGA MULTIPLE SINCRONICA: Carga varios sonidos a la vez. Cada sonido es cargado al botón correspondiente al definido en el nombre de su archivo (Del 01 al 16 y los numeros de una sifra con 0 adelante). EJEMPLO: El archivo '07.wav' se cargará en el séptimo botón del sector seleccionado");
         }
     }
 }
