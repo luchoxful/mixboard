@@ -93,6 +93,16 @@ namespace mixboard.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap barra {
+            get {
+                object obj = ResourceManager.GetObject("barra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boton {
             get {
                 object obj = ResourceManager.GetObject("boton", resourceCulture);
@@ -316,6 +326,16 @@ namespace mixboard.Properties {
         internal static System.Drawing.Bitmap logoedicionorange {
             get {
                 object obj = ResourceManager.GetObject("logoedicionorange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mixboardtitulo {
+            get {
+                object obj = ResourceManager.GetObject("mixboardtitulo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

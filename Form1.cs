@@ -25,11 +25,13 @@ namespace mixboard
         //location menu : 730; -8
         //ventana abierta 923; 562
         //ventana cerrada 739; 562
-
+       
         string[] direcA = new string[17];
         string[] direcB = new string[17];
         string[] direcC = new string[17];
         string[] direcD = new string[17];
+
+        string[] direclista = new string[180];
 
         Button[] botonesA = new Button[17];
         Button[] botonesB = new Button[17];
@@ -180,12 +182,15 @@ namespace mixboard
             bool playing8 = false;
             bool playing9 = false;
             bool playing10 = false;
-            bool playing11= false;
+            bool playing11 = false;
             bool playing12 = false;
             bool playing13 = false;
             bool playing14 = false;
             bool playing15 = false;
             bool playing16 = false;
+
+            panelmenu.Controls.Add(barra);
+            barra.Location = new Point(191, 262);
 
             playingboton[1] = playing1;
             playingboton[2] = playing2;
@@ -204,12 +209,12 @@ namespace mixboard
             playingboton[15] = playing15;
             playingboton[16] = playing16;
 
-            
+
 
 
             int mostrarletras = 1;
             aplicar_texto_a_boton(mostrarletras);
-            
+
         }
         public void playbotonA(int indice, string sector) //hacer switch para que funcion abarque todos los sectores
         {
@@ -262,7 +267,7 @@ namespace mixboard
                     break;
             }
 
-            
+
         }
         public void cargarconclick(int indice, string sector)
         {
@@ -321,40 +326,40 @@ namespace mixboard
         {
             if (modoplay == true)
             {
-            switch (sector)
-            {
-                
-                case "A":
-                    if (direcA[indice] == null)
-                    {
-                        botonesA[indice].Image = Properties.Resources.btndefault;
-                    }
-                    else
-                    {
-                        botonesA[indice].Image = Properties.Resources.btncargado;
-                    }                    
-                    if (WMPA[indice].playState != WMPLib.WMPPlayState.wmppsPlaying)
-                    {
-                        return;
-                    }
-                    WMPA[indice].Ctlcontrols.stop();
-                    break;
-                case "B":
-                    if (direcB[indice] == null)
-                    {
-                        botonesB[indice].Image = Properties.Resources.btndefault;
-                    }
-                    else
-                    {
-                        botonesB[indice].Image = Properties.Resources.btncargado;
-                    }
-                    if (WMPB[indice].playState != WMPLib.WMPPlayState.wmppsPlaying)
-                    {
-                        return;
-                    }
-                    WMPB[indice].Ctlcontrols.stop();
-                    break;
-            }
+                switch (sector)
+                {
+
+                    case "A":
+                        if (direcA[indice] == null)
+                        {
+                            botonesA[indice].Image = Properties.Resources.btndefault;
+                        }
+                        else
+                        {
+                            botonesA[indice].Image = Properties.Resources.btncargado;
+                        }
+                        if (WMPA[indice].playState != WMPLib.WMPPlayState.wmppsPlaying)
+                        {
+                            return;
+                        }
+                        WMPA[indice].Ctlcontrols.stop();
+                        break;
+                    case "B":
+                        if (direcB[indice] == null)
+                        {
+                            botonesB[indice].Image = Properties.Resources.btndefault;
+                        }
+                        else
+                        {
+                            botonesB[indice].Image = Properties.Resources.btncargado;
+                        }
+                        if (WMPB[indice].playState != WMPLib.WMPPlayState.wmppsPlaying)
+                        {
+                            return;
+                        }
+                        WMPB[indice].Ctlcontrols.stop();
+                        break;
+                }
             }
         }
 
@@ -415,7 +420,7 @@ namespace mixboard
             }
         }
 
-        
+
         private void btnrestablecer_Click(object sender, EventArgs e)
         {
             if (estadorestablecer == false)
@@ -450,7 +455,7 @@ namespace mixboard
                     }
                 }
             }
-            
+
         }
 
         public void btnbuscar_Click(object sender, EventArgs e)
@@ -468,13 +473,14 @@ namespace mixboard
         }
         bool playing = false;
 
-        public void form1_KeyDown(object sender, KeyEventArgs e) {
+        public void form1_KeyDown(object sender, KeyEventArgs e)
+        {
             //SECTOR A
             switch (e.KeyCode)
             {
                 case Keys.D1:
                     if (modoplay == true) playbotonA(1, "A");
-                    
+
                     break;
                 case Keys.D2:
                     if (modoplay == true) playbotonA(2, "A");
@@ -677,7 +683,7 @@ namespace mixboard
                     soltarbotonA(16, "B");
                     break;
             }
-            
+
         }
 
         private void btna2_Click_1(object sender, EventArgs e)
@@ -688,7 +694,7 @@ namespace mixboard
         private void form1_KeyPress(object sender, KeyPressEventArgs e)
         {
             //tecla maneteniendose presionada
-        
+
         }
 
 
@@ -725,8 +731,8 @@ namespace mixboard
             {
                 //hacer otra cosa
             }
-        
-            }
+
+        }
         private void restablecer_hover(int indice, string sector)
         {
             if (modoplay == false && estadorestablecer == true)
@@ -759,7 +765,7 @@ namespace mixboard
                     {
                         lblayuda.Text = "Botón vacio, clickealo en modo edición para cargarlo";
                     }
-                    break; 
+                    break;
                 case "B":
                     if (direcB[indice] != null)
                     {
@@ -894,7 +900,7 @@ namespace mixboard
 
         private void celesteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces","");
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces", "");
             numsectorr = promptValue;
             switch (numsectorr)
             {
@@ -915,7 +921,7 @@ namespace mixboard
 
         private void verdedefaultToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces","");
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces", "");
             numsectorr = promptValue;
             switch (numsectorr)
             {
@@ -936,7 +942,7 @@ namespace mixboard
 
         private void rojoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces","");
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces", "");
             numsectorr = promptValue;
             switch (numsectorr)
             {
@@ -957,7 +963,7 @@ namespace mixboard
 
         private void naranjaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces","");
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces", "");
             numsectorr = promptValue;
             switch (numsectorr)
             {
@@ -978,7 +984,7 @@ namespace mixboard
 
         public void randomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces","");
+            int promptValue = Prompt.ShowDialog("Sector:", "Configurar color de luces", "");
             numsectorr = promptValue;
 
 
@@ -1007,14 +1013,14 @@ namespace mixboard
         public void pbdesplegar_Click(object sender, EventArgs e)
         {
             panelmenu.BringToFront();
-            this.Size = new System.Drawing.Size(914, 672);
+            //this.Size = new System.Drawing.Size(914, 672);
 
         }
 
         private void pbdesplegado_Click(object sender, EventArgs e)
         {
-            panelvacio.BringToFront();
-            this.Size = new System.Drawing.Size(739, 672);
+            //panelvacio.BringToFront();
+            //this.Size = new System.Drawing.Size(739, 672);
         }
 
         private void gbvacioo_Enter(object sender, EventArgs e)
@@ -1050,6 +1056,7 @@ namespace mixboard
                 pbmodo.Image = Properties.Resources.botonedicion;
                 modoplay = false;
                 lblmodo.Text = "Modo Edicion";
+                this.tm.Enabled = true;
                 pbdesplegar_Click(sender, e);
                 for (int i = 1; i < 17; i++)
                 {
@@ -1082,6 +1089,7 @@ namespace mixboard
                 pbmodo.Image = Properties.Resources.botonsesion;
                 modoplay = true;
                 lblmodo.Text = "Modo Play";
+                this.tm.Enabled = true;
                 pbdesplegado_Click(sender, e);
                 for (int i = 1; i < 17; i++)
                 {
@@ -1116,7 +1124,7 @@ namespace mixboard
         }
 
 
-        
+
 
         private void btna1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -1126,7 +1134,7 @@ namespace mixboard
         private void btna1_MouseUp(object sender, MouseEventArgs e)
         {
             soltarbotonA(1, "A");
-            
+
         }
 
         private void btna2_MouseDown(object sender, MouseEventArgs e)
@@ -1224,7 +1232,8 @@ namespace mixboard
                 string titulosonido = "";
                 foreach (string file in open.FileNames)
                 {
-                    try {
+                    try
+                    {
                         titulosonido = System.IO.Path.GetFileNameWithoutExtension(file);
                         numeroboton = Convert.ToInt16(titulosonido.Substring(0, 2));
                         switch (numsectorr)
@@ -1879,13 +1888,13 @@ namespace mixboard
                     {
                         titulosonido = System.IO.Path.GetFileNameWithoutExtension(file);
                         x++;
-                        
-                        if (x<=16)
+
+                        if (x <= 16)
                         {
                             direcA[x] = file;
                             botonesA[x].Image = Properties.Resources.btnverde;
                         }
-                        if (x>16 && z<=16)
+                        if (x > 16 && z <= 16)
                         {
                             z++;
                             direcB[z] = file;
@@ -1906,7 +1915,7 @@ namespace mixboard
                     }
                 }
             }
-            }
+        }
 
         private void ayudacarga1_MouseEnter(object sender, EventArgs e)
         {
@@ -1926,7 +1935,7 @@ namespace mixboard
         private void guardarProyectoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Guardar Proyecto
-            
+
             SaveFileDialog guardar = new SaveFileDialog();
             guardar.Title = "Guardar como";
             guardar.Filter = "Archivo Mixboard |*.txt";
@@ -1935,6 +1944,7 @@ namespace mixboard
             {
                 direcproyecto = guardar.FileName;
                 nombreproyecto = System.IO.Path.GetFileNameWithoutExtension(direcproyecto);
+                //MessageBox.Show(Directory.GetCurrentDirectory());
                 guardar.Dispose();
 
                 this.Text = titulodefault + nombreproyecto;
@@ -1945,6 +1955,7 @@ namespace mixboard
                     {
                         if (direcA[i] != null)
                         {
+
                             if (i < 10)
                             {
                                 escritor.WriteLine("A" + "0" + i + "@" + direcA[i]);
@@ -1969,6 +1980,370 @@ namespace mixboard
                 }
             }
         }
+
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Abrir Proyecto
+            bool preguntar = false;
+
+            string sector = "";
+            int numboton = 0;
+            string ruta = "";
+
+            OpenFileDialog abrir = new OpenFileDialog();
+            abrir.Title = "Abrir proyecto";
+            abrir.Filter = "Archivo Mixboard |*.txt";
+            if (abrir.ShowDialog() == DialogResult.OK)
+            {
+                for (int i = 1; i < 17; i++)
+                {
+                    if (direcA[i] != null || direcB[i] != null)
+                    {
+                        preguntar = true;
+                    }
+                }
+                if (preguntar == true)
+                {
+                    DialogResult dialogResult = MessageBox.Show("¿Desea guardar los cambios del proyecto actual (" + nombreproyecto + ")?", "Abrir proyecto", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        guardarProyectoToolStripMenuItem_Click(sender, e);
+                    }
+                }
+                for (int i = 1; i < 17; i++)
+                {
+                    direcA[i] = null;
+                    botonesA[i].Image = Properties.Resources.btndefault;
+                    direcB[i] = null;
+                    botonesB[i].Image = Properties.Resources.btndefault;
+                }
+                nombreproyecto = System.IO.Path.GetFileNameWithoutExtension(abrir.FileName);
+                this.Text = titulodefault + nombreproyecto;
+                using (StreamReader lector = new StreamReader(abrir.FileName))
+                {
+                    string line;
+                    while ((line = lector.ReadLine()) != null)
+                    {
+                        sector = line.Substring(0, 1);
+                        numboton = Convert.ToInt16(line.Substring(1, 2));
+                        ruta = line.Substring(4);
+                        switch (sector)
+                        {
+                            case "A":
+                                direcA[numboton] = ruta;
+                                botonesA[numboton].Image = Properties.Resources.btncargado;
+                                break;
+                            case "B":
+                                direcB[numboton] = ruta;
+                                botonesB[numboton].Image = Properties.Resources.btncargado;
+                                break;
+                        }
+
+
+                    }
+                }
+
+            }
+
+        }
+        int k = 1;
+        private void btncargarlista_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = "Seleccionar sonidos";
+            open.Filter = "Archivos de Audio|*.wav;*.mp3;*.fxp";
+            open.Multiselect = true;
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                string titulosonido = "";
+                foreach (string file in open.FileNames)
+                {
+                    titulosonido = System.IO.Path.GetFileNameWithoutExtension(file);
+                    listasonidos.Items.Add(titulosonido);
+                    if (direclista[k] == null)
+                    {
+                        direclista[k] = file;
+                        k++;
+                    }
+
+                }
+            }
+        }
+
+        private void listasonidos_MouseDown(object sender, MouseEventArgs e)
+        {
+            //mousedown
+            string direccion = "";
+            string titulo = "";
+            if (listasonidos.SelectedItem != null)
+            {
+                //MessageBox.Show(listasonidos.SelectedItem.ToString());
+                for (int i = 1; i < 100; i++)
+                {
+                    direccion = direclista[i];
+                    titulo = Convert.ToString(listasonidos.SelectedItem);
+                    if (System.IO.Path.GetFileNameWithoutExtension(direccion) == titulo)
+                    {
+                        wmplist.URL = direclista[i];
+                        wmplist.Ctlcontrols.play();
+                    }
+
+
+                }
+                DoDragDrop(listasonidos.SelectedItem.ToString(), DragDropEffects.Copy);
+            }
+            
+
+        }
+
+
+
+        private void btna1_DragDrop(object sender, DragEventArgs e){
+            dragndrop("A", 1);
+
+        }
+
+        private void dragndrop(string sector, int indice)
+        {
+            string direccion = "";
+            string titulo = "";
+            for (int i = 1; i < 100; i++)
+            {
+                direccion = direclista[i];
+                titulo = Convert.ToString(listasonidos.SelectedItem);
+                if (System.IO.Path.GetFileNameWithoutExtension(direccion) == titulo)
+                {
+                    switch (sector)
+                    {
+                        case "A":
+                            direcA[indice] = direclista[i];
+                            botonesA[indice].Image = Properties.Resources.btnverde;
+                            break;
+                        case "B":
+                            direcB[indice] = direclista[i];
+                            botonesB[indice].Image = Properties.Resources.btnverde;
+                            break;
+                    }
+                    
+                }
+            }
+        }
+
+        private void boton_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+        private void kakita(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void btna6_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 6);
+        }
+
+        private void btna6_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void btna2_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 2);
+        }
+
+        private void btna3_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 3);
+        }
+
+        private void btna4_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 4);
+        }
+
+        private void btna5_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 5);
+        }
+
+        private void btna7_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 7);
+        }
+
+        private void btna8_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 8);
+        }
+
+        private void btna9_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 9);
+        }
+
+        private void btna10_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 10);
+        }
+
+        private void btna11_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 11);
+        }
+
+        private void btna12_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 12);
+        }
+
+        private void btna13_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 13);
+        }
+
+        private void btna14_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 14);
+        }
+
+        private void btna15_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 15);
+        }
+
+        private void btna16_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("A", 16);
+        }
+
+        private void btnb1_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 1);
+        }
+
+        private void btnb2_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 2);
+        }
+
+        private void btnb3_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 3);
+        }
+
+        private void btnb4_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 4);
+        }
+
+        private void btnb5_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 5);
+        }
+
+        private void btnb6_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 6);
+        }
+
+        private void btnb7_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 7);
+        }
+
+        private void btnb8_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 8);
+        }
+
+        private void btnb9_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 9);
+        }
+
+        private void btnb10_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 10);
+        }
+
+        private void btnb11_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 11);
+        }
+
+        private void btnb12_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 12);
+        }
+
+        private void btnb13_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 13);
+        }
+
+        private void btnb14_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 14);
+        }
+
+        private void btnb15_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 15);
+        }
+
+        private void btnb16_DragDrop(object sender, DragEventArgs e)
+        {
+            dragndrop("B", 16);
+        }
+
+        private void listasonidos_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+            //if the item state is selected them change the back color 
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                e = new DrawItemEventArgs(e.Graphics,
+                                          e.Font,
+                                          e.Bounds,
+                                          e.Index,
+                                          e.State ^ DrawItemState.Selected,
+                                          e.ForeColor,
+                                          Color.Orange);//Choose the color
+
+            // Draw the background of the ListBox control for each item.
+            e.DrawBackground();
+            // Draw the current item text
+            e.Graphics.DrawString(listasonidos.Items[e.Index].ToString(), e.Font, Brushes.White, e.Bounds, StringFormat.GenericDefault);
+            // If the ListBox has focus, draw a focus rectangle around the selected item.
+            e.DrawFocusRectangle();
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            listasonidos.Items.Remove(listasonidos.SelectedItem);
+        }
+
+        private void tm_Tick(object sender, EventArgs e)
+        {
+            if (modoplay == false)
+            {
+                if (this.Width >= 908) this.tm.Enabled = false;
+                else this.Width += 12;
+            }
+            else
+            {
+                if (this.Width <= 739) this.tm.Enabled = false;
+                else this.Width -= 12;
+                if (this.Width <=748)
+                {
+                    panelvacio.BringToFront();
+                }
+            }
+
+        }
     }
+
 }
     

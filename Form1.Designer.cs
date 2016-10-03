@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form1));
-            this.label1 = new System.Windows.Forms.Label();
             this.msopciones = new System.Windows.Forms.MenuStrip();
             this.proyectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +54,8 @@
             this.pbdesplegar = new System.Windows.Forms.PictureBox();
             this.lblmodo = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.barra = new System.Windows.Forms.PictureBox();
+            this.listasonidos = new System.Windows.Forms.ListBox();
             this.ayudacarga2 = new System.Windows.Forms.PictureBox();
             this.ayudacarga1 = new System.Windows.Forms.PictureBox();
             this.pbdesplegado = new System.Windows.Forms.PictureBox();
@@ -62,10 +64,14 @@
             this.btnaleatorio = new System.Windows.Forms.Button();
             this.btnseleccionarcarpeta = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.btncargarlista = new System.Windows.Forms.Button();
             this.btnrestablecer = new System.Windows.Forms.Button();
+            this.wmplist = new AxWMPLib.AxWindowsMediaPlayer();
             this.lblayuda = new System.Windows.Forms.Label();
             this.wmpa16 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpa15 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -101,6 +107,7 @@
             this.wmpb16 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btna16 = new System.Windows.Forms.Button();
             this.btna14 = new System.Windows.Forms.Button();
             this.btna15 = new System.Windows.Forms.Button();
@@ -134,13 +141,16 @@
             this.btna1 = new System.Windows.Forms.Button();
             this.btna3 = new System.Windows.Forms.Button();
             this.pbmodo = new System.Windows.Forms.PictureBox();
+            this.tm = new System.Windows.Forms.Timer(this.components);
             this.msopciones.SuspendLayout();
             this.panelvacio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
             this.panelmenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmplist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa14)).BeginInit();
@@ -175,19 +185,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpb16)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(274, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MixBoard Pad";
             // 
             // msopciones
             // 
@@ -197,7 +197,7 @@
             this.opcionesToolStripMenuItem});
             this.msopciones.Location = new System.Drawing.Point(0, 0);
             this.msopciones.Name = "msopciones";
-            this.msopciones.Size = new System.Drawing.Size(898, 24);
+            this.msopciones.Size = new System.Drawing.Size(913, 24);
             this.msopciones.TabIndex = 3;
             this.msopciones.Text = "Proyecto";
             // 
@@ -225,6 +225,7 @@
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
             this.abrirToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.abrirToolStripMenuItem.Text = "Abrir";
+            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
             // guardarProyectoToolStripMenuItem
             // 
@@ -343,9 +344,9 @@
             // panelvacio
             // 
             this.panelvacio.Controls.Add(this.pbdesplegar);
-            this.panelvacio.Location = new System.Drawing.Point(688, 24);
+            this.panelvacio.Location = new System.Drawing.Point(690, 24);
             this.panelvacio.Name = "panelvacio";
-            this.panelvacio.Size = new System.Drawing.Size(211, 580);
+            this.panelvacio.Size = new System.Drawing.Size(225, 578);
             this.panelvacio.TabIndex = 8;
             // 
             // pbdesplegar
@@ -357,7 +358,7 @@
             this.pbdesplegar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbdesplegar.TabIndex = 6;
             this.pbdesplegar.TabStop = false;
-            this.pbdesplegar.Click += new System.EventHandler(this.pbdesplegar_Click);
+            this.pbdesplegar.Click += new System.EventHandler(this.pbmodo_Click);
             this.pbdesplegar.MouseEnter += new System.EventHandler(this.pbdesplegar_MouseEnter);
             this.pbdesplegar.MouseLeave += new System.EventHandler(this.pbdesplegar_MouseLeave);
             // 
@@ -375,6 +376,8 @@
             // panelmenu
             // 
             this.panelmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panelmenu.Controls.Add(this.barra);
+            this.panelmenu.Controls.Add(this.listasonidos);
             this.panelmenu.Controls.Add(this.ayudacarga2);
             this.panelmenu.Controls.Add(this.ayudacarga1);
             this.panelmenu.Controls.Add(this.pbdesplegado);
@@ -383,19 +386,46 @@
             this.panelmenu.Controls.Add(this.btnaleatorio);
             this.panelmenu.Controls.Add(this.btnseleccionarcarpeta);
             this.panelmenu.Controls.Add(this.label4);
+            this.panelmenu.Controls.Add(this.label6);
             this.panelmenu.Controls.Add(this.label2);
             this.panelmenu.Controls.Add(this.label3);
             this.panelmenu.Controls.Add(this.label5);
+            this.panelmenu.Controls.Add(this.btneliminar);
+            this.panelmenu.Controls.Add(this.btncargarlista);
             this.panelmenu.Controls.Add(this.btnrestablecer);
+            this.panelmenu.Controls.Add(this.wmplist);
             this.panelmenu.Location = new System.Drawing.Point(690, 24);
             this.panelmenu.Name = "panelmenu";
-            this.panelmenu.Size = new System.Drawing.Size(211, 580);
+            this.panelmenu.Size = new System.Drawing.Size(225, 580);
             this.panelmenu.TabIndex = 11;
+            // 
+            // barra
+            // 
+            this.barra.Image = global::mixboard.Properties.Resources.barra;
+            this.barra.Location = new System.Drawing.Point(188, 262);
+            this.barra.Name = "barra";
+            this.barra.Size = new System.Drawing.Size(24, 322);
+            this.barra.TabIndex = 11;
+            this.barra.TabStop = false;
+            // 
+            // listasonidos
+            // 
+            this.listasonidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.listasonidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listasonidos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listasonidos.ForeColor = System.Drawing.SystemColors.Control;
+            this.listasonidos.FormattingEnabled = true;
+            this.listasonidos.Location = new System.Drawing.Point(3, 305);
+            this.listasonidos.Name = "listasonidos";
+            this.listasonidos.Size = new System.Drawing.Size(193, 273);
+            this.listasonidos.TabIndex = 10;
+            this.listasonidos.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listasonidos_DrawItem);
+            this.listasonidos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listasonidos_MouseDown);
             // 
             // ayudacarga2
             // 
             this.ayudacarga2.Image = global::mixboard.Properties.Resources.ayuda;
-            this.ayudacarga2.Location = new System.Drawing.Point(174, 104);
+            this.ayudacarga2.Location = new System.Drawing.Point(174, 111);
             this.ayudacarga2.Name = "ayudacarga2";
             this.ayudacarga2.Size = new System.Drawing.Size(19, 18);
             this.ayudacarga2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -405,7 +435,7 @@
             // ayudacarga1
             // 
             this.ayudacarga1.Image = global::mixboard.Properties.Resources.ayuda;
-            this.ayudacarga1.Location = new System.Drawing.Point(188, 48);
+            this.ayudacarga1.Location = new System.Drawing.Point(188, 49);
             this.ayudacarga1.Name = "ayudacarga1";
             this.ayudacarga1.Size = new System.Drawing.Size(19, 18);
             this.ayudacarga1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -424,7 +454,7 @@
             this.pbdesplegado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbdesplegado.TabIndex = 5;
             this.pbdesplegado.TabStop = false;
-            this.pbdesplegado.Click += new System.EventHandler(this.pbdesplegado_Click);
+            this.pbdesplegado.Click += new System.EventHandler(this.pbmodo_Click);
             this.pbdesplegado.MouseEnter += new System.EventHandler(this.pbdesplegado_MouseEnter);
             this.pbdesplegado.MouseLeave += new System.EventHandler(this.pbdesplegado_MouseLeave);
             // 
@@ -433,7 +463,7 @@
             this.txtseleccionarcarpeta2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtseleccionarcarpeta2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtseleccionarcarpeta2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtseleccionarcarpeta2.Location = new System.Drawing.Point(2, 130);
+            this.txtseleccionarcarpeta2.Location = new System.Drawing.Point(2, 137);
             this.txtseleccionarcarpeta2.Name = "txtseleccionarcarpeta2";
             this.txtseleccionarcarpeta2.Size = new System.Drawing.Size(147, 20);
             this.txtseleccionarcarpeta2.TabIndex = 8;
@@ -444,7 +474,7 @@
             this.txtseleccionarcarpeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtseleccionarcarpeta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtseleccionarcarpeta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtseleccionarcarpeta.Location = new System.Drawing.Point(2, 75);
+            this.txtseleccionarcarpeta.Location = new System.Drawing.Point(2, 76);
             this.txtseleccionarcarpeta.Name = "txtseleccionarcarpeta";
             this.txtseleccionarcarpeta.Size = new System.Drawing.Size(147, 20);
             this.txtseleccionarcarpeta.TabIndex = 8;
@@ -456,7 +486,7 @@
             // 
             this.btnaleatorio.BackColor = System.Drawing.Color.Maroon;
             this.btnaleatorio.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnaleatorio.Location = new System.Drawing.Point(150, 130);
+            this.btnaleatorio.Location = new System.Drawing.Point(150, 137);
             this.btnaleatorio.Name = "btnaleatorio";
             this.btnaleatorio.Size = new System.Drawing.Size(29, 20);
             this.btnaleatorio.TabIndex = 7;
@@ -468,7 +498,7 @@
             // 
             this.btnseleccionarcarpeta.BackColor = System.Drawing.Color.Maroon;
             this.btnseleccionarcarpeta.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnseleccionarcarpeta.Location = new System.Drawing.Point(150, 74);
+            this.btnseleccionarcarpeta.Location = new System.Drawing.Point(150, 75);
             this.btnseleccionarcarpeta.Name = "btnseleccionarcarpeta";
             this.btnseleccionarcarpeta.Size = new System.Drawing.Size(29, 21);
             this.btnseleccionarcarpeta.TabIndex = 7;
@@ -489,12 +519,23 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "OPCIONES";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.label6.Location = new System.Drawing.Point(3, 244);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(167, 20);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "CARGAR SONIDOS A LISTA:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label2.Location = new System.Drawing.Point(-2, 163);
+            this.label2.Location = new System.Drawing.Point(-2, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 20);
             this.label2.TabIndex = 3;
@@ -505,7 +546,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label3.Location = new System.Drawing.Point(-3, 103);
+            this.label3.Location = new System.Drawing.Point(-3, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(180, 20);
             this.label3.TabIndex = 3;
@@ -516,7 +557,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label5.Location = new System.Drawing.Point(-4, 47);
+            this.label5.Location = new System.Drawing.Point(-4, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(196, 20);
             this.label5.TabIndex = 3;
@@ -524,19 +565,57 @@
             this.label5.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
             this.label5.MouseLeave += new System.EventHandler(this.leave_ayuda);
             // 
+            // btneliminar
+            // 
+            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btneliminar.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btneliminar.Location = new System.Drawing.Point(99, 270);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(98, 35);
+            this.btneliminar.TabIndex = 5;
+            this.btneliminar.Text = "ELIMINAR";
+            this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            // 
+            // btncargarlista
+            // 
+            this.btncargarlista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btncargarlista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncargarlista.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncargarlista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btncargarlista.Location = new System.Drawing.Point(2, 270);
+            this.btncargarlista.Name = "btncargarlista";
+            this.btncargarlista.Size = new System.Drawing.Size(99, 35);
+            this.btncargarlista.TabIndex = 5;
+            this.btncargarlista.Text = "CARGAR";
+            this.btncargarlista.UseVisualStyleBackColor = false;
+            this.btncargarlista.Click += new System.EventHandler(this.btncargarlista_Click);
+            // 
             // btnrestablecer
             // 
             this.btnrestablecer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.btnrestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrestablecer.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnrestablecer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btnrestablecer.Location = new System.Drawing.Point(2, 186);
+            this.btnrestablecer.Location = new System.Drawing.Point(2, 194);
             this.btnrestablecer.Name = "btnrestablecer";
             this.btnrestablecer.Size = new System.Drawing.Size(204, 35);
             this.btnrestablecer.TabIndex = 5;
             this.btnrestablecer.Text = "RESTABLECER";
             this.btnrestablecer.UseVisualStyleBackColor = false;
             this.btnrestablecer.Click += new System.EventHandler(this.btnrestablecer_Click);
+            // 
+            // wmplist
+            // 
+            this.wmplist.Enabled = true;
+            this.wmplist.Location = new System.Drawing.Point(168, 245);
+            this.wmplist.Name = "wmplist";
+            this.wmplist.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmplist.OcxState")));
+            this.wmplist.Size = new System.Drawing.Size(28, 21);
+            this.wmplist.TabIndex = 4;
+            this.wmplist.Visible = false;
             // 
             // lblayuda
             // 
@@ -877,7 +956,7 @@
             this.panel1.Controls.Add(this.lblayuda);
             this.panel1.Location = new System.Drawing.Point(0, 602);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(898, 32);
+            this.panel1.Size = new System.Drawing.Size(915, 32);
             this.panel1.TabIndex = 27;
             // 
             // pictureBox1
@@ -890,8 +969,19 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::mixboard.Properties.Resources.mixboardtitulo;
+            this.pictureBox2.Location = new System.Drawing.Point(283, 31);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(148, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
             // btna16
             // 
+            this.btna16.AllowDrop = true;
             this.btna16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna16.BackColor = System.Drawing.Color.Transparent;
             this.btna16.FlatAppearance.BorderSize = 0;
@@ -905,6 +995,8 @@
             this.btna16.TabIndex = 23;
             this.btna16.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna16.UseVisualStyleBackColor = false;
+            this.btna16.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna16_DragDrop);
+            this.btna16.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna16_MouseDown);
             this.btna16.MouseEnter += new System.EventHandler(this.btna16_MouseEnter);
             this.btna16.MouseLeave += new System.EventHandler(this.btna16_MouseLeave);
@@ -912,6 +1004,7 @@
             // 
             // btna14
             // 
+            this.btna14.AllowDrop = true;
             this.btna14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna14.BackColor = System.Drawing.Color.Transparent;
             this.btna14.FlatAppearance.BorderSize = 0;
@@ -925,6 +1018,8 @@
             this.btna14.TabIndex = 24;
             this.btna14.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna14.UseVisualStyleBackColor = false;
+            this.btna14.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna14_DragDrop);
+            this.btna14.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna14_MouseDown);
             this.btna14.MouseEnter += new System.EventHandler(this.btna14_MouseEnter);
             this.btna14.MouseLeave += new System.EventHandler(this.btna14_MouseLeave);
@@ -932,6 +1027,7 @@
             // 
             // btna15
             // 
+            this.btna15.AllowDrop = true;
             this.btna15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna15.BackColor = System.Drawing.Color.Transparent;
             this.btna15.FlatAppearance.BorderSize = 0;
@@ -945,6 +1041,8 @@
             this.btna15.TabIndex = 25;
             this.btna15.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna15.UseVisualStyleBackColor = false;
+            this.btna15.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna15_DragDrop);
+            this.btna15.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna15_MouseDown);
             this.btna15.MouseEnter += new System.EventHandler(this.btna15_MouseEnter);
             this.btna15.MouseLeave += new System.EventHandler(this.btna15_MouseLeave);
@@ -952,6 +1050,7 @@
             // 
             // btna13
             // 
+            this.btna13.AllowDrop = true;
             this.btna13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna13.BackColor = System.Drawing.Color.Transparent;
             this.btna13.FlatAppearance.BorderSize = 0;
@@ -965,6 +1064,8 @@
             this.btna13.TabIndex = 26;
             this.btna13.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna13.UseVisualStyleBackColor = false;
+            this.btna13.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna13_DragDrop);
+            this.btna13.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna13_MouseDown);
             this.btna13.MouseEnter += new System.EventHandler(this.btna13_MouseEnter);
             this.btna13.MouseLeave += new System.EventHandler(this.btna13_MouseLeave);
@@ -972,6 +1073,7 @@
             // 
             // btna12
             // 
+            this.btna12.AllowDrop = true;
             this.btna12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna12.BackColor = System.Drawing.Color.Transparent;
             this.btna12.FlatAppearance.BorderSize = 0;
@@ -985,6 +1087,8 @@
             this.btna12.TabIndex = 19;
             this.btna12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna12.UseVisualStyleBackColor = false;
+            this.btna12.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna12_DragDrop);
+            this.btna12.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna12_MouseDown);
             this.btna12.MouseEnter += new System.EventHandler(this.btna12_MouseEnter);
             this.btna12.MouseLeave += new System.EventHandler(this.btna12_MouseLeave);
@@ -992,6 +1096,7 @@
             // 
             // btna10
             // 
+            this.btna10.AllowDrop = true;
             this.btna10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna10.BackColor = System.Drawing.Color.Transparent;
             this.btna10.FlatAppearance.BorderSize = 0;
@@ -1005,6 +1110,8 @@
             this.btna10.TabIndex = 20;
             this.btna10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna10.UseVisualStyleBackColor = false;
+            this.btna10.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna10_DragDrop);
+            this.btna10.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna10_MouseDown);
             this.btna10.MouseEnter += new System.EventHandler(this.btna10_MouseEnter);
             this.btna10.MouseLeave += new System.EventHandler(this.btna10_MouseLeave);
@@ -1012,6 +1119,7 @@
             // 
             // btna11
             // 
+            this.btna11.AllowDrop = true;
             this.btna11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna11.BackColor = System.Drawing.Color.Transparent;
             this.btna11.FlatAppearance.BorderSize = 0;
@@ -1025,6 +1133,8 @@
             this.btna11.TabIndex = 21;
             this.btna11.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna11.UseVisualStyleBackColor = false;
+            this.btna11.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna11_DragDrop);
+            this.btna11.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna11_MouseDown);
             this.btna11.MouseEnter += new System.EventHandler(this.btna11_MouseEnter);
             this.btna11.MouseLeave += new System.EventHandler(this.btna11_MouseLeave);
@@ -1032,6 +1142,7 @@
             // 
             // btna9
             // 
+            this.btna9.AllowDrop = true;
             this.btna9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna9.BackColor = System.Drawing.Color.Transparent;
             this.btna9.FlatAppearance.BorderSize = 0;
@@ -1045,6 +1156,8 @@
             this.btna9.TabIndex = 22;
             this.btna9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna9.UseVisualStyleBackColor = false;
+            this.btna9.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna9_DragDrop);
+            this.btna9.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna9_MouseDown);
             this.btna9.MouseEnter += new System.EventHandler(this.btna9_MouseEnter);
             this.btna9.MouseLeave += new System.EventHandler(this.btna9_MouseLeave);
@@ -1052,6 +1165,7 @@
             // 
             // btna8
             // 
+            this.btna8.AllowDrop = true;
             this.btna8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna8.BackColor = System.Drawing.Color.Transparent;
             this.btna8.FlatAppearance.BorderSize = 0;
@@ -1065,6 +1179,8 @@
             this.btna8.TabIndex = 15;
             this.btna8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna8.UseVisualStyleBackColor = false;
+            this.btna8.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna8_DragDrop);
+            this.btna8.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna8_MouseDown);
             this.btna8.MouseEnter += new System.EventHandler(this.btna8_MouseEnter);
             this.btna8.MouseLeave += new System.EventHandler(this.btna8_MouseLeave);
@@ -1072,6 +1188,7 @@
             // 
             // btna6
             // 
+            this.btna6.AllowDrop = true;
             this.btna6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna6.BackColor = System.Drawing.Color.Transparent;
             this.btna6.FlatAppearance.BorderSize = 0;
@@ -1085,6 +1202,8 @@
             this.btna6.TabIndex = 16;
             this.btna6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna6.UseVisualStyleBackColor = false;
+            this.btna6.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna6_DragDrop);
+            this.btna6.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna6_MouseDown);
             this.btna6.MouseEnter += new System.EventHandler(this.btna6_MouseEnter);
             this.btna6.MouseLeave += new System.EventHandler(this.btna6_MouseLeave);
@@ -1092,6 +1211,7 @@
             // 
             // btna7
             // 
+            this.btna7.AllowDrop = true;
             this.btna7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna7.BackColor = System.Drawing.Color.Transparent;
             this.btna7.FlatAppearance.BorderSize = 0;
@@ -1105,6 +1225,8 @@
             this.btna7.TabIndex = 17;
             this.btna7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna7.UseVisualStyleBackColor = false;
+            this.btna7.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna7_DragDrop);
+            this.btna7.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna7_MouseDown);
             this.btna7.MouseEnter += new System.EventHandler(this.btna7_MouseEnter);
             this.btna7.MouseLeave += new System.EventHandler(this.btna7_MouseLeave);
@@ -1112,6 +1234,7 @@
             // 
             // btna5
             // 
+            this.btna5.AllowDrop = true;
             this.btna5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna5.BackColor = System.Drawing.Color.Transparent;
             this.btna5.FlatAppearance.BorderSize = 0;
@@ -1125,6 +1248,8 @@
             this.btna5.TabIndex = 18;
             this.btna5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna5.UseVisualStyleBackColor = false;
+            this.btna5.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna5_DragDrop);
+            this.btna5.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna5_MouseDown);
             this.btna5.MouseEnter += new System.EventHandler(this.btna5_MouseEnter);
             this.btna5.MouseLeave += new System.EventHandler(this.btna5_MouseLeave);
@@ -1132,6 +1257,7 @@
             // 
             // btna4
             // 
+            this.btna4.AllowDrop = true;
             this.btna4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna4.BackColor = System.Drawing.Color.Transparent;
             this.btna4.FlatAppearance.BorderSize = 0;
@@ -1145,6 +1271,8 @@
             this.btna4.TabIndex = 14;
             this.btna4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna4.UseVisualStyleBackColor = false;
+            this.btna4.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna4_DragDrop);
+            this.btna4.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna4_MouseDown);
             this.btna4.MouseEnter += new System.EventHandler(this.btna4_MouseEnter);
             this.btna4.MouseLeave += new System.EventHandler(this.btna4_MouseLeave);
@@ -1152,6 +1280,7 @@
             // 
             // btna2
             // 
+            this.btna2.AllowDrop = true;
             this.btna2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna2.BackColor = System.Drawing.Color.Transparent;
             this.btna2.FlatAppearance.BorderSize = 0;
@@ -1165,6 +1294,8 @@
             this.btna2.TabIndex = 14;
             this.btna2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna2.UseVisualStyleBackColor = false;
+            this.btna2.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna2_DragDrop);
+            this.btna2.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna2_MouseDown);
             this.btna2.MouseEnter += new System.EventHandler(this.btna2_MouseEnter);
             this.btna2.MouseLeave += new System.EventHandler(this.btna2_MouseLeave);
@@ -1172,6 +1303,7 @@
             // 
             // btnb16
             // 
+            this.btnb16.AllowDrop = true;
             this.btnb16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb16.BackColor = System.Drawing.Color.Transparent;
             this.btnb16.CausesValidation = false;
@@ -1188,6 +1320,8 @@
             this.btnb16.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb16.UseMnemonic = false;
             this.btnb16.UseVisualStyleBackColor = false;
+            this.btnb16.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb16_DragDrop);
+            this.btnb16.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb16_MouseDown);
             this.btnb16.MouseEnter += new System.EventHandler(this.btnb16_MouseEnter);
             this.btnb16.MouseLeave += new System.EventHandler(this.btnb16_MouseLeave);
@@ -1195,6 +1329,7 @@
             // 
             // btnb15
             // 
+            this.btnb15.AllowDrop = true;
             this.btnb15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb15.BackColor = System.Drawing.Color.Transparent;
             this.btnb15.CausesValidation = false;
@@ -1211,6 +1346,8 @@
             this.btnb15.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb15.UseMnemonic = false;
             this.btnb15.UseVisualStyleBackColor = false;
+            this.btnb15.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb15_DragDrop);
+            this.btnb15.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb15_MouseDown);
             this.btnb15.MouseEnter += new System.EventHandler(this.btnb15_MouseEnter);
             this.btnb15.MouseLeave += new System.EventHandler(this.btnb15_MouseLeave);
@@ -1218,6 +1355,7 @@
             // 
             // btnb8
             // 
+            this.btnb8.AllowDrop = true;
             this.btnb8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb8.BackColor = System.Drawing.Color.Transparent;
             this.btnb8.CausesValidation = false;
@@ -1234,6 +1372,8 @@
             this.btnb8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb8.UseMnemonic = false;
             this.btnb8.UseVisualStyleBackColor = false;
+            this.btnb8.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb8_DragDrop);
+            this.btnb8.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb8_MouseDown);
             this.btnb8.MouseEnter += new System.EventHandler(this.btnb8_MouseEnter);
             this.btnb8.MouseLeave += new System.EventHandler(this.btnb8_MouseLeave);
@@ -1241,6 +1381,7 @@
             // 
             // btnb12
             // 
+            this.btnb12.AllowDrop = true;
             this.btnb12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb12.BackColor = System.Drawing.Color.Transparent;
             this.btnb12.CausesValidation = false;
@@ -1257,6 +1398,8 @@
             this.btnb12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb12.UseMnemonic = false;
             this.btnb12.UseVisualStyleBackColor = false;
+            this.btnb12.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb12_DragDrop);
+            this.btnb12.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb12_MouseDown);
             this.btnb12.MouseEnter += new System.EventHandler(this.btnb12_MouseEnter);
             this.btnb12.MouseLeave += new System.EventHandler(this.btnb12_MouseLeave);
@@ -1264,6 +1407,7 @@
             // 
             // btnb7
             // 
+            this.btnb7.AllowDrop = true;
             this.btnb7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb7.BackColor = System.Drawing.Color.Transparent;
             this.btnb7.CausesValidation = false;
@@ -1280,6 +1424,8 @@
             this.btnb7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb7.UseMnemonic = false;
             this.btnb7.UseVisualStyleBackColor = false;
+            this.btnb7.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb7_DragDrop);
+            this.btnb7.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb7_MouseDown);
             this.btnb7.MouseEnter += new System.EventHandler(this.btnb7_MouseEnter);
             this.btnb7.MouseLeave += new System.EventHandler(this.btnb7_MouseLeave);
@@ -1287,6 +1433,7 @@
             // 
             // btnb14
             // 
+            this.btnb14.AllowDrop = true;
             this.btnb14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb14.BackColor = System.Drawing.Color.Transparent;
             this.btnb14.CausesValidation = false;
@@ -1303,6 +1450,8 @@
             this.btnb14.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb14.UseMnemonic = false;
             this.btnb14.UseVisualStyleBackColor = false;
+            this.btnb14.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb14_DragDrop);
+            this.btnb14.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb14_MouseDown);
             this.btnb14.MouseEnter += new System.EventHandler(this.btnb14_MouseEnter);
             this.btnb14.MouseLeave += new System.EventHandler(this.btnb14_MouseLeave);
@@ -1310,6 +1459,7 @@
             // 
             // btnb4
             // 
+            this.btnb4.AllowDrop = true;
             this.btnb4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb4.BackColor = System.Drawing.Color.Transparent;
             this.btnb4.CausesValidation = false;
@@ -1326,6 +1476,8 @@
             this.btnb4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb4.UseMnemonic = false;
             this.btnb4.UseVisualStyleBackColor = false;
+            this.btnb4.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb4_DragDrop);
+            this.btnb4.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb4_MouseDown);
             this.btnb4.MouseEnter += new System.EventHandler(this.btnb4_MouseEnter);
             this.btnb4.MouseLeave += new System.EventHandler(this.btnb4_MouseLeave);
@@ -1333,6 +1485,7 @@
             // 
             // btnb11
             // 
+            this.btnb11.AllowDrop = true;
             this.btnb11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb11.BackColor = System.Drawing.Color.Transparent;
             this.btnb11.CausesValidation = false;
@@ -1349,6 +1502,8 @@
             this.btnb11.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb11.UseMnemonic = false;
             this.btnb11.UseVisualStyleBackColor = false;
+            this.btnb11.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb11_DragDrop);
+            this.btnb11.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb11_MouseDown);
             this.btnb11.MouseEnter += new System.EventHandler(this.btnb11_MouseEnter);
             this.btnb11.MouseLeave += new System.EventHandler(this.btnb11_MouseLeave);
@@ -1356,6 +1511,7 @@
             // 
             // btnb6
             // 
+            this.btnb6.AllowDrop = true;
             this.btnb6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb6.BackColor = System.Drawing.Color.Transparent;
             this.btnb6.CausesValidation = false;
@@ -1372,6 +1528,8 @@
             this.btnb6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb6.UseMnemonic = false;
             this.btnb6.UseVisualStyleBackColor = false;
+            this.btnb6.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb6_DragDrop);
+            this.btnb6.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb6_MouseDown);
             this.btnb6.MouseEnter += new System.EventHandler(this.btnb6_MouseEnter);
             this.btnb6.MouseLeave += new System.EventHandler(this.btnb6_MouseLeave);
@@ -1379,6 +1537,7 @@
             // 
             // btnb13
             // 
+            this.btnb13.AllowDrop = true;
             this.btnb13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb13.BackColor = System.Drawing.Color.Transparent;
             this.btnb13.CausesValidation = false;
@@ -1395,6 +1554,8 @@
             this.btnb13.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb13.UseMnemonic = false;
             this.btnb13.UseVisualStyleBackColor = false;
+            this.btnb13.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb13_DragDrop);
+            this.btnb13.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb13_MouseDown);
             this.btnb13.MouseEnter += new System.EventHandler(this.btnb13_MouseEnter);
             this.btnb13.MouseLeave += new System.EventHandler(this.btnb13_MouseLeave);
@@ -1402,6 +1563,7 @@
             // 
             // btnb3
             // 
+            this.btnb3.AllowDrop = true;
             this.btnb3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb3.BackColor = System.Drawing.Color.Transparent;
             this.btnb3.CausesValidation = false;
@@ -1418,6 +1580,8 @@
             this.btnb3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb3.UseMnemonic = false;
             this.btnb3.UseVisualStyleBackColor = false;
+            this.btnb3.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb3_DragDrop);
+            this.btnb3.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb3_MouseDown);
             this.btnb3.MouseEnter += new System.EventHandler(this.btnb3_MouseEnter);
             this.btnb3.MouseLeave += new System.EventHandler(this.btnb3_MouseLeave);
@@ -1425,6 +1589,7 @@
             // 
             // btnb10
             // 
+            this.btnb10.AllowDrop = true;
             this.btnb10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb10.BackColor = System.Drawing.Color.Transparent;
             this.btnb10.CausesValidation = false;
@@ -1441,6 +1606,8 @@
             this.btnb10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb10.UseMnemonic = false;
             this.btnb10.UseVisualStyleBackColor = false;
+            this.btnb10.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb10_DragDrop);
+            this.btnb10.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb10_MouseDown);
             this.btnb10.MouseEnter += new System.EventHandler(this.btnb10_MouseEnter);
             this.btnb10.MouseLeave += new System.EventHandler(this.btnb10_MouseLeave);
@@ -1448,6 +1615,7 @@
             // 
             // btnb5
             // 
+            this.btnb5.AllowDrop = true;
             this.btnb5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb5.BackColor = System.Drawing.Color.Transparent;
             this.btnb5.CausesValidation = false;
@@ -1464,6 +1632,8 @@
             this.btnb5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb5.UseMnemonic = false;
             this.btnb5.UseVisualStyleBackColor = false;
+            this.btnb5.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb5_DragDrop);
+            this.btnb5.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb5_MouseDown);
             this.btnb5.MouseEnter += new System.EventHandler(this.btnb5_MouseEnter);
             this.btnb5.MouseLeave += new System.EventHandler(this.btnb5_MouseLeave);
@@ -1471,6 +1641,7 @@
             // 
             // btnb9
             // 
+            this.btnb9.AllowDrop = true;
             this.btnb9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb9.BackColor = System.Drawing.Color.Transparent;
             this.btnb9.CausesValidation = false;
@@ -1487,6 +1658,8 @@
             this.btnb9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb9.UseMnemonic = false;
             this.btnb9.UseVisualStyleBackColor = false;
+            this.btnb9.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb9_DragDrop);
+            this.btnb9.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb9_MouseDown);
             this.btnb9.MouseEnter += new System.EventHandler(this.btnb9_MouseEnter);
             this.btnb9.MouseLeave += new System.EventHandler(this.btnb9_MouseLeave);
@@ -1494,6 +1667,7 @@
             // 
             // btnb2
             // 
+            this.btnb2.AllowDrop = true;
             this.btnb2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb2.BackColor = System.Drawing.Color.Transparent;
             this.btnb2.CausesValidation = false;
@@ -1510,6 +1684,8 @@
             this.btnb2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb2.UseMnemonic = false;
             this.btnb2.UseVisualStyleBackColor = false;
+            this.btnb2.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb2_DragDrop);
+            this.btnb2.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb2_MouseDown);
             this.btnb2.MouseEnter += new System.EventHandler(this.btnb2_MouseEnter);
             this.btnb2.MouseLeave += new System.EventHandler(this.btnb2_MouseLeave);
@@ -1517,6 +1693,7 @@
             // 
             // btnb1
             // 
+            this.btnb1.AllowDrop = true;
             this.btnb1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnb1.BackColor = System.Drawing.Color.Transparent;
             this.btnb1.CausesValidation = false;
@@ -1533,6 +1710,8 @@
             this.btnb1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnb1.UseMnemonic = false;
             this.btnb1.UseVisualStyleBackColor = false;
+            this.btnb1.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb1_DragDrop);
+            this.btnb1.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnb1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnb1_MouseDown);
             this.btnb1.MouseEnter += new System.EventHandler(this.btnb1_MouseEnter);
             this.btnb1.MouseLeave += new System.EventHandler(this.btnb1_MouseLeave);
@@ -1540,6 +1719,7 @@
             // 
             // btna1
             // 
+            this.btna1.AllowDrop = true;
             this.btna1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna1.BackColor = System.Drawing.Color.Transparent;
             this.btna1.CausesValidation = false;
@@ -1556,6 +1736,8 @@
             this.btna1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna1.UseMnemonic = false;
             this.btna1.UseVisualStyleBackColor = false;
+            this.btna1.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna1_DragDrop);
+            this.btna1.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna1_MouseDown);
             this.btna1.MouseEnter += new System.EventHandler(this.btna1_MouseEnter);
             this.btna1.MouseLeave += new System.EventHandler(this.btna1_MouseLeave);
@@ -1563,6 +1745,7 @@
             // 
             // btna3
             // 
+            this.btna3.AllowDrop = true;
             this.btna3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btna3.BackColor = System.Drawing.Color.Transparent;
             this.btna3.FlatAppearance.BorderSize = 0;
@@ -1576,6 +1759,8 @@
             this.btna3.TabIndex = 14;
             this.btna3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btna3.UseVisualStyleBackColor = false;
+            this.btna3.DragDrop += new System.Windows.Forms.DragEventHandler(this.btna3_DragDrop);
+            this.btna3.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btna3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btna3_MouseDown);
             this.btna3.MouseEnter += new System.EventHandler(this.btna3_MouseEnter);
             this.btna3.MouseLeave += new System.EventHandler(this.btna3_MouseLeave);
@@ -1583,6 +1768,7 @@
             // 
             // pbmodo
             // 
+            this.pbmodo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbmodo.Image = global::mixboard.Properties.Resources.botonsesion;
             this.pbmodo.Location = new System.Drawing.Point(-10, 26);
             this.pbmodo.Name = "pbmodo";
@@ -1592,6 +1778,11 @@
             this.pbmodo.TabStop = false;
             this.pbmodo.Click += new System.EventHandler(this.pbmodo_Click);
             // 
+            // tm
+            // 
+            this.tm.Interval = 13;
+            this.tm.Tick += new System.EventHandler(this.tm_Tick);
+            // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1599,7 +1790,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(898, 633);
+            this.ClientSize = new System.Drawing.Size(913, 633);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.wmpa16);
             this.Controls.Add(this.wmpa15);
@@ -1668,7 +1860,6 @@
             this.Controls.Add(this.lblmodo);
             this.Controls.Add(this.pbmodo);
             this.Controls.Add(this.msopciones);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelvacio);
             this.Controls.Add(this.panelmenu);
             this.KeyPreview = true;
@@ -1687,9 +1878,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).EndInit();
             this.panelmenu.ResumeLayout(false);
             this.panelmenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmplist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa14)).EndInit();
@@ -1725,6 +1918,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1732,8 +1926,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip msopciones;
         private System.Windows.Forms.ToolStripMenuItem proyectoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
@@ -1838,6 +2030,14 @@
         private System.Windows.Forms.PictureBox ayudacarga1;
         private System.Windows.Forms.PictureBox ayudacarga2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListBox listasonidos;
+        private System.Windows.Forms.Button btncargarlista;
+        private AxWMPLib.AxWindowsMediaPlayer wmplist;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.PictureBox barra;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Timer tm;
     }
 }
 

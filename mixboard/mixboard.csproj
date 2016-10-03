@@ -203,12 +203,14 @@
     <None Include="Resources\btnverde.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\mixboardtitulo.png" />
     <None Include="Resources\btncargado.png" />
     <None Include="Resources\btnrestablecer.png" />
     <None Include="Resources\btnrestableceramarillo.png" />
     <None Include="Resources\btnrestablecerOK.png" />
     <None Include="Resources\ayuda.png" />
     <None Include="Resources\ayuda2.png" />
+    <None Include="Resources\barra.png" />
     <Content Include="Resources\btnsinsonido.png" />
     <None Include="Resources\btnsinsonido1.png" />
   </ItemGroup>
