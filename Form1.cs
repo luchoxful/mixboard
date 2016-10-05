@@ -831,6 +831,7 @@ namespace mixboard
                 cmbsec.Items.Insert(1, "sector B");
                 cmbsec.Items.Insert(2, "sector C");
                 cmbsec.Items.Insert(3, "sector D");
+                cmbsec.Items.Insert(4, "TODOS");
                 Label txtinfo = new Label() { Left = 50, Top = 80, Height = 60, Width = 300, Text = info };
                 Button confirmation = new Button() { Text = "Ok", Left = 180, Width = 100, Top = 50 };
                 confirmation.Click += (sender, e) => { prompt.Close(); };
@@ -894,6 +895,13 @@ namespace mixboard
                 case 3:
                     colorselecD = 1;
                     break;
+                case 4:
+                    colorselecA = 1;
+                    colorselecB = 1;
+                    colorselecC = 1;
+                    colorselecD = 1;
+
+                    break;
             }
 
         }
@@ -914,6 +922,12 @@ namespace mixboard
                     colorselecC = 2;
                     break;
                 case 3:
+                    colorselecD = 2;
+                    break;
+                case 4:
+                    colorselecA = 2;
+                    colorselecB = 2;
+                    colorselecC = 2;
                     colorselecD = 2;
                     break;
             }
@@ -937,6 +951,12 @@ namespace mixboard
                 case 3:
                     colorselecD = 0;
                     break;
+                case 4:
+                    colorselecA = 0;
+                    colorselecB = 0;
+                    colorselecC = 0;
+                    colorselecD = 0;
+                    break;
             }
         }
 
@@ -956,6 +976,12 @@ namespace mixboard
                     colorselecC = 3;
                     break;
                 case 3:
+                    colorselecD = 3;
+                    break;
+                case 4:
+                    colorselecA = 3;
+                    colorselecB = 3;
+                    colorselecC = 3;
                     colorselecD = 3;
                     break;
             }
@@ -979,6 +1005,12 @@ namespace mixboard
                 case 3:
                     colorselecD = 4;
                     break;
+                case 4:
+                    colorselecA = 4;
+                    colorselecB = 4;
+                    colorselecC = 4;
+                    colorselecD = 4;
+                    break;
             }
         }
 
@@ -1000,6 +1032,12 @@ namespace mixboard
                     colorselecC = 5;
                     break;
                 case 3:
+                    colorselecD = 5;
+                    break;
+                case 4:
+                    colorselecA = 5;
+                    colorselecB = 5;
+                    colorselecC = 5;
                     colorselecD = 5;
                     break;
             }
@@ -1951,6 +1989,16 @@ namespace mixboard
 
                 using (System.IO.StreamWriter escritor = new System.IO.StreamWriter(direcproyecto))
                 {
+                    //recordar luces
+                    if(RecordarMenuItem.Checked == true)
+                    {
+                        escritor.WriteLine(colorselecA);
+                        escritor.WriteLine(colorselecB);
+                        escritor.WriteLine(colorselecC);
+                        escritor.WriteLine(colorselecD);
+                    }
+
+
                     for (int i = 1; i < 17; i++)
                     {
                         if (direcA[i] != null)
@@ -2021,9 +2069,29 @@ namespace mixboard
                 this.Text = titulodefault + nombreproyecto;
                 using (StreamReader lector = new StreamReader(abrir.FileName))
                 {
+                    int i = 0;
                     string line;
                     while ((line = lector.ReadLine()) != null)
                     {
+                        i++;
+                        switch (i)
+                        {
+                            case 1:
+                                colorselecA = Convert.ToInt16(line.Substring(0, 1));
+                                break;
+                            case 2:
+                                colorselecB = Convert.ToInt16(line.Substring(0, 1));
+                                break;
+                            case 3:
+                                colorselecC = Convert.ToInt16(line.Substring(0, 1));
+                                break;
+                            case 4:
+                                colorselecA = Convert.ToInt16(line.Substring(0, 1));
+                                break;
+                        }
+
+                        if (i >=5)
+                        {
                         sector = line.Substring(0, 1);
                         numboton = Convert.ToInt16(line.Substring(1, 2));
                         ruta = line.Substring(4);
@@ -2038,7 +2106,7 @@ namespace mixboard
                                 botonesB[numboton].Image = Properties.Resources.btncargado;
                                 break;
                         }
-
+                        }
 
                     }
                 }
@@ -2091,7 +2159,7 @@ namespace mixboard
 
 
                 }
-                DoDragDrop(listasonidos.SelectedItem.ToString(), DragDropEffects.Copy);
+                DoDragDrop(listasonidos.SelectedIndices.ToString(), DragDropEffects.Copy);
             }
             
 
@@ -2106,6 +2174,7 @@ namespace mixboard
 
         private void dragndrop(string sector, int indice)
         {
+
             string direccion = "";
             string titulo = "";
             for (int i = 1; i < 100; i++)
@@ -2322,7 +2391,14 @@ namespace mixboard
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            listasonidos.Items.Remove(listasonidos.SelectedItem);
+
+            //listasonidos.Items.Remove(listasonidos.SelectedItems);
+            for (int x = listasonidos.SelectedIndices.Count - 1; x >= 0; x--)
+            {
+                int idx = listasonidos.SelectedIndices[x];
+                //listasonidos.Items.Add(listasonidos.Items[idx]);
+                listasonidos.Items.RemoveAt(idx);
+            }
         }
 
         private void tm_Tick(object sender, EventArgs e)
@@ -2343,6 +2419,27 @@ namespace mixboard
             }
 
         }
+
+        private void form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bool preguntar = false;
+            for (int i = 1; i < 17; i++)
+            {
+                if (direcA[i] != null || direcB[i] != null)
+                {
+                    preguntar = true;
+                }
+            }
+            if (preguntar == true)
+            {
+                DialogResult dialogResult = MessageBox.Show("¿Desea guardar los cambios del proyecto actual (" + nombreproyecto + ") antes de salir?", "Cerrar proyecto", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    guardarProyectoToolStripMenuItem_Click(sender, e);
+                }
+            }
+        }
+
     }
 
 }

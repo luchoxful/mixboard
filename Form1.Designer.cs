@@ -49,6 +49,7 @@
             this.mostrarLetraDeBotonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.desactivarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RecordarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelvacio = new System.Windows.Forms.Panel();
             this.pbdesplegar = new System.Windows.Forms.PictureBox();
@@ -142,6 +143,7 @@
             this.btna3 = new System.Windows.Forms.Button();
             this.pbmodo = new System.Windows.Forms.PictureBox();
             this.tm = new System.Windows.Forms.Timer(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.msopciones.SuspendLayout();
             this.panelvacio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
@@ -251,7 +253,8 @@
             // 
             this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mscolorluces,
-            this.mostrarLetraDeBotonToolStripMenuItem});
+            this.mostrarLetraDeBotonToolStripMenuItem,
+            this.RecordarMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.opcionesToolStripMenuItem.Text = "Opciones";
@@ -267,7 +270,7 @@
             this.toolStripSeparator1,
             this.randomToolStripMenuItem});
             this.mscolorluces.Name = "mscolorluces";
-            this.mscolorluces.Size = new System.Drawing.Size(192, 22);
+            this.mscolorluces.Size = new System.Drawing.Size(207, 22);
             this.mscolorluces.Text = "Color de luces";
             this.mscolorluces.Click += new System.EventHandler(this.mscolorluces_Click);
             // 
@@ -324,7 +327,7 @@
             this.activarToolStripMenuItem,
             this.desactivarToolStripMenuItem});
             this.mostrarLetraDeBotonToolStripMenuItem.Name = "mostrarLetraDeBotonToolStripMenuItem";
-            this.mostrarLetraDeBotonToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.mostrarLetraDeBotonToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.mostrarLetraDeBotonToolStripMenuItem.Text = "Mostrar letra de boton";
             // 
             // activarToolStripMenuItem
@@ -340,6 +343,15 @@
             this.desactivarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.desactivarToolStripMenuItem.Text = "Desactivar";
             this.desactivarToolStripMenuItem.Click += new System.EventHandler(this.desactivarToolStripMenuItem_Click);
+            // 
+            // RecordarMenuItem
+            // 
+            this.RecordarMenuItem.Checked = true;
+            this.RecordarMenuItem.CheckOnClick = true;
+            this.RecordarMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.RecordarMenuItem.Name = "RecordarMenuItem";
+            this.RecordarMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.RecordarMenuItem.Text = "Recordar mapeo de luces";
             // 
             // panelvacio
             // 
@@ -417,6 +429,7 @@
             this.listasonidos.FormattingEnabled = true;
             this.listasonidos.Location = new System.Drawing.Point(3, 305);
             this.listasonidos.Name = "listasonidos";
+            this.listasonidos.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listasonidos.Size = new System.Drawing.Size(193, 273);
             this.listasonidos.TabIndex = 10;
             this.listasonidos.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listasonidos_DrawItem);
@@ -1783,6 +1796,14 @@
             this.tm.Interval = 13;
             this.tm.Tick += new System.EventHandler(this.tm_Tick);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(283, 358);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 29;
+            // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1791,6 +1812,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(913, 633);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.wmpa16);
@@ -1860,14 +1882,15 @@
             this.Controls.Add(this.lblmodo);
             this.Controls.Add(this.pbmodo);
             this.Controls.Add(this.msopciones);
-            this.Controls.Add(this.panelvacio);
             this.Controls.Add(this.panelmenu);
+            this.Controls.Add(this.panelvacio);
             this.KeyPreview = true;
             this.MainMenuStrip = this.msopciones;
             this.MaximizeBox = false;
             this.Name = "form1";
             this.ShowIcon = false;
             this.Text = "MixBoard Pad";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form1_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.form1_KeyPress);
@@ -2038,6 +2061,8 @@
         private System.Windows.Forms.PictureBox barra;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer tm;
+        private System.Windows.Forms.ToolStripMenuItem RecordarMenuItem;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
