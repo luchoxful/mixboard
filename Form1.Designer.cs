@@ -143,7 +143,7 @@
             this.btna3 = new System.Windows.Forms.Button();
             this.pbmodo = new System.Windows.Forms.PictureBox();
             this.tm = new System.Windows.Forms.Timer(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msopciones.SuspendLayout();
             this.panelvacio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
@@ -209,6 +209,7 @@
             this.nuevoToolStripMenuItem,
             this.abrirToolStripMenuItem,
             this.guardarProyectoToolStripMenuItem,
+            this.guardarToolStripMenuItem,
             this.grabarSetToolStripMenuItem,
             this.cerrarToolStripMenuItem});
             this.proyectoToolStripMenuItem.Name = "proyectoToolStripMenuItem";
@@ -232,8 +233,8 @@
             // guardarProyectoToolStripMenuItem
             // 
             this.guardarProyectoToolStripMenuItem.Name = "guardarProyectoToolStripMenuItem";
-            this.guardarProyectoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.guardarProyectoToolStripMenuItem.Text = "Guardar proyecto";
+            this.guardarProyectoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.guardarProyectoToolStripMenuItem.Text = "Guardar proyecto como";
             this.guardarProyectoToolStripMenuItem.Click += new System.EventHandler(this.guardarProyectoToolStripMenuItem_Click);
             // 
             // grabarSetToolStripMenuItem
@@ -1796,13 +1797,12 @@
             this.tm.Interval = 13;
             this.tm.Tick += new System.EventHandler(this.tm_Tick);
             // 
-            // listBox1
+            // guardarToolStripMenuItem
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(283, 358);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 29;
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.guardarToolStripMenuItem.Text = "Guardar proyecto";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // form1
             // 
@@ -1812,7 +1812,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(913, 633);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.wmpa16);
@@ -1882,8 +1881,8 @@
             this.Controls.Add(this.lblmodo);
             this.Controls.Add(this.pbmodo);
             this.Controls.Add(this.msopciones);
-            this.Controls.Add(this.panelmenu);
             this.Controls.Add(this.panelvacio);
+            this.Controls.Add(this.panelmenu);
             this.KeyPreview = true;
             this.MainMenuStrip = this.msopciones;
             this.MaximizeBox = false;
@@ -2062,7 +2061,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer tm;
         private System.Windows.Forms.ToolStripMenuItem RecordarMenuItem;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
     }
 }
 

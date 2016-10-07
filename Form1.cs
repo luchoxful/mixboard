@@ -703,6 +703,10 @@ namespace mixboard
             DialogResult dialogResult = MessageBox.Show("Se perderán los sonidos cargados al proyecto actual, ¿continuar creando un nuevo proyecto?", "Nuevo Proyecto", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                colorselecA = 0;
+                colorselecB = 0;
+                colorselecC = 0;
+                colorselecD = 0;
 
                 for (int i = 1; i < 17; i++)
                 {
@@ -1997,6 +2001,14 @@ namespace mixboard
                         escritor.WriteLine(colorselecC);
                         escritor.WriteLine(colorselecD);
                     }
+                    else
+                    {
+                        escritor.WriteLine(0);
+                        escritor.WriteLine(0);
+                        escritor.WriteLine(0);
+                        escritor.WriteLine(0);
+
+                    }
 
 
                     for (int i = 1; i < 17; i++)
@@ -2057,6 +2069,10 @@ namespace mixboard
                     {
                         guardarProyectoToolStripMenuItem_Click(sender, e);
                     }
+                    else
+                    {
+                        //do nothing
+                    }
                 }
                 for (int i = 1; i < 17; i++)
                 {
@@ -2066,6 +2082,7 @@ namespace mixboard
                     botonesB[i].Image = Properties.Resources.btndefault;
                 }
                 nombreproyecto = System.IO.Path.GetFileNameWithoutExtension(abrir.FileName);
+                direcproyecto = abrir.FileName;
                 this.Text = titulodefault + nombreproyecto;
                 using (StreamReader lector = new StreamReader(abrir.FileName))
                 {
@@ -2435,11 +2452,69 @@ namespace mixboard
                 DialogResult dialogResult = MessageBox.Show("¿Desea guardar los cambios del proyecto actual (" + nombreproyecto + ") antes de salir?", "Cerrar proyecto", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    guardarProyectoToolStripMenuItem_Click(sender, e);
+                    if (direcproyecto != "")
+                    {
+                        guardarToolStripMenuItem_Click(sender, e);
+                    }
+                    else
+                    {
+                        guardarProyectoToolStripMenuItem_Click(sender, e);
+                    }
+                    
                 }
             }
         }
 
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (System.IO.StreamWriter escritor = new System.IO.StreamWriter(direcproyecto))
+            {
+                //recordar luces
+                if (RecordarMenuItem.Checked == true)
+                {
+                    escritor.WriteLine(colorselecA);
+                    escritor.WriteLine(colorselecB);
+                    escritor.WriteLine(colorselecC);
+                    escritor.WriteLine(colorselecD);
+                }
+                else
+                {
+                    escritor.WriteLine(0);
+                    escritor.WriteLine(0);
+                    escritor.WriteLine(0);
+                    escritor.WriteLine(0);
+
+                }
+
+
+                for (int i = 1; i < 17; i++)
+                {
+                    if (direcA[i] != null)
+                    {
+
+                        if (i < 10)
+                        {
+                            escritor.WriteLine("A" + "0" + i + "@" + direcA[i]);
+                        }
+                        else
+                        {
+                            escritor.WriteLine("A" + i + "@" + direcA[i]);
+                        }
+                    }
+                    if (direcB[i] != null)
+                    {
+                        if (i < 10)
+                        {
+                            escritor.WriteLine("B" + "0" + i + "@" + direcB[i]);
+                        }
+                        else
+                        {
+                            escritor.WriteLine("B" + i + "@" + direcB[i]);
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }
