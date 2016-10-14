@@ -31,7 +31,7 @@ namespace mixboard
         string[] direcC = new string[17];
         string[] direcD = new string[17];
 
-        string[] direcLoops = new string[5];
+        string[] direcLoops = new string[7];
 
         string[] direclista = new string[180];
 
@@ -54,6 +54,7 @@ namespace mixboard
 
         bool[] playingboton = new bool[17];
 
+        int tiempo = 0;
 
         int colorselecA = 0;
         int colorselecB = 0;
@@ -296,10 +297,14 @@ namespace mixboard
             }
             else
             {
+                if (direcLoops[indice] != null)
+                {
                 WMPLoop[indice].URL = direcLoops[indice];
                 WMPLoop[indice].settings.setMode("loop", true);
                 botonesLoop[indice].Image = Properties.Resources.btnonloop;
                 WMPLoop[indice].Ctlcontrols.play();
+                }
+                
             }
             
             
@@ -2564,9 +2569,80 @@ namespace mixboard
 
         private void btnloop1_Click(object sender, EventArgs e)
         {
-            if (modoplay == true) playloop(1); else cargarconclick(1, "Loop");
+            wmpl1.settings.setMode("loop", false);
+            if (modoplay == true) {
+
+                if (wmpl1.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    wmpl1.settings.setMode("loop", false);
+                    wmpl1.Ctlcontrols.stop();
+                    btnloop1.Image = Properties.Resources.btnloopcargado;
+                }
+                else
+                {
+                    if (direcLoops[1] != null)
+                    {
+                        wmpl1.URL = direcLoops[1];
+                        wmpl1.settings.setMode("loop", true);
+                        btnloop1.Image = Properties.Resources.btnonloop;
+                        wmpl1.Ctlcontrols.play();
+                    }
+
+                }
+            }
+            else
+            {
+                cargarconclick(1, "Loop");
+            }
+            
+
         }
 
+        private void btnloop2_Click(object sender, EventArgs e)
+        {
+            if (modoplay == true) playloop(2); else cargarconclick(2, "Loop");
+        }
+
+        private void btnloop3_Click(object sender, EventArgs e)
+        {
+            if (modoplay == true) playloop(3); else cargarconclick(3, "Loop");
+        }
+
+        private void btnloop4_Click(object sender, EventArgs e)
+        {
+            if (modoplay == true) playloop(4); else cargarconclick(4, "Loop");
+        }
+
+        private void btnloop5_Click(object sender, EventArgs e)
+        {
+            if (modoplay == true) playloop(5); else cargarconclick(5, "Loop");
+        }
+
+        private void btnloop6_Click(object sender, EventArgs e)
+        {
+            if (modoplay == true) playloop(6); else cargarconclick(6, "Loop");
+        }
+
+        private void wmpl1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            if (e.newState == 8)
+            {
+                tmloop.Enabled = true;
+                wmpl1.Ctlcontrols.play();
+            }
+        }
+
+        private void tmloop_Tick(object sender, EventArgs e)
+        {
+            tiempo++;
+            if (tiempo == 10)
+            {
+                wmpl1.Ctlcontrols.play();
+                tiempo = 0;
+                tmloop.Enabled = false;
+            }
+            
+        }
     }
 }
     

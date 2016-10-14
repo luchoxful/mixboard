@@ -110,6 +110,7 @@
             this.wmpl4 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpl5 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpl6 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btna16 = new System.Windows.Forms.Button();
@@ -156,8 +157,7 @@
             this.ayudacarga2 = new System.Windows.Forms.PictureBox();
             this.ayudacarga1 = new System.Windows.Forms.PictureBox();
             this.pbdesplegado = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.tmloop = new System.Windows.Forms.Timer(this.components);
             this.msopciones.SuspendLayout();
             this.panelvacio.SuspendLayout();
             this.panelmenu.SuspendLayout();
@@ -201,6 +201,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).BeginInit();
@@ -209,8 +210,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // msopciones
@@ -958,6 +957,7 @@
             this.wmpl1.Size = new System.Drawing.Size(11, 11);
             this.wmpl1.TabIndex = 4;
             this.wmpl1.Visible = false;
+            this.wmpl1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.wmpl1_PlayStateChange);
             // 
             // wmpl2
             // 
@@ -1008,6 +1008,16 @@
             this.wmpl6.Size = new System.Drawing.Size(11, 11);
             this.wmpl6.TabIndex = 4;
             this.wmpl6.Visible = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 539);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(65, 65);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 30;
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -1370,7 +1380,7 @@
             this.btnloop6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnloop6.UseMnemonic = false;
             this.btnloop6.UseVisualStyleBackColor = false;
-            this.btnloop6.Click += new System.EventHandler(this.btnloop1_Click);
+            this.btnloop6.Click += new System.EventHandler(this.btnloop6_Click);
             this.btnloop6.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb16_DragDrop);
             this.btnloop6.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnloop6.MouseEnter += new System.EventHandler(this.btnb16_MouseEnter);
@@ -1396,7 +1406,7 @@
             this.btnloop5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnloop5.UseMnemonic = false;
             this.btnloop5.UseVisualStyleBackColor = false;
-            this.btnloop5.Click += new System.EventHandler(this.btnloop1_Click);
+            this.btnloop5.Click += new System.EventHandler(this.btnloop5_Click);
             this.btnloop5.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb16_DragDrop);
             this.btnloop5.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnloop5.MouseEnter += new System.EventHandler(this.btnb16_MouseEnter);
@@ -1422,7 +1432,7 @@
             this.btnloop4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnloop4.UseMnemonic = false;
             this.btnloop4.UseVisualStyleBackColor = false;
-            this.btnloop4.Click += new System.EventHandler(this.btnloop1_Click);
+            this.btnloop4.Click += new System.EventHandler(this.btnloop4_Click);
             this.btnloop4.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb16_DragDrop);
             this.btnloop4.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnloop4.MouseEnter += new System.EventHandler(this.btnb16_MouseEnter);
@@ -1448,7 +1458,7 @@
             this.btnloop2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnloop2.UseMnemonic = false;
             this.btnloop2.UseVisualStyleBackColor = false;
-            this.btnloop2.Click += new System.EventHandler(this.btnloop1_Click);
+            this.btnloop2.Click += new System.EventHandler(this.btnloop2_Click);
             this.btnloop2.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb16_DragDrop);
             this.btnloop2.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnloop2.MouseEnter += new System.EventHandler(this.btnb16_MouseEnter);
@@ -1474,7 +1484,7 @@
             this.btnloop3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnloop3.UseMnemonic = false;
             this.btnloop3.UseVisualStyleBackColor = false;
-            this.btnloop3.Click += new System.EventHandler(this.btnloop1_Click);
+            this.btnloop3.Click += new System.EventHandler(this.btnloop3_Click);
             this.btnloop3.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnb16_DragDrop);
             this.btnloop3.DragEnter += new System.Windows.Forms.DragEventHandler(this.boton_DragEnter);
             this.btnloop3.MouseEnter += new System.EventHandler(this.btnb16_MouseEnter);
@@ -2039,23 +2049,10 @@
             this.pbdesplegado.MouseEnter += new System.EventHandler(this.pbdesplegado_MouseEnter);
             this.pbdesplegado.MouseLeave += new System.EventHandler(this.pbdesplegado_MouseLeave);
             // 
-            // pictureBox3
+            // tmloop
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(-23, -46);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(163, 331);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(65, 65);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 30;
-            this.pictureBox4.TabStop = false;
+            this.tmloop.Interval = 150;
+            this.tmloop.Tick += new System.EventHandler(this.tmloop_Tick);
             // 
             // form1
             // 
@@ -2066,7 +2063,6 @@
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(913, 633);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.wmpa16);
@@ -2207,6 +2203,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).EndInit();
@@ -2215,8 +2212,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2349,8 +2344,8 @@
         private AxWMPLib.AxWindowsMediaPlayer wmpl5;
         private System.Windows.Forms.Button btnloop6;
         private AxWMPLib.AxWindowsMediaPlayer wmpl6;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Timer tmloop;
     }
 }
 
