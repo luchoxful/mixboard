@@ -211,6 +211,13 @@
     <None Include="Resources\ayuda.png" />
     <None Include="Resources\ayuda2.png" />
     <None Include="Resources\barra.png" />
+    <None Include="Resources\btnloop.png" />
+    <None Include="Resources\btnloop1.png" />
+    <None Include="Resources\btnloopon.png" />
+    <None Include="Resources\btnloop2.png" />
+    <None Include="Resources\btnloopon1.png" />
+    <None Include="Resources\btnloopcargado.png" />
+    <None Include="Resources\btnonloop.png" />
     <Content Include="Resources\btnsinsonido.png" />
     <None Include="Resources\btnsinsonido1.png" />
   </ItemGroup>

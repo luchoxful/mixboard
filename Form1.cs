@@ -25,11 +25,13 @@ namespace mixboard
         //location menu : 730; -8
         //ventana abierta 923; 562
         //ventana cerrada 739; 562
-       
+
         string[] direcA = new string[17];
         string[] direcB = new string[17];
         string[] direcC = new string[17];
         string[] direcD = new string[17];
+
+        string[] direcLoops = new string[5];
 
         string[] direclista = new string[180];
 
@@ -38,6 +40,9 @@ namespace mixboard
         Button[] botonesC = new Button[17];
         Button[] botonesD = new Button[17];
 
+        Button[] botonesLoop = new Button[7];
+
+
         Color[] colores = new Color[6];
 
         Image[] btncolores = new Image[6];
@@ -45,6 +50,7 @@ namespace mixboard
         AxWMPLib.AxWindowsMediaPlayer[] WMPA = new AxWMPLib.AxWindowsMediaPlayer[17];
         AxWMPLib.AxWindowsMediaPlayer[] WMPB = new AxWMPLib.AxWindowsMediaPlayer[17];
 
+        AxWMPLib.AxWindowsMediaPlayer[] WMPLoop = new AxWMPLib.AxWindowsMediaPlayer[7];
 
         bool[] playingboton = new bool[17];
 
@@ -113,7 +119,12 @@ namespace mixboard
             botonesB[15] = btnb15;
             botonesB[16] = btnb16;
 
-
+            botonesLoop[1] = btnloop1;
+            botonesLoop[2] = btnloop2;
+            botonesLoop[3] = btnloop3;
+            botonesLoop[4] = btnloop4;
+            botonesLoop[5] = btnloop5;
+            botonesLoop[6] = btnloop6;
 
 
 
@@ -166,7 +177,12 @@ namespace mixboard
             WMPB[15] = wmpb15;
             WMPB[16] = wmpb16;
 
-
+            WMPLoop[1] = wmpl1;
+            WMPLoop[2] = wmpl2;
+            WMPLoop[3] = wmpl3;
+            WMPLoop[4] = wmpl4;
+            WMPLoop[5] = wmpl5;
+            WMPLoop[6] = wmpl6;
 
 
 
@@ -269,6 +285,30 @@ namespace mixboard
 
 
         }
+
+        public void playloop(int indice)
+        {
+            if (WMPLoop[indice].playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+              WMPLoop[indice].settings.setMode("loop", false);
+              WMPLoop[indice].Ctlcontrols.stop();
+              botonesLoop[indice].Image = Properties.Resources.btnloopcargado;  
+            }
+            else
+            {
+                WMPLoop[indice].URL = direcLoops[indice];
+                WMPLoop[indice].settings.setMode("loop", true);
+                botonesLoop[indice].Image = Properties.Resources.btnonloop;
+                WMPLoop[indice].Ctlcontrols.play();
+            }
+            
+            
+            
+            
+
+
+        }
+
         public void cargarconclick(int indice, string sector)
         {
             if (estadorestablecer == true)
@@ -282,7 +322,6 @@ namespace mixboard
                     case "B":
                         direcB[indice] = null;
                         botonesB[indice].Image = Properties.Resources.btnamarillo;
-
                         break;
                 }
             }
@@ -314,7 +353,13 @@ namespace mixboard
                             {
                                 //botonesB[indice].ForeColor = Color.GreenYellow;
                                 botonesB[indice].Image = Properties.Resources.btnverde;
-
+                            }
+                            break;
+                        case "Loop":
+                            direcLoops[indice] = direccionactual;
+                            if (direcLoops[indice] != null)
+                            {
+                                botonesLoop[indice].Image = Properties.Resources.btnloopcargado;
                             }
                             break;
                     }
@@ -1994,7 +2039,7 @@ namespace mixboard
                 using (System.IO.StreamWriter escritor = new System.IO.StreamWriter(direcproyecto))
                 {
                     //recordar luces
-                    if(RecordarMenuItem.Checked == true)
+                    if (RecordarMenuItem.Checked == true)
                     {
                         escritor.WriteLine(colorselecA);
                         escritor.WriteLine(colorselecB);
@@ -2107,22 +2152,22 @@ namespace mixboard
                                 break;
                         }
 
-                        if (i >=5)
+                        if (i >= 5)
                         {
-                        sector = line.Substring(0, 1);
-                        numboton = Convert.ToInt16(line.Substring(1, 2));
-                        ruta = line.Substring(4);
-                        switch (sector)
-                        {
-                            case "A":
-                                direcA[numboton] = ruta;
-                                botonesA[numboton].Image = Properties.Resources.btncargado;
-                                break;
-                            case "B":
-                                direcB[numboton] = ruta;
-                                botonesB[numboton].Image = Properties.Resources.btncargado;
-                                break;
-                        }
+                            sector = line.Substring(0, 1);
+                            numboton = Convert.ToInt16(line.Substring(1, 2));
+                            ruta = line.Substring(4);
+                            switch (sector)
+                            {
+                                case "A":
+                                    direcA[numboton] = ruta;
+                                    botonesA[numboton].Image = Properties.Resources.btncargado;
+                                    break;
+                                case "B":
+                                    direcB[numboton] = ruta;
+                                    botonesB[numboton].Image = Properties.Resources.btncargado;
+                                    break;
+                            }
                         }
 
                     }
@@ -2178,13 +2223,14 @@ namespace mixboard
                 }
                 DoDragDrop(listasonidos.SelectedIndices.ToString(), DragDropEffects.Copy);
             }
-            
+
 
         }
 
 
 
-        private void btna1_DragDrop(object sender, DragEventArgs e){
+        private void btna1_DragDrop(object sender, DragEventArgs e)
+        {
             dragndrop("A", 1);
 
         }
@@ -2211,7 +2257,7 @@ namespace mixboard
                             botonesB[indice].Image = Properties.Resources.btnverde;
                             break;
                     }
-                    
+
                 }
             }
         }
@@ -2429,7 +2475,7 @@ namespace mixboard
             {
                 if (this.Width <= 739) this.tm.Enabled = false;
                 else this.Width -= 12;
-                if (this.Width <=748)
+                if (this.Width <= 748)
                 {
                     panelvacio.BringToFront();
                 }
@@ -2460,7 +2506,7 @@ namespace mixboard
                     {
                         guardarProyectoToolStripMenuItem_Click(sender, e);
                     }
-                    
+
                 }
             }
         }
@@ -2515,7 +2561,12 @@ namespace mixboard
                 }
             }
         }
-    }
 
+        private void btnloop1_Click(object sender, EventArgs e)
+        {
+            if (modoplay == true) playloop(1); else cargarconclick(1, "Loop");
+        }
+
+    }
 }
     
