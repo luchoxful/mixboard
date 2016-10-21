@@ -292,29 +292,38 @@ namespace mixboard
 
         public void playloop(int indice)
         {
-            if (WMPLoop[indice].playState == WMPLib.WMPPlayState.wmppsPlaying)
+            WMPLoop[indice].settings.setMode("loop", false);
+            if (modoplay == true)
             {
-              WMPLoop[indice].settings.setMode("loop", false);
-              WMPLoop[indice].Ctlcontrols.stop();
-              botonesLoop[indice].Image = Properties.Resources.btnloopcargado;  
-            }
-            else
-            {
-                if (direcLoops[indice] != null)
+                if (tmloop.Enabled == true || WMPLoop[indice].playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
-                WMPLoop[indice].URL = direcLoops[indice];
-                WMPLoop[indice].settings.setMode("loop", true);
-                botonesLoop[indice].Image = Properties.Resources.btnonloop;
-                WMPLoop[indice].Ctlcontrols.play();
+                    pausar = true;
+                    WMPLoop[indice].Ctlcontrols.stop();
+                    botonesLoop[indice].Image = Properties.Resources.btnloopcargado;
+                    tmloop.Enabled = false;
                 }
-                
+                else
+                {
+                    WMPLoop[indice].URL = direcLoops[1];
+                    botonesLoop[indice].Image = Properties.Resources.btnonloop;
+                    pausar = false;
+                    WMPLoop[indice].Ctlcontrols.play();
+                }
+
             }
-            
-            
-            
-            
+        }
 
+        public void Loop_Cambio_De_Estado(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e, int indice)
+        {
+            if (e.newState == 8)
+            {
+                if (pausar == false)
+                {
+                    tmloop.Enabled = true;
+                    WMPLoop[indice].Ctlcontrols.play();
+                }
 
+            }
         }
 
         public void cargarconclick(int indice, string sector)
@@ -2572,32 +2581,7 @@ namespace mixboard
 
         private void btnloop1_Click(object sender, EventArgs e)
         {
-            wmpl1.settings.setMode("loop", false);
-            if (modoplay == true) {
-
-                if (tmloop.Enabled == true || wmpl1.playState == WMPLib.WMPPlayState.wmppsPlaying)
-                {
-                    pausar = true;
-                    wmpl1.Ctlcontrols.stop();
-                    btnloop1.Image = Properties.Resources.btnloopcargado;
-                    tmloop.Enabled = false;
-                }
-                else
-                {
-                        wmpl1.URL = direcLoops[1];
-                        btnloop1.Image = Properties.Resources.btnonloop;
-                        pausar = false;
-                        wmpl1.Ctlcontrols.play();       
-                }
-                
-                
-            }
-            else
-            {
-                cargarconclick(1, "Loop");
-            }
-            
-
+            if (modoplay == true) playloop(1); else cargarconclick(1, "Loop");
         }
 
         private void btnloop2_Click(object sender, EventArgs e)
@@ -2627,15 +2611,7 @@ namespace mixboard
 
         private void wmpl1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
-            if (e.newState == 8)
-            {
-                if (pausar == false)
-                {
-                tmloop.Enabled = true;
-                wmpl1.Ctlcontrols.play();
-                }
-                
-            }
+            Loop_Cambio_De_Estado(sender, e, 1);
         }
 
         private void tmloop_Tick(object sender, EventArgs e)
@@ -2643,11 +2619,16 @@ namespace mixboard
             tiempo++;
             if (tiempo == 10)
             {
-                wmpl1.Ctlcontrols.play();
+                wmpl2.Ctlcontrols.play();
                 tiempo = 0;
                 tmloop.Enabled = false;
             }
             
+        }
+
+        private void wmpl2_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            Loop_Cambio_De_Estado(sender, e, 2);
         }
     }
 }

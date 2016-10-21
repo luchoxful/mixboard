@@ -1034,6 +1034,7 @@
             this.wmpl2.Size = new System.Drawing.Size(11, 11);
             this.wmpl2.TabIndex = 4;
             this.wmpl2.Visible = false;
+            this.wmpl2.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.wmpl2_PlayStateChange);
             // 
             // wmpl3
             // 
