@@ -53,9 +53,14 @@
             this.RecordarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelvacio = new System.Windows.Forms.Panel();
+            this.pbdesplegar = new System.Windows.Forms.PictureBox();
             this.lblmodo = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.barra = new System.Windows.Forms.PictureBox();
             this.listasonidos = new System.Windows.Forms.ListBox();
+            this.ayudacarga2 = new System.Windows.Forms.PictureBox();
+            this.ayudacarga1 = new System.Windows.Forms.PictureBox();
+            this.pbdesplegado = new System.Windows.Forms.PictureBox();
             this.txtseleccionarcarpeta2 = new System.Windows.Forms.TextBox();
             this.txtseleccionarcarpeta = new System.Windows.Forms.TextBox();
             this.btnaleatorio = new System.Windows.Forms.Button();
@@ -103,6 +108,7 @@
             this.wmpb12 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpb16 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tm = new System.Windows.Forms.Timer(this.components);
             this.wmpl1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpl2 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -110,9 +116,7 @@
             this.wmpl4 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpl5 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpl6 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btna16 = new System.Windows.Forms.Button();
             this.btna14 = new System.Windows.Forms.Button();
             this.btna15 = new System.Windows.Forms.Button();
@@ -152,15 +156,15 @@
             this.btna1 = new System.Windows.Forms.Button();
             this.btna3 = new System.Windows.Forms.Button();
             this.pbmodo = new System.Windows.Forms.PictureBox();
-            this.pbdesplegar = new System.Windows.Forms.PictureBox();
-            this.barra = new System.Windows.Forms.PictureBox();
-            this.ayudacarga2 = new System.Windows.Forms.PictureBox();
-            this.ayudacarga1 = new System.Windows.Forms.PictureBox();
-            this.pbdesplegado = new System.Windows.Forms.PictureBox();
             this.tmloop = new System.Windows.Forms.Timer(this.components);
             this.msopciones.SuspendLayout();
             this.panelvacio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
             this.panelmenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmplist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa15)).BeginInit();
@@ -195,21 +199,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpb12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpb16)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barra)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).BeginInit();
             this.SuspendLayout();
             // 
             // msopciones
@@ -390,6 +388,19 @@
             this.panelvacio.Size = new System.Drawing.Size(225, 578);
             this.panelvacio.TabIndex = 8;
             // 
+            // pbdesplegar
+            // 
+            this.pbdesplegar.Image = global::mixboard.Properties.Resources.logoedicionorange;
+            this.pbdesplegar.Location = new System.Drawing.Point(0, 0);
+            this.pbdesplegar.Name = "pbdesplegar";
+            this.pbdesplegar.Size = new System.Drawing.Size(38, 37);
+            this.pbdesplegar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbdesplegar.TabIndex = 6;
+            this.pbdesplegar.TabStop = false;
+            this.pbdesplegar.Click += new System.EventHandler(this.pbmodo_Click);
+            this.pbdesplegar.MouseEnter += new System.EventHandler(this.pbdesplegar_MouseEnter);
+            this.pbdesplegar.MouseLeave += new System.EventHandler(this.pbdesplegar_MouseLeave);
+            // 
             // lblmodo
             // 
             this.lblmodo.AutoSize = true;
@@ -427,6 +438,15 @@
             this.panelmenu.Size = new System.Drawing.Size(225, 580);
             this.panelmenu.TabIndex = 11;
             // 
+            // barra
+            // 
+            this.barra.Image = global::mixboard.Properties.Resources.barra;
+            this.barra.Location = new System.Drawing.Point(188, 262);
+            this.barra.Name = "barra";
+            this.barra.Size = new System.Drawing.Size(24, 322);
+            this.barra.TabIndex = 11;
+            this.barra.TabStop = false;
+            // 
             // listasonidos
             // 
             this.listasonidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -441,6 +461,42 @@
             this.listasonidos.TabIndex = 10;
             this.listasonidos.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listasonidos_DrawItem);
             this.listasonidos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listasonidos_MouseDown);
+            // 
+            // ayudacarga2
+            // 
+            this.ayudacarga2.Image = global::mixboard.Properties.Resources.ayuda;
+            this.ayudacarga2.Location = new System.Drawing.Point(174, 111);
+            this.ayudacarga2.Name = "ayudacarga2";
+            this.ayudacarga2.Size = new System.Drawing.Size(19, 18);
+            this.ayudacarga2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ayudacarga2.TabIndex = 9;
+            this.ayudacarga2.TabStop = false;
+            // 
+            // ayudacarga1
+            // 
+            this.ayudacarga1.Image = global::mixboard.Properties.Resources.ayuda;
+            this.ayudacarga1.Location = new System.Drawing.Point(188, 49);
+            this.ayudacarga1.Name = "ayudacarga1";
+            this.ayudacarga1.Size = new System.Drawing.Size(19, 18);
+            this.ayudacarga1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ayudacarga1.TabIndex = 9;
+            this.ayudacarga1.TabStop = false;
+            this.ayudacarga1.Click += new System.EventHandler(this.ayudacarga1_Click);
+            this.ayudacarga1.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
+            this.ayudacarga1.MouseLeave += new System.EventHandler(this.leave_ayuda);
+            // 
+            // pbdesplegado
+            // 
+            this.pbdesplegado.Image = global::mixboard.Properties.Resources.logoedicion1;
+            this.pbdesplegado.Location = new System.Drawing.Point(1, -1);
+            this.pbdesplegado.Name = "pbdesplegado";
+            this.pbdesplegado.Size = new System.Drawing.Size(37, 38);
+            this.pbdesplegado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbdesplegado.TabIndex = 5;
+            this.pbdesplegado.TabStop = false;
+            this.pbdesplegado.Click += new System.EventHandler(this.pbmodo_Click);
+            this.pbdesplegado.MouseEnter += new System.EventHandler(this.pbdesplegado_MouseEnter);
+            this.pbdesplegado.MouseLeave += new System.EventHandler(this.pbdesplegado_MouseLeave);
             // 
             // txtseleccionarcarpeta2
             // 
@@ -943,6 +999,16 @@
             this.panel1.Size = new System.Drawing.Size(915, 32);
             this.panel1.TabIndex = 27;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::mixboard.Properties.Resources.ayuda2;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // tm
             // 
             this.tm.Interval = 13;
@@ -1009,16 +1075,6 @@
             this.wmpl6.TabIndex = 4;
             this.wmpl6.Visible = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 539);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(65, 65);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 30;
-            this.pictureBox4.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::mixboard.Properties.Resources.mixboardtitulo;
@@ -1028,16 +1084,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 28;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::mixboard.Properties.Resources.ayuda2;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
             // 
             // btna16
             // 
@@ -1991,64 +2037,6 @@
             this.pbmodo.TabStop = false;
             this.pbmodo.Click += new System.EventHandler(this.pbmodo_Click);
             // 
-            // pbdesplegar
-            // 
-            this.pbdesplegar.Image = global::mixboard.Properties.Resources.logoedicionorange;
-            this.pbdesplegar.Location = new System.Drawing.Point(0, 0);
-            this.pbdesplegar.Name = "pbdesplegar";
-            this.pbdesplegar.Size = new System.Drawing.Size(38, 37);
-            this.pbdesplegar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbdesplegar.TabIndex = 6;
-            this.pbdesplegar.TabStop = false;
-            this.pbdesplegar.Click += new System.EventHandler(this.pbmodo_Click);
-            this.pbdesplegar.MouseEnter += new System.EventHandler(this.pbdesplegar_MouseEnter);
-            this.pbdesplegar.MouseLeave += new System.EventHandler(this.pbdesplegar_MouseLeave);
-            // 
-            // barra
-            // 
-            this.barra.Image = global::mixboard.Properties.Resources.barra;
-            this.barra.Location = new System.Drawing.Point(188, 262);
-            this.barra.Name = "barra";
-            this.barra.Size = new System.Drawing.Size(24, 322);
-            this.barra.TabIndex = 11;
-            this.barra.TabStop = false;
-            // 
-            // ayudacarga2
-            // 
-            this.ayudacarga2.Image = global::mixboard.Properties.Resources.ayuda;
-            this.ayudacarga2.Location = new System.Drawing.Point(174, 111);
-            this.ayudacarga2.Name = "ayudacarga2";
-            this.ayudacarga2.Size = new System.Drawing.Size(19, 18);
-            this.ayudacarga2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ayudacarga2.TabIndex = 9;
-            this.ayudacarga2.TabStop = false;
-            // 
-            // ayudacarga1
-            // 
-            this.ayudacarga1.Image = global::mixboard.Properties.Resources.ayuda;
-            this.ayudacarga1.Location = new System.Drawing.Point(188, 49);
-            this.ayudacarga1.Name = "ayudacarga1";
-            this.ayudacarga1.Size = new System.Drawing.Size(19, 18);
-            this.ayudacarga1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ayudacarga1.TabIndex = 9;
-            this.ayudacarga1.TabStop = false;
-            this.ayudacarga1.Click += new System.EventHandler(this.ayudacarga1_Click);
-            this.ayudacarga1.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
-            this.ayudacarga1.MouseLeave += new System.EventHandler(this.leave_ayuda);
-            // 
-            // pbdesplegado
-            // 
-            this.pbdesplegado.Image = global::mixboard.Properties.Resources.logoedicion1;
-            this.pbdesplegado.Location = new System.Drawing.Point(1, -1);
-            this.pbdesplegado.Name = "pbdesplegado";
-            this.pbdesplegado.Size = new System.Drawing.Size(37, 38);
-            this.pbdesplegado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbdesplegado.TabIndex = 5;
-            this.pbdesplegado.TabStop = false;
-            this.pbdesplegado.Click += new System.EventHandler(this.pbmodo_Click);
-            this.pbdesplegado.MouseEnter += new System.EventHandler(this.pbdesplegado_MouseEnter);
-            this.pbdesplegado.MouseLeave += new System.EventHandler(this.pbdesplegado_MouseLeave);
-            // 
             // tmloop
             // 
             this.tmloop.Interval = 150;
@@ -2062,7 +2050,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(913, 633);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.wmpa16);
@@ -2160,8 +2147,13 @@
             this.msopciones.ResumeLayout(false);
             this.msopciones.PerformLayout();
             this.panelvacio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).EndInit();
             this.panelmenu.ResumeLayout(false);
             this.panelmenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmplist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa15)).EndInit();
@@ -2197,21 +2189,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpb16)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barra)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2344,7 +2330,6 @@
         private AxWMPLib.AxWindowsMediaPlayer wmpl5;
         private System.Windows.Forms.Button btnloop6;
         private AxWMPLib.AxWindowsMediaPlayer wmpl6;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Timer tmloop;
     }
 }

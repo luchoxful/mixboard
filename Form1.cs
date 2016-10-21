@@ -73,6 +73,9 @@ namespace mixboard
 
         bool estadorestablecer = false;
 
+        bool pausar = false;
+        bool loopon = false;
+
         string direccionactual = "";
 
         string tituloboton = "";
@@ -2572,23 +2575,22 @@ namespace mixboard
             wmpl1.settings.setMode("loop", false);
             if (modoplay == true) {
 
-                if (wmpl1.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                if (tmloop.Enabled == true || wmpl1.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
-                    wmpl1.settings.setMode("loop", false);
+                    pausar = true;
                     wmpl1.Ctlcontrols.stop();
                     btnloop1.Image = Properties.Resources.btnloopcargado;
+                    tmloop.Enabled = false;
                 }
                 else
                 {
-                    if (direcLoops[1] != null)
-                    {
                         wmpl1.URL = direcLoops[1];
-                        wmpl1.settings.setMode("loop", true);
                         btnloop1.Image = Properties.Resources.btnonloop;
-                        wmpl1.Ctlcontrols.play();
-                    }
-
+                        pausar = false;
+                        wmpl1.Ctlcontrols.play();       
                 }
+                
+                
             }
             else
             {
@@ -2627,8 +2629,12 @@ namespace mixboard
         {
             if (e.newState == 8)
             {
+                if (pausar == false)
+                {
                 tmloop.Enabled = true;
                 wmpl1.Ctlcontrols.play();
+                }
+                
             }
         }
 
