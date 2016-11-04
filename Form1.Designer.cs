@@ -135,6 +135,8 @@
             this.btnloop5 = new System.Windows.Forms.Button();
             this.btnloop4 = new System.Windows.Forms.Button();
             this.btnloop2 = new System.Windows.Forms.Button();
+            this.stripTicks = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmbtiempo = new System.Windows.Forms.ToolStripComboBox();
             this.btnloop3 = new System.Windows.Forms.Button();
             this.btnloop1 = new System.Windows.Forms.Button();
             this.btnb16 = new System.Windows.Forms.Button();
@@ -156,7 +158,10 @@
             this.btna1 = new System.Windows.Forms.Button();
             this.btna3 = new System.Windows.Forms.Button();
             this.pbmodo = new System.Windows.Forms.PictureBox();
-            this.tmloop = new System.Windows.Forms.Timer(this.components);
+            this.tmloop1 = new System.Windows.Forms.Timer(this.components);
+            this.tmloop2 = new System.Windows.Forms.Timer(this.components);
+            this.stripTicks2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmbtiempo2 = new System.Windows.Forms.ToolStripComboBox();
             this.msopciones.SuspendLayout();
             this.panelvacio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
@@ -207,7 +212,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpl5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.stripTicks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).BeginInit();
+            this.stripTicks2.SuspendLayout();
             this.SuspendLayout();
             // 
             // msopciones
@@ -1017,7 +1024,7 @@
             // wmpl1
             // 
             this.wmpl1.Enabled = true;
-            this.wmpl1.Location = new System.Drawing.Point(673, 75);
+            this.wmpl1.Location = new System.Drawing.Point(643, 75);
             this.wmpl1.Name = "wmpl1";
             this.wmpl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl1.OcxState")));
             this.wmpl1.Size = new System.Drawing.Size(11, 11);
@@ -1028,7 +1035,7 @@
             // wmpl2
             // 
             this.wmpl2.Enabled = true;
-            this.wmpl2.Location = new System.Drawing.Point(673, 155);
+            this.wmpl2.Location = new System.Drawing.Point(643, 155);
             this.wmpl2.Name = "wmpl2";
             this.wmpl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl2.OcxState")));
             this.wmpl2.Size = new System.Drawing.Size(11, 11);
@@ -1039,7 +1046,7 @@
             // wmpl3
             // 
             this.wmpl3.Enabled = true;
-            this.wmpl3.Location = new System.Drawing.Point(677, 242);
+            this.wmpl3.Location = new System.Drawing.Point(647, 242);
             this.wmpl3.Name = "wmpl3";
             this.wmpl3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl3.OcxState")));
             this.wmpl3.Size = new System.Drawing.Size(11, 11);
@@ -1049,7 +1056,7 @@
             // wmpl4
             // 
             this.wmpl4.Enabled = true;
-            this.wmpl4.Location = new System.Drawing.Point(677, 321);
+            this.wmpl4.Location = new System.Drawing.Point(647, 321);
             this.wmpl4.Name = "wmpl4";
             this.wmpl4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl4.OcxState")));
             this.wmpl4.Size = new System.Drawing.Size(11, 11);
@@ -1059,7 +1066,7 @@
             // wmpl5
             // 
             this.wmpl5.Enabled = true;
-            this.wmpl5.Location = new System.Drawing.Point(677, 396);
+            this.wmpl5.Location = new System.Drawing.Point(647, 396);
             this.wmpl5.Name = "wmpl5";
             this.wmpl5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl5.OcxState")));
             this.wmpl5.Size = new System.Drawing.Size(11, 11);
@@ -1069,7 +1076,7 @@
             // wmpl6
             // 
             this.wmpl6.Enabled = true;
-            this.wmpl6.Location = new System.Drawing.Point(677, 483);
+            this.wmpl6.Location = new System.Drawing.Point(647, 483);
             this.wmpl6.Name = "wmpl6";
             this.wmpl6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl6.OcxState")));
             this.wmpl6.Size = new System.Drawing.Size(11, 11);
@@ -1492,6 +1499,7 @@
             this.btnloop2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnloop2.BackColor = System.Drawing.Color.Transparent;
             this.btnloop2.CausesValidation = false;
+            this.btnloop2.ContextMenuStrip = this.stripTicks2;
             this.btnloop2.FlatAppearance.BorderSize = 0;
             this.btnloop2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnloop2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -1511,6 +1519,25 @@
             this.btnloop2.MouseEnter += new System.EventHandler(this.btnb16_MouseEnter);
             this.btnloop2.MouseLeave += new System.EventHandler(this.btnb16_MouseLeave);
             this.btnloop2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnb16_MouseUp);
+            // 
+            // stripTicks
+            // 
+            this.stripTicks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmbtiempo});
+            this.stripTicks.Name = "stripTicks";
+            this.stripTicks.Size = new System.Drawing.Size(153, 31);
+            // 
+            // cmbtiempo
+            // 
+            this.cmbtiempo.Items.AddRange(new object[] {
+            "1 Tick",
+            "2 Ticks",
+            "4 Ticks",
+            "8 Ticks",
+            "Default"});
+            this.cmbtiempo.Name = "cmbtiempo";
+            this.cmbtiempo.Size = new System.Drawing.Size(92, 23);
+            this.cmbtiempo.Text = "Tiempo loop";
             // 
             // btnloop3
             // 
@@ -1544,6 +1571,7 @@
             this.btnloop1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnloop1.BackColor = System.Drawing.Color.Transparent;
             this.btnloop1.CausesValidation = false;
+            this.btnloop1.ContextMenuStrip = this.stripTicks;
             this.btnloop1.FlatAppearance.BorderSize = 0;
             this.btnloop1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnloop1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -2038,10 +2066,34 @@
             this.pbmodo.TabStop = false;
             this.pbmodo.Click += new System.EventHandler(this.pbmodo_Click);
             // 
-            // tmloop
+            // tmloop1
             // 
-            this.tmloop.Interval = 150;
-            this.tmloop.Tick += new System.EventHandler(this.tmloop_Tick);
+            this.tmloop1.Interval = 150;
+            this.tmloop1.Tick += new System.EventHandler(this.tmloop_Tick);
+            // 
+            // tmloop2
+            // 
+            this.tmloop2.Interval = 150;
+            this.tmloop2.Tick += new System.EventHandler(this.tmloop2_Tick);
+            // 
+            // stripTicks2
+            // 
+            this.stripTicks2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmbtiempo2});
+            this.stripTicks2.Name = "stripTicks";
+            this.stripTicks2.Size = new System.Drawing.Size(153, 31);
+            // 
+            // cmbtiempo2
+            // 
+            this.cmbtiempo2.Items.AddRange(new object[] {
+            "1 Tick",
+            "2 Ticks",
+            "4 Ticks",
+            "8 Ticks",
+            "Default"});
+            this.cmbtiempo2.Name = "cmbtiempo2";
+            this.cmbtiempo2.Size = new System.Drawing.Size(92, 23);
+            this.cmbtiempo2.Text = "Tiempo loop";
             // 
             // form1
             // 
@@ -2198,7 +2250,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.stripTicks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).EndInit();
+            this.stripTicks2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2331,7 +2385,12 @@
         private AxWMPLib.AxWindowsMediaPlayer wmpl5;
         private System.Windows.Forms.Button btnloop6;
         private AxWMPLib.AxWindowsMediaPlayer wmpl6;
-        private System.Windows.Forms.Timer tmloop;
+        private System.Windows.Forms.Timer tmloop1;
+        private System.Windows.Forms.Timer tmloop2;
+        private System.Windows.Forms.ContextMenuStrip stripTicks;
+        private System.Windows.Forms.ToolStripComboBox cmbtiempo;
+        private System.Windows.Forms.ContextMenuStrip stripTicks2;
+        private System.Windows.Forms.ToolStripComboBox cmbtiempo2;
     }
 }
 

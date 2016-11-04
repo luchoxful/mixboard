@@ -47,14 +47,26 @@ namespace mixboard
 
         Image[] btncolores = new Image[6];
 
+        //Array de objetos windows media player
         AxWMPLib.AxWindowsMediaPlayer[] WMPA = new AxWMPLib.AxWindowsMediaPlayer[17];
         AxWMPLib.AxWindowsMediaPlayer[] WMPB = new AxWMPLib.AxWindowsMediaPlayer[17];
 
+        //loop
         AxWMPLib.AxWindowsMediaPlayer[] WMPLoop = new AxWMPLib.AxWindowsMediaPlayer[7];
+        Timer[] looptimer = new Timer[3];
 
         bool[] playingboton = new bool[17];
 
         int tiempo = 0;
+        int tiempo2 = 0;
+
+
+        int tiempol1 = 0;
+        int tiempol2 = 0;
+        int tiempol3 = 0;
+        int tiempol4 = 0;
+        int tiempol5 = 0;
+
 
         int colorselecA = 0;
         int colorselecB = 0;
@@ -188,6 +200,9 @@ namespace mixboard
             WMPLoop[5] = wmpl5;
             WMPLoop[6] = wmpl6;
 
+            //Array de timers para loop
+            looptimer[1] = tmloop1;
+            looptimer[2] = tmloop2;
 
 
 
@@ -295,16 +310,16 @@ namespace mixboard
             WMPLoop[indice].settings.setMode("loop", false);
             if (modoplay == true)
             {
-                if (tmloop.Enabled == true || WMPLoop[indice].playState == WMPLib.WMPPlayState.wmppsPlaying)
+                if (looptimer[indice].Enabled == true || WMPLoop[indice].playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
                     pausar = true;
                     WMPLoop[indice].Ctlcontrols.stop();
                     botonesLoop[indice].Image = Properties.Resources.btnloopcargado;
-                    tmloop.Enabled = false;
+                    looptimer[indice].Enabled = false;
                 }
                 else
                 {
-                    WMPLoop[indice].URL = direcLoops[1];
+                    WMPLoop[indice].URL = direcLoops[indice];
                     botonesLoop[indice].Image = Properties.Resources.btnonloop;
                     pausar = false;
                     WMPLoop[indice].Ctlcontrols.play();
@@ -315,12 +330,12 @@ namespace mixboard
 
         public void Loop_Cambio_De_Estado(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e, int indice)
         {
+            
             if (e.newState == 8)
             {
                 if (pausar == false)
                 {
-                    tmloop.Enabled = true;
-                    WMPLoop[indice].Ctlcontrols.play();
+                    looptimer[indice].Enabled = true;
                 }
 
             }
@@ -2612,23 +2627,85 @@ namespace mixboard
         private void wmpl1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
             Loop_Cambio_De_Estado(sender, e, 1);
+            switch (cmbtiempo.Text)
+            {
+                case "1 Tick":
+                    tiempol1 = 5;
+                    break;
+                case "2 Ticks":
+                    tiempol1 = 10;
+                    break;
+                case "4 Ticks":
+                    tiempol1 = 20;
+                    break;
+                case "8 Tick":
+                    tiempol1 = 40;
+                    break;
+                case "Default":
+                    tiempol1 = 1;
+                    break;
+                case "Tiempo loop":
+                    tiempol1 = 1;
+                    break;
+            }
+        }
+        
+        public void tiempotimer()
+        {
+            
+
         }
 
-        private void tmloop_Tick(object sender, EventArgs e)
+        private void tmloop_Tick(object sender, EventArgs e) //tmloop1
         {
-            tiempo++;
-            if (tiempo == 10)
+            tiempo++;            
+            if (tiempo == tiempol1) //10 = 2seg
             {
-                wmpl2.Ctlcontrols.play();
+                wmpl1.Ctlcontrols.play();
                 tiempo = 0;
-                tmloop.Enabled = false;
+                tmloop1.Enabled = false;
             }
+            
             
         }
 
         private void wmpl2_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
             Loop_Cambio_De_Estado(sender, e, 2);
+            switch (cmbtiempo2.Text)
+            {
+                case "1 Tick":
+                    tiempol2 = 5;
+                    break;
+                case "2 Ticks":
+                    tiempol2 = 10;
+                    break;
+                case "4 Ticks":
+                    tiempol2 = 20;
+                    break;
+                case "8 Tick":
+                    tiempol2 = 40;
+                    break;
+                case "Default":
+                    tiempol2 = 1;
+                    break;
+                case "Tiempo loop":
+                    tiempol2 = 1;
+                    break;
+            }
+        }
+
+        private void tmloop2_Tick(object sender, EventArgs e)
+        {
+            tiempo2++;
+            if (tiempo2 == tiempol2) //10 = 2seg
+            {
+                wmpl2.Ctlcontrols.play();
+                tiempo2 = 0;
+                tmloop2.Enabled = false;
+            }
+            
+
         }
     }
 }
