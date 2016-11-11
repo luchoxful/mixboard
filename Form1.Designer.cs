@@ -53,14 +53,9 @@
             this.RecordarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelvacio = new System.Windows.Forms.Panel();
-            this.pbdesplegar = new System.Windows.Forms.PictureBox();
             this.lblmodo = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.Panel();
-            this.barra = new System.Windows.Forms.PictureBox();
-            this.listasonidos = new System.Windows.Forms.ListBox();
-            this.ayudacarga2 = new System.Windows.Forms.PictureBox();
-            this.ayudacarga1 = new System.Windows.Forms.PictureBox();
-            this.pbdesplegado = new System.Windows.Forms.PictureBox();
+            this.lblista = new System.Windows.Forms.ListBox();
             this.txtseleccionarcarpeta2 = new System.Windows.Forms.TextBox();
             this.txtseleccionarcarpeta = new System.Windows.Forms.TextBox();
             this.btnaleatorio = new System.Windows.Forms.Button();
@@ -75,6 +70,46 @@
             this.btnrestablecer = new System.Windows.Forms.Button();
             this.wmplist = new AxWMPLib.AxWindowsMediaPlayer();
             this.lblayuda = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tm = new System.Windows.Forms.Timer(this.components);
+            this.stripTicks2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmbtiempo2 = new System.Windows.Forms.ToolStripComboBox();
+            this.stripTicks = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmbtiempo = new System.Windows.Forms.ToolStripComboBox();
+            this.tmloop1 = new System.Windows.Forms.Timer(this.components);
+            this.tmloop2 = new System.Windows.Forms.Timer(this.components);
+            this.wmpd16 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd15 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd14 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd13 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd12 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd11 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd10 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd9 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd6 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd8 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd5 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd7 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd4 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd3 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd2 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpd1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc16 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc15 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc14 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc13 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc12 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc11 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc10 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc9 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc6 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc8 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc5 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc7 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc4 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc3 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc2 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpc1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpa16 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpa15 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpa14 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -90,33 +125,68 @@
             this.wmpa4 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpa3 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpa2 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb1 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpa1 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb2 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb3 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb4 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb5 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb6 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb7 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb8 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb9 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb13 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb10 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb14 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb11 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb15 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpb12 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpb16 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tm = new System.Windows.Forms.Timer(this.components);
-            this.wmpl1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb8 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb12 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpl6 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpl5 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpl4 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpl2 = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpl3 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpl4 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpl5 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.wmpl6 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpl1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb4 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb15 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb7 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb11 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb3 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb14 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb6 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb10 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb2 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb13 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb5 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb9 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpb1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmpa1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pbsecB = new System.Windows.Forms.PictureBox();
+            this.pbsecD = new System.Windows.Forms.PictureBox();
+            this.pbsecC = new System.Windows.Forms.PictureBox();
+            this.pbsecA = new System.Windows.Forms.PictureBox();
+            this.btnd16 = new System.Windows.Forms.Button();
+            this.btnd14 = new System.Windows.Forms.Button();
+            this.btnd15 = new System.Windows.Forms.Button();
+            this.btnd13 = new System.Windows.Forms.Button();
+            this.btnd12 = new System.Windows.Forms.Button();
+            this.btnd10 = new System.Windows.Forms.Button();
+            this.btnd11 = new System.Windows.Forms.Button();
+            this.btnd9 = new System.Windows.Forms.Button();
+            this.btnd8 = new System.Windows.Forms.Button();
+            this.btnd6 = new System.Windows.Forms.Button();
+            this.btnd7 = new System.Windows.Forms.Button();
+            this.btnd5 = new System.Windows.Forms.Button();
+            this.btnd4 = new System.Windows.Forms.Button();
+            this.btnd2 = new System.Windows.Forms.Button();
+            this.btnd1 = new System.Windows.Forms.Button();
+            this.btnd3 = new System.Windows.Forms.Button();
+            this.btnc16 = new System.Windows.Forms.Button();
+            this.btnc14 = new System.Windows.Forms.Button();
+            this.btnc15 = new System.Windows.Forms.Button();
+            this.btnc13 = new System.Windows.Forms.Button();
+            this.btnc12 = new System.Windows.Forms.Button();
+            this.btnc10 = new System.Windows.Forms.Button();
+            this.btnc11 = new System.Windows.Forms.Button();
+            this.btnc9 = new System.Windows.Forms.Button();
+            this.btnc8 = new System.Windows.Forms.Button();
+            this.btnc6 = new System.Windows.Forms.Button();
+            this.btnc7 = new System.Windows.Forms.Button();
+            this.btnc5 = new System.Windows.Forms.Button();
+            this.btnc4 = new System.Windows.Forms.Button();
+            this.btnc2 = new System.Windows.Forms.Button();
+            this.btnc1 = new System.Windows.Forms.Button();
+            this.btnc3 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btna16 = new System.Windows.Forms.Button();
             this.btna14 = new System.Windows.Forms.Button();
             this.btna15 = new System.Windows.Forms.Button();
@@ -135,8 +205,6 @@
             this.btnloop5 = new System.Windows.Forms.Button();
             this.btnloop4 = new System.Windows.Forms.Button();
             this.btnloop2 = new System.Windows.Forms.Button();
-            this.stripTicks = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmbtiempo = new System.Windows.Forms.ToolStripComboBox();
             this.btnloop3 = new System.Windows.Forms.Button();
             this.btnloop1 = new System.Windows.Forms.Button();
             this.btnb16 = new System.Windows.Forms.Button();
@@ -158,19 +226,50 @@
             this.btna1 = new System.Windows.Forms.Button();
             this.btna3 = new System.Windows.Forms.Button();
             this.pbmodo = new System.Windows.Forms.PictureBox();
-            this.tmloop1 = new System.Windows.Forms.Timer(this.components);
-            this.tmloop2 = new System.Windows.Forms.Timer(this.components);
-            this.stripTicks2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmbtiempo2 = new System.Windows.Forms.ToolStripComboBox();
+            this.barra = new System.Windows.Forms.PictureBox();
+            this.ayudacarga2 = new System.Windows.Forms.PictureBox();
+            this.ayudacarga1 = new System.Windows.Forms.PictureBox();
+            this.pbdesplegado = new System.Windows.Forms.PictureBox();
+            this.pbdesplegar = new System.Windows.Forms.PictureBox();
             this.msopciones.SuspendLayout();
             this.panelvacio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
             this.panelmenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barra)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmplist)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.stripTicks2.SuspendLayout();
+            this.stripTicks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa14)).BeginInit();
@@ -186,35 +285,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpa4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpa1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpb16)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpl5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpl4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpl5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpa1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbsecB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbsecD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbsecC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbsecA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.stripTicks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).BeginInit();
-            this.stripTicks2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
             this.SuspendLayout();
             // 
             // msopciones
@@ -395,19 +500,6 @@
             this.panelvacio.Size = new System.Drawing.Size(225, 578);
             this.panelvacio.TabIndex = 8;
             // 
-            // pbdesplegar
-            // 
-            this.pbdesplegar.Image = global::mixboard.Properties.Resources.logoedicionorange;
-            this.pbdesplegar.Location = new System.Drawing.Point(0, 0);
-            this.pbdesplegar.Name = "pbdesplegar";
-            this.pbdesplegar.Size = new System.Drawing.Size(38, 37);
-            this.pbdesplegar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbdesplegar.TabIndex = 6;
-            this.pbdesplegar.TabStop = false;
-            this.pbdesplegar.Click += new System.EventHandler(this.pbmodo_Click);
-            this.pbdesplegar.MouseEnter += new System.EventHandler(this.pbdesplegar_MouseEnter);
-            this.pbdesplegar.MouseLeave += new System.EventHandler(this.pbdesplegar_MouseLeave);
-            // 
             // lblmodo
             // 
             this.lblmodo.AutoSize = true;
@@ -423,7 +515,7 @@
             // 
             this.panelmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.panelmenu.Controls.Add(this.barra);
-            this.panelmenu.Controls.Add(this.listasonidos);
+            this.panelmenu.Controls.Add(this.lblista);
             this.panelmenu.Controls.Add(this.ayudacarga2);
             this.panelmenu.Controls.Add(this.ayudacarga1);
             this.panelmenu.Controls.Add(this.pbdesplegado);
@@ -445,65 +537,20 @@
             this.panelmenu.Size = new System.Drawing.Size(225, 580);
             this.panelmenu.TabIndex = 11;
             // 
-            // barra
+            // lblista
             // 
-            this.barra.Image = global::mixboard.Properties.Resources.barra;
-            this.barra.Location = new System.Drawing.Point(188, 262);
-            this.barra.Name = "barra";
-            this.barra.Size = new System.Drawing.Size(24, 322);
-            this.barra.TabIndex = 11;
-            this.barra.TabStop = false;
-            // 
-            // listasonidos
-            // 
-            this.listasonidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.listasonidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listasonidos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.listasonidos.ForeColor = System.Drawing.SystemColors.Control;
-            this.listasonidos.FormattingEnabled = true;
-            this.listasonidos.Location = new System.Drawing.Point(3, 305);
-            this.listasonidos.Name = "listasonidos";
-            this.listasonidos.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listasonidos.Size = new System.Drawing.Size(193, 273);
-            this.listasonidos.TabIndex = 10;
-            this.listasonidos.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listasonidos_DrawItem);
-            this.listasonidos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listasonidos_MouseDown);
-            // 
-            // ayudacarga2
-            // 
-            this.ayudacarga2.Image = global::mixboard.Properties.Resources.ayuda;
-            this.ayudacarga2.Location = new System.Drawing.Point(174, 111);
-            this.ayudacarga2.Name = "ayudacarga2";
-            this.ayudacarga2.Size = new System.Drawing.Size(19, 18);
-            this.ayudacarga2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ayudacarga2.TabIndex = 9;
-            this.ayudacarga2.TabStop = false;
-            // 
-            // ayudacarga1
-            // 
-            this.ayudacarga1.Image = global::mixboard.Properties.Resources.ayuda;
-            this.ayudacarga1.Location = new System.Drawing.Point(188, 49);
-            this.ayudacarga1.Name = "ayudacarga1";
-            this.ayudacarga1.Size = new System.Drawing.Size(19, 18);
-            this.ayudacarga1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ayudacarga1.TabIndex = 9;
-            this.ayudacarga1.TabStop = false;
-            this.ayudacarga1.Click += new System.EventHandler(this.ayudacarga1_Click);
-            this.ayudacarga1.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
-            this.ayudacarga1.MouseLeave += new System.EventHandler(this.leave_ayuda);
-            // 
-            // pbdesplegado
-            // 
-            this.pbdesplegado.Image = global::mixboard.Properties.Resources.logoedicion1;
-            this.pbdesplegado.Location = new System.Drawing.Point(1, -1);
-            this.pbdesplegado.Name = "pbdesplegado";
-            this.pbdesplegado.Size = new System.Drawing.Size(37, 38);
-            this.pbdesplegado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbdesplegado.TabIndex = 5;
-            this.pbdesplegado.TabStop = false;
-            this.pbdesplegado.Click += new System.EventHandler(this.pbmodo_Click);
-            this.pbdesplegado.MouseEnter += new System.EventHandler(this.pbdesplegado_MouseEnter);
-            this.pbdesplegado.MouseLeave += new System.EventHandler(this.pbdesplegado_MouseLeave);
+            this.lblista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.lblista.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblista.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.lblista.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblista.FormattingEnabled = true;
+            this.lblista.Location = new System.Drawing.Point(3, 305);
+            this.lblista.Name = "lblista";
+            this.lblista.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lblista.Size = new System.Drawing.Size(193, 273);
+            this.lblista.TabIndex = 10;
+            this.lblista.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listasonidos_DrawItem);
+            this.lblista.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listasonidos_MouseDown);
             // 
             // txtseleccionarcarpeta2
             // 
@@ -676,326 +723,6 @@
             this.lblayuda.TabIndex = 27;
             this.lblayuda.Text = "•";
             // 
-            // wmpa16
-            // 
-            this.wmpa16.Enabled = true;
-            this.wmpa16.Location = new System.Drawing.Point(293, 263);
-            this.wmpa16.Name = "wmpa16";
-            this.wmpa16.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa16.OcxState")));
-            this.wmpa16.Size = new System.Drawing.Size(11, 11);
-            this.wmpa16.TabIndex = 4;
-            this.wmpa16.Visible = false;
-            // 
-            // wmpa15
-            // 
-            this.wmpa15.Enabled = true;
-            this.wmpa15.Location = new System.Drawing.Point(228, 263);
-            this.wmpa15.Name = "wmpa15";
-            this.wmpa15.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa15.OcxState")));
-            this.wmpa15.Size = new System.Drawing.Size(11, 11);
-            this.wmpa15.TabIndex = 4;
-            this.wmpa15.Visible = false;
-            // 
-            // wmpa14
-            // 
-            this.wmpa14.Enabled = true;
-            this.wmpa14.Location = new System.Drawing.Point(163, 263);
-            this.wmpa14.Name = "wmpa14";
-            this.wmpa14.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa14.OcxState")));
-            this.wmpa14.Size = new System.Drawing.Size(11, 11);
-            this.wmpa14.TabIndex = 4;
-            this.wmpa14.Visible = false;
-            // 
-            // wmpa13
-            // 
-            this.wmpa13.Enabled = true;
-            this.wmpa13.Location = new System.Drawing.Point(100, 263);
-            this.wmpa13.Name = "wmpa13";
-            this.wmpa13.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa13.OcxState")));
-            this.wmpa13.Size = new System.Drawing.Size(11, 11);
-            this.wmpa13.TabIndex = 4;
-            this.wmpa13.Visible = false;
-            // 
-            // wmpa12
-            // 
-            this.wmpa12.Enabled = true;
-            this.wmpa12.Location = new System.Drawing.Point(293, 201);
-            this.wmpa12.Name = "wmpa12";
-            this.wmpa12.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa12.OcxState")));
-            this.wmpa12.Size = new System.Drawing.Size(11, 11);
-            this.wmpa12.TabIndex = 4;
-            this.wmpa12.Visible = false;
-            // 
-            // wmpa11
-            // 
-            this.wmpa11.Enabled = true;
-            this.wmpa11.Location = new System.Drawing.Point(228, 201);
-            this.wmpa11.Name = "wmpa11";
-            this.wmpa11.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa11.OcxState")));
-            this.wmpa11.Size = new System.Drawing.Size(11, 11);
-            this.wmpa11.TabIndex = 4;
-            this.wmpa11.Visible = false;
-            // 
-            // wmpa10
-            // 
-            this.wmpa10.Enabled = true;
-            this.wmpa10.Location = new System.Drawing.Point(163, 201);
-            this.wmpa10.Name = "wmpa10";
-            this.wmpa10.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa10.OcxState")));
-            this.wmpa10.Size = new System.Drawing.Size(11, 11);
-            this.wmpa10.TabIndex = 4;
-            this.wmpa10.Visible = false;
-            // 
-            // wmpa9
-            // 
-            this.wmpa9.Enabled = true;
-            this.wmpa9.Location = new System.Drawing.Point(100, 201);
-            this.wmpa9.Name = "wmpa9";
-            this.wmpa9.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa9.OcxState")));
-            this.wmpa9.Size = new System.Drawing.Size(11, 11);
-            this.wmpa9.TabIndex = 4;
-            this.wmpa9.Visible = false;
-            // 
-            // wmpa6
-            // 
-            this.wmpa6.Enabled = true;
-            this.wmpa6.Location = new System.Drawing.Point(163, 140);
-            this.wmpa6.Name = "wmpa6";
-            this.wmpa6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa6.OcxState")));
-            this.wmpa6.Size = new System.Drawing.Size(11, 11);
-            this.wmpa6.TabIndex = 4;
-            this.wmpa6.Visible = false;
-            // 
-            // wmpa8
-            // 
-            this.wmpa8.Enabled = true;
-            this.wmpa8.Location = new System.Drawing.Point(293, 140);
-            this.wmpa8.Name = "wmpa8";
-            this.wmpa8.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa8.OcxState")));
-            this.wmpa8.Size = new System.Drawing.Size(11, 11);
-            this.wmpa8.TabIndex = 4;
-            this.wmpa8.Visible = false;
-            // 
-            // wmpa5
-            // 
-            this.wmpa5.Enabled = true;
-            this.wmpa5.Location = new System.Drawing.Point(100, 140);
-            this.wmpa5.Name = "wmpa5";
-            this.wmpa5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa5.OcxState")));
-            this.wmpa5.Size = new System.Drawing.Size(11, 11);
-            this.wmpa5.TabIndex = 4;
-            this.wmpa5.Visible = false;
-            // 
-            // wmpa7
-            // 
-            this.wmpa7.Enabled = true;
-            this.wmpa7.Location = new System.Drawing.Point(228, 140);
-            this.wmpa7.Name = "wmpa7";
-            this.wmpa7.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa7.OcxState")));
-            this.wmpa7.Size = new System.Drawing.Size(11, 11);
-            this.wmpa7.TabIndex = 4;
-            this.wmpa7.Visible = false;
-            // 
-            // wmpa4
-            // 
-            this.wmpa4.Enabled = true;
-            this.wmpa4.Location = new System.Drawing.Point(293, 79);
-            this.wmpa4.Name = "wmpa4";
-            this.wmpa4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa4.OcxState")));
-            this.wmpa4.Size = new System.Drawing.Size(11, 11);
-            this.wmpa4.TabIndex = 4;
-            this.wmpa4.Visible = false;
-            // 
-            // wmpa3
-            // 
-            this.wmpa3.Enabled = true;
-            this.wmpa3.Location = new System.Drawing.Point(228, 79);
-            this.wmpa3.Name = "wmpa3";
-            this.wmpa3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa3.OcxState")));
-            this.wmpa3.Size = new System.Drawing.Size(11, 11);
-            this.wmpa3.TabIndex = 4;
-            this.wmpa3.Visible = false;
-            // 
-            // wmpa2
-            // 
-            this.wmpa2.Enabled = true;
-            this.wmpa2.Location = new System.Drawing.Point(163, 79);
-            this.wmpa2.Name = "wmpa2";
-            this.wmpa2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa2.OcxState")));
-            this.wmpa2.Size = new System.Drawing.Size(11, 11);
-            this.wmpa2.TabIndex = 4;
-            this.wmpa2.Visible = false;
-            // 
-            // wmpb1
-            // 
-            this.wmpb1.Enabled = true;
-            this.wmpb1.Location = new System.Drawing.Point(369, 80);
-            this.wmpb1.Name = "wmpb1";
-            this.wmpb1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb1.OcxState")));
-            this.wmpb1.Size = new System.Drawing.Size(11, 11);
-            this.wmpb1.TabIndex = 4;
-            this.wmpb1.Visible = false;
-            // 
-            // wmpa1
-            // 
-            this.wmpa1.Enabled = true;
-            this.wmpa1.Location = new System.Drawing.Point(100, 79);
-            this.wmpa1.Name = "wmpa1";
-            this.wmpa1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa1.OcxState")));
-            this.wmpa1.Size = new System.Drawing.Size(11, 11);
-            this.wmpa1.TabIndex = 4;
-            this.wmpa1.Visible = false;
-            // 
-            // wmpb2
-            // 
-            this.wmpb2.Enabled = true;
-            this.wmpb2.Location = new System.Drawing.Point(432, 80);
-            this.wmpb2.Name = "wmpb2";
-            this.wmpb2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb2.OcxState")));
-            this.wmpb2.Size = new System.Drawing.Size(11, 11);
-            this.wmpb2.TabIndex = 4;
-            this.wmpb2.Visible = false;
-            // 
-            // wmpb3
-            // 
-            this.wmpb3.Enabled = true;
-            this.wmpb3.Location = new System.Drawing.Point(497, 80);
-            this.wmpb3.Name = "wmpb3";
-            this.wmpb3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb3.OcxState")));
-            this.wmpb3.Size = new System.Drawing.Size(11, 11);
-            this.wmpb3.TabIndex = 4;
-            this.wmpb3.Visible = false;
-            // 
-            // wmpb4
-            // 
-            this.wmpb4.Enabled = true;
-            this.wmpb4.Location = new System.Drawing.Point(560, 80);
-            this.wmpb4.Name = "wmpb4";
-            this.wmpb4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb4.OcxState")));
-            this.wmpb4.Size = new System.Drawing.Size(11, 11);
-            this.wmpb4.TabIndex = 4;
-            this.wmpb4.Visible = false;
-            // 
-            // wmpb5
-            // 
-            this.wmpb5.Enabled = true;
-            this.wmpb5.Location = new System.Drawing.Point(369, 140);
-            this.wmpb5.Name = "wmpb5";
-            this.wmpb5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb5.OcxState")));
-            this.wmpb5.Size = new System.Drawing.Size(11, 11);
-            this.wmpb5.TabIndex = 4;
-            this.wmpb5.Visible = false;
-            // 
-            // wmpb6
-            // 
-            this.wmpb6.Enabled = true;
-            this.wmpb6.Location = new System.Drawing.Point(432, 140);
-            this.wmpb6.Name = "wmpb6";
-            this.wmpb6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb6.OcxState")));
-            this.wmpb6.Size = new System.Drawing.Size(11, 11);
-            this.wmpb6.TabIndex = 4;
-            this.wmpb6.Visible = false;
-            // 
-            // wmpb7
-            // 
-            this.wmpb7.Enabled = true;
-            this.wmpb7.Location = new System.Drawing.Point(497, 140);
-            this.wmpb7.Name = "wmpb7";
-            this.wmpb7.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb7.OcxState")));
-            this.wmpb7.Size = new System.Drawing.Size(11, 11);
-            this.wmpb7.TabIndex = 4;
-            this.wmpb7.Visible = false;
-            // 
-            // wmpb8
-            // 
-            this.wmpb8.Enabled = true;
-            this.wmpb8.Location = new System.Drawing.Point(560, 140);
-            this.wmpb8.Name = "wmpb8";
-            this.wmpb8.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb8.OcxState")));
-            this.wmpb8.Size = new System.Drawing.Size(11, 11);
-            this.wmpb8.TabIndex = 4;
-            this.wmpb8.Visible = false;
-            // 
-            // wmpb9
-            // 
-            this.wmpb9.Enabled = true;
-            this.wmpb9.Location = new System.Drawing.Point(369, 203);
-            this.wmpb9.Name = "wmpb9";
-            this.wmpb9.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb9.OcxState")));
-            this.wmpb9.Size = new System.Drawing.Size(11, 11);
-            this.wmpb9.TabIndex = 4;
-            this.wmpb9.Visible = false;
-            // 
-            // wmpb13
-            // 
-            this.wmpb13.Enabled = true;
-            this.wmpb13.Location = new System.Drawing.Point(369, 263);
-            this.wmpb13.Name = "wmpb13";
-            this.wmpb13.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb13.OcxState")));
-            this.wmpb13.Size = new System.Drawing.Size(11, 11);
-            this.wmpb13.TabIndex = 4;
-            this.wmpb13.Visible = false;
-            // 
-            // wmpb10
-            // 
-            this.wmpb10.Enabled = true;
-            this.wmpb10.Location = new System.Drawing.Point(432, 203);
-            this.wmpb10.Name = "wmpb10";
-            this.wmpb10.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb10.OcxState")));
-            this.wmpb10.Size = new System.Drawing.Size(11, 11);
-            this.wmpb10.TabIndex = 4;
-            this.wmpb10.Visible = false;
-            // 
-            // wmpb14
-            // 
-            this.wmpb14.Enabled = true;
-            this.wmpb14.Location = new System.Drawing.Point(432, 263);
-            this.wmpb14.Name = "wmpb14";
-            this.wmpb14.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb14.OcxState")));
-            this.wmpb14.Size = new System.Drawing.Size(11, 11);
-            this.wmpb14.TabIndex = 4;
-            this.wmpb14.Visible = false;
-            // 
-            // wmpb11
-            // 
-            this.wmpb11.Enabled = true;
-            this.wmpb11.Location = new System.Drawing.Point(497, 203);
-            this.wmpb11.Name = "wmpb11";
-            this.wmpb11.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb11.OcxState")));
-            this.wmpb11.Size = new System.Drawing.Size(11, 11);
-            this.wmpb11.TabIndex = 4;
-            this.wmpb11.Visible = false;
-            // 
-            // wmpb15
-            // 
-            this.wmpb15.Enabled = true;
-            this.wmpb15.Location = new System.Drawing.Point(497, 263);
-            this.wmpb15.Name = "wmpb15";
-            this.wmpb15.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb15.OcxState")));
-            this.wmpb15.Size = new System.Drawing.Size(11, 11);
-            this.wmpb15.TabIndex = 4;
-            this.wmpb15.Visible = false;
-            // 
-            // wmpb12
-            // 
-            this.wmpb12.Enabled = true;
-            this.wmpb12.Location = new System.Drawing.Point(560, 203);
-            this.wmpb12.Name = "wmpb12";
-            this.wmpb12.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb12.OcxState")));
-            this.wmpb12.Size = new System.Drawing.Size(11, 11);
-            this.wmpb12.TabIndex = 4;
-            this.wmpb12.Visible = false;
-            // 
-            // wmpb16
-            // 
-            this.wmpb16.Enabled = true;
-            this.wmpb16.Location = new System.Drawing.Point(560, 263);
-            this.wmpb16.Name = "wmpb16";
-            this.wmpb16.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb16.OcxState")));
-            this.wmpb16.Size = new System.Drawing.Size(11, 11);
-            this.wmpb16.TabIndex = 4;
-            this.wmpb16.Visible = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
@@ -1005,6 +732,1403 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(915, 32);
             this.panel1.TabIndex = 27;
+            // 
+            // tm
+            // 
+            this.tm.Interval = 13;
+            this.tm.Tick += new System.EventHandler(this.tm_Tick);
+            // 
+            // stripTicks2
+            // 
+            this.stripTicks2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmbtiempo2});
+            this.stripTicks2.Name = "stripTicks";
+            this.stripTicks2.Size = new System.Drawing.Size(153, 31);
+            // 
+            // cmbtiempo2
+            // 
+            this.cmbtiempo2.Items.AddRange(new object[] {
+            "1 Tick",
+            "2 Ticks",
+            "4 Ticks",
+            "8 Ticks",
+            "Default"});
+            this.cmbtiempo2.Name = "cmbtiempo2";
+            this.cmbtiempo2.Size = new System.Drawing.Size(92, 23);
+            this.cmbtiempo2.Text = "Tiempo loop";
+            // 
+            // stripTicks
+            // 
+            this.stripTicks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmbtiempo});
+            this.stripTicks.Name = "stripTicks";
+            this.stripTicks.Size = new System.Drawing.Size(153, 31);
+            // 
+            // cmbtiempo
+            // 
+            this.cmbtiempo.Items.AddRange(new object[] {
+            "1 Tick",
+            "2 Ticks",
+            "4 Ticks",
+            "8 Ticks",
+            "Default"});
+            this.cmbtiempo.Name = "cmbtiempo";
+            this.cmbtiempo.Size = new System.Drawing.Size(92, 23);
+            this.cmbtiempo.Text = "Tiempo loop";
+            // 
+            // tmloop1
+            // 
+            this.tmloop1.Interval = 150;
+            this.tmloop1.Tick += new System.EventHandler(this.tmloop_Tick);
+            // 
+            // tmloop2
+            // 
+            this.tmloop2.Interval = 150;
+            this.tmloop2.Tick += new System.EventHandler(this.tmloop2_Tick);
+            // 
+            // wmpd16
+            // 
+            this.wmpd16.Enabled = true;
+            this.wmpd16.Location = new System.Drawing.Point(526, 520);
+            this.wmpd16.Name = "wmpd16";
+            this.wmpd16.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd16.OcxState")));
+            this.wmpd16.Size = new System.Drawing.Size(11, 11);
+            this.wmpd16.TabIndex = 61;
+            this.wmpd16.Visible = false;
+            // 
+            // wmpd15
+            // 
+            this.wmpd15.Enabled = true;
+            this.wmpd15.Location = new System.Drawing.Point(461, 520);
+            this.wmpd15.Name = "wmpd15";
+            this.wmpd15.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd15.OcxState")));
+            this.wmpd15.Size = new System.Drawing.Size(11, 11);
+            this.wmpd15.TabIndex = 75;
+            this.wmpd15.Visible = false;
+            // 
+            // wmpd14
+            // 
+            this.wmpd14.Enabled = true;
+            this.wmpd14.Location = new System.Drawing.Point(396, 520);
+            this.wmpd14.Name = "wmpd14";
+            this.wmpd14.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd14.OcxState")));
+            this.wmpd14.Size = new System.Drawing.Size(11, 11);
+            this.wmpd14.TabIndex = 74;
+            this.wmpd14.Visible = false;
+            // 
+            // wmpd13
+            // 
+            this.wmpd13.Enabled = true;
+            this.wmpd13.Location = new System.Drawing.Point(333, 520);
+            this.wmpd13.Name = "wmpd13";
+            this.wmpd13.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd13.OcxState")));
+            this.wmpd13.Size = new System.Drawing.Size(11, 11);
+            this.wmpd13.TabIndex = 73;
+            this.wmpd13.Visible = false;
+            // 
+            // wmpd12
+            // 
+            this.wmpd12.Enabled = true;
+            this.wmpd12.Location = new System.Drawing.Point(526, 458);
+            this.wmpd12.Name = "wmpd12";
+            this.wmpd12.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd12.OcxState")));
+            this.wmpd12.Size = new System.Drawing.Size(11, 11);
+            this.wmpd12.TabIndex = 72;
+            this.wmpd12.Visible = false;
+            // 
+            // wmpd11
+            // 
+            this.wmpd11.Enabled = true;
+            this.wmpd11.Location = new System.Drawing.Point(461, 458);
+            this.wmpd11.Name = "wmpd11";
+            this.wmpd11.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd11.OcxState")));
+            this.wmpd11.Size = new System.Drawing.Size(11, 11);
+            this.wmpd11.TabIndex = 71;
+            this.wmpd11.Visible = false;
+            // 
+            // wmpd10
+            // 
+            this.wmpd10.Enabled = true;
+            this.wmpd10.Location = new System.Drawing.Point(396, 458);
+            this.wmpd10.Name = "wmpd10";
+            this.wmpd10.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd10.OcxState")));
+            this.wmpd10.Size = new System.Drawing.Size(11, 11);
+            this.wmpd10.TabIndex = 70;
+            this.wmpd10.Visible = false;
+            // 
+            // wmpd9
+            // 
+            this.wmpd9.Enabled = true;
+            this.wmpd9.Location = new System.Drawing.Point(333, 458);
+            this.wmpd9.Name = "wmpd9";
+            this.wmpd9.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd9.OcxState")));
+            this.wmpd9.Size = new System.Drawing.Size(11, 11);
+            this.wmpd9.TabIndex = 76;
+            this.wmpd9.Visible = false;
+            // 
+            // wmpd6
+            // 
+            this.wmpd6.Enabled = true;
+            this.wmpd6.Location = new System.Drawing.Point(396, 397);
+            this.wmpd6.Name = "wmpd6";
+            this.wmpd6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd6.OcxState")));
+            this.wmpd6.Size = new System.Drawing.Size(11, 11);
+            this.wmpd6.TabIndex = 68;
+            this.wmpd6.Visible = false;
+            // 
+            // wmpd8
+            // 
+            this.wmpd8.Enabled = true;
+            this.wmpd8.Location = new System.Drawing.Point(526, 397);
+            this.wmpd8.Name = "wmpd8";
+            this.wmpd8.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd8.OcxState")));
+            this.wmpd8.Size = new System.Drawing.Size(11, 11);
+            this.wmpd8.TabIndex = 67;
+            this.wmpd8.Visible = false;
+            // 
+            // wmpd5
+            // 
+            this.wmpd5.Enabled = true;
+            this.wmpd5.Location = new System.Drawing.Point(333, 397);
+            this.wmpd5.Name = "wmpd5";
+            this.wmpd5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd5.OcxState")));
+            this.wmpd5.Size = new System.Drawing.Size(11, 11);
+            this.wmpd5.TabIndex = 66;
+            this.wmpd5.Visible = false;
+            // 
+            // wmpd7
+            // 
+            this.wmpd7.Enabled = true;
+            this.wmpd7.Location = new System.Drawing.Point(461, 397);
+            this.wmpd7.Name = "wmpd7";
+            this.wmpd7.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd7.OcxState")));
+            this.wmpd7.Size = new System.Drawing.Size(11, 11);
+            this.wmpd7.TabIndex = 65;
+            this.wmpd7.Visible = false;
+            // 
+            // wmpd4
+            // 
+            this.wmpd4.Enabled = true;
+            this.wmpd4.Location = new System.Drawing.Point(526, 336);
+            this.wmpd4.Name = "wmpd4";
+            this.wmpd4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd4.OcxState")));
+            this.wmpd4.Size = new System.Drawing.Size(11, 11);
+            this.wmpd4.TabIndex = 64;
+            this.wmpd4.Visible = false;
+            // 
+            // wmpd3
+            // 
+            this.wmpd3.Enabled = true;
+            this.wmpd3.Location = new System.Drawing.Point(461, 336);
+            this.wmpd3.Name = "wmpd3";
+            this.wmpd3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd3.OcxState")));
+            this.wmpd3.Size = new System.Drawing.Size(11, 11);
+            this.wmpd3.TabIndex = 63;
+            this.wmpd3.Visible = false;
+            // 
+            // wmpd2
+            // 
+            this.wmpd2.Enabled = true;
+            this.wmpd2.Location = new System.Drawing.Point(396, 336);
+            this.wmpd2.Name = "wmpd2";
+            this.wmpd2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd2.OcxState")));
+            this.wmpd2.Size = new System.Drawing.Size(11, 11);
+            this.wmpd2.TabIndex = 62;
+            this.wmpd2.Visible = false;
+            // 
+            // wmpd1
+            // 
+            this.wmpd1.Enabled = true;
+            this.wmpd1.Location = new System.Drawing.Point(333, 336);
+            this.wmpd1.Name = "wmpd1";
+            this.wmpd1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpd1.OcxState")));
+            this.wmpd1.Size = new System.Drawing.Size(11, 11);
+            this.wmpd1.TabIndex = 69;
+            this.wmpd1.Visible = false;
+            // 
+            // wmpc16
+            // 
+            this.wmpc16.Enabled = true;
+            this.wmpc16.Location = new System.Drawing.Point(257, 520);
+            this.wmpc16.Name = "wmpc16";
+            this.wmpc16.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc16.OcxState")));
+            this.wmpc16.Size = new System.Drawing.Size(11, 11);
+            this.wmpc16.TabIndex = 29;
+            this.wmpc16.Visible = false;
+            // 
+            // wmpc15
+            // 
+            this.wmpc15.Enabled = true;
+            this.wmpc15.Location = new System.Drawing.Point(192, 520);
+            this.wmpc15.Name = "wmpc15";
+            this.wmpc15.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc15.OcxState")));
+            this.wmpc15.Size = new System.Drawing.Size(11, 11);
+            this.wmpc15.TabIndex = 43;
+            this.wmpc15.Visible = false;
+            // 
+            // wmpc14
+            // 
+            this.wmpc14.Enabled = true;
+            this.wmpc14.Location = new System.Drawing.Point(127, 520);
+            this.wmpc14.Name = "wmpc14";
+            this.wmpc14.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc14.OcxState")));
+            this.wmpc14.Size = new System.Drawing.Size(11, 11);
+            this.wmpc14.TabIndex = 42;
+            this.wmpc14.Visible = false;
+            // 
+            // wmpc13
+            // 
+            this.wmpc13.Enabled = true;
+            this.wmpc13.Location = new System.Drawing.Point(64, 520);
+            this.wmpc13.Name = "wmpc13";
+            this.wmpc13.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc13.OcxState")));
+            this.wmpc13.Size = new System.Drawing.Size(11, 11);
+            this.wmpc13.TabIndex = 41;
+            this.wmpc13.Visible = false;
+            // 
+            // wmpc12
+            // 
+            this.wmpc12.Enabled = true;
+            this.wmpc12.Location = new System.Drawing.Point(257, 458);
+            this.wmpc12.Name = "wmpc12";
+            this.wmpc12.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc12.OcxState")));
+            this.wmpc12.Size = new System.Drawing.Size(11, 11);
+            this.wmpc12.TabIndex = 40;
+            this.wmpc12.Visible = false;
+            // 
+            // wmpc11
+            // 
+            this.wmpc11.Enabled = true;
+            this.wmpc11.Location = new System.Drawing.Point(192, 458);
+            this.wmpc11.Name = "wmpc11";
+            this.wmpc11.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc11.OcxState")));
+            this.wmpc11.Size = new System.Drawing.Size(11, 11);
+            this.wmpc11.TabIndex = 39;
+            this.wmpc11.Visible = false;
+            // 
+            // wmpc10
+            // 
+            this.wmpc10.Enabled = true;
+            this.wmpc10.Location = new System.Drawing.Point(127, 458);
+            this.wmpc10.Name = "wmpc10";
+            this.wmpc10.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc10.OcxState")));
+            this.wmpc10.Size = new System.Drawing.Size(11, 11);
+            this.wmpc10.TabIndex = 38;
+            this.wmpc10.Visible = false;
+            // 
+            // wmpc9
+            // 
+            this.wmpc9.Enabled = true;
+            this.wmpc9.Location = new System.Drawing.Point(64, 458);
+            this.wmpc9.Name = "wmpc9";
+            this.wmpc9.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc9.OcxState")));
+            this.wmpc9.Size = new System.Drawing.Size(11, 11);
+            this.wmpc9.TabIndex = 44;
+            this.wmpc9.Visible = false;
+            // 
+            // wmpc6
+            // 
+            this.wmpc6.Enabled = true;
+            this.wmpc6.Location = new System.Drawing.Point(127, 397);
+            this.wmpc6.Name = "wmpc6";
+            this.wmpc6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc6.OcxState")));
+            this.wmpc6.Size = new System.Drawing.Size(11, 11);
+            this.wmpc6.TabIndex = 36;
+            this.wmpc6.Visible = false;
+            // 
+            // wmpc8
+            // 
+            this.wmpc8.Enabled = true;
+            this.wmpc8.Location = new System.Drawing.Point(257, 397);
+            this.wmpc8.Name = "wmpc8";
+            this.wmpc8.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc8.OcxState")));
+            this.wmpc8.Size = new System.Drawing.Size(11, 11);
+            this.wmpc8.TabIndex = 35;
+            this.wmpc8.Visible = false;
+            // 
+            // wmpc5
+            // 
+            this.wmpc5.Enabled = true;
+            this.wmpc5.Location = new System.Drawing.Point(64, 397);
+            this.wmpc5.Name = "wmpc5";
+            this.wmpc5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc5.OcxState")));
+            this.wmpc5.Size = new System.Drawing.Size(11, 11);
+            this.wmpc5.TabIndex = 34;
+            this.wmpc5.Visible = false;
+            // 
+            // wmpc7
+            // 
+            this.wmpc7.Enabled = true;
+            this.wmpc7.Location = new System.Drawing.Point(192, 397);
+            this.wmpc7.Name = "wmpc7";
+            this.wmpc7.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc7.OcxState")));
+            this.wmpc7.Size = new System.Drawing.Size(11, 11);
+            this.wmpc7.TabIndex = 33;
+            this.wmpc7.Visible = false;
+            // 
+            // wmpc4
+            // 
+            this.wmpc4.Enabled = true;
+            this.wmpc4.Location = new System.Drawing.Point(257, 336);
+            this.wmpc4.Name = "wmpc4";
+            this.wmpc4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc4.OcxState")));
+            this.wmpc4.Size = new System.Drawing.Size(11, 11);
+            this.wmpc4.TabIndex = 32;
+            this.wmpc4.Visible = false;
+            // 
+            // wmpc3
+            // 
+            this.wmpc3.Enabled = true;
+            this.wmpc3.Location = new System.Drawing.Point(192, 336);
+            this.wmpc3.Name = "wmpc3";
+            this.wmpc3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc3.OcxState")));
+            this.wmpc3.Size = new System.Drawing.Size(11, 11);
+            this.wmpc3.TabIndex = 31;
+            this.wmpc3.Visible = false;
+            // 
+            // wmpc2
+            // 
+            this.wmpc2.Enabled = true;
+            this.wmpc2.Location = new System.Drawing.Point(127, 336);
+            this.wmpc2.Name = "wmpc2";
+            this.wmpc2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc2.OcxState")));
+            this.wmpc2.Size = new System.Drawing.Size(11, 11);
+            this.wmpc2.TabIndex = 30;
+            this.wmpc2.Visible = false;
+            // 
+            // wmpc1
+            // 
+            this.wmpc1.Enabled = true;
+            this.wmpc1.Location = new System.Drawing.Point(64, 336);
+            this.wmpc1.Name = "wmpc1";
+            this.wmpc1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpc1.OcxState")));
+            this.wmpc1.Size = new System.Drawing.Size(11, 11);
+            this.wmpc1.TabIndex = 37;
+            this.wmpc1.Visible = false;
+            // 
+            // wmpa16
+            // 
+            this.wmpa16.Enabled = true;
+            this.wmpa16.Location = new System.Drawing.Point(257, 263);
+            this.wmpa16.Name = "wmpa16";
+            this.wmpa16.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa16.OcxState")));
+            this.wmpa16.Size = new System.Drawing.Size(11, 11);
+            this.wmpa16.TabIndex = 4;
+            this.wmpa16.Visible = false;
+            // 
+            // wmpa15
+            // 
+            this.wmpa15.Enabled = true;
+            this.wmpa15.Location = new System.Drawing.Point(192, 263);
+            this.wmpa15.Name = "wmpa15";
+            this.wmpa15.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa15.OcxState")));
+            this.wmpa15.Size = new System.Drawing.Size(11, 11);
+            this.wmpa15.TabIndex = 4;
+            this.wmpa15.Visible = false;
+            // 
+            // wmpa14
+            // 
+            this.wmpa14.Enabled = true;
+            this.wmpa14.Location = new System.Drawing.Point(127, 263);
+            this.wmpa14.Name = "wmpa14";
+            this.wmpa14.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa14.OcxState")));
+            this.wmpa14.Size = new System.Drawing.Size(11, 11);
+            this.wmpa14.TabIndex = 4;
+            this.wmpa14.Visible = false;
+            // 
+            // wmpa13
+            // 
+            this.wmpa13.Enabled = true;
+            this.wmpa13.Location = new System.Drawing.Point(64, 263);
+            this.wmpa13.Name = "wmpa13";
+            this.wmpa13.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa13.OcxState")));
+            this.wmpa13.Size = new System.Drawing.Size(11, 11);
+            this.wmpa13.TabIndex = 4;
+            this.wmpa13.Visible = false;
+            // 
+            // wmpa12
+            // 
+            this.wmpa12.Enabled = true;
+            this.wmpa12.Location = new System.Drawing.Point(257, 201);
+            this.wmpa12.Name = "wmpa12";
+            this.wmpa12.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa12.OcxState")));
+            this.wmpa12.Size = new System.Drawing.Size(11, 11);
+            this.wmpa12.TabIndex = 4;
+            this.wmpa12.Visible = false;
+            // 
+            // wmpa11
+            // 
+            this.wmpa11.Enabled = true;
+            this.wmpa11.Location = new System.Drawing.Point(192, 201);
+            this.wmpa11.Name = "wmpa11";
+            this.wmpa11.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa11.OcxState")));
+            this.wmpa11.Size = new System.Drawing.Size(11, 11);
+            this.wmpa11.TabIndex = 4;
+            this.wmpa11.Visible = false;
+            // 
+            // wmpa10
+            // 
+            this.wmpa10.Enabled = true;
+            this.wmpa10.Location = new System.Drawing.Point(127, 201);
+            this.wmpa10.Name = "wmpa10";
+            this.wmpa10.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa10.OcxState")));
+            this.wmpa10.Size = new System.Drawing.Size(11, 11);
+            this.wmpa10.TabIndex = 4;
+            this.wmpa10.Visible = false;
+            // 
+            // wmpa9
+            // 
+            this.wmpa9.Enabled = true;
+            this.wmpa9.Location = new System.Drawing.Point(64, 201);
+            this.wmpa9.Name = "wmpa9";
+            this.wmpa9.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa9.OcxState")));
+            this.wmpa9.Size = new System.Drawing.Size(11, 11);
+            this.wmpa9.TabIndex = 4;
+            this.wmpa9.Visible = false;
+            // 
+            // wmpa6
+            // 
+            this.wmpa6.Enabled = true;
+            this.wmpa6.Location = new System.Drawing.Point(127, 140);
+            this.wmpa6.Name = "wmpa6";
+            this.wmpa6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa6.OcxState")));
+            this.wmpa6.Size = new System.Drawing.Size(11, 11);
+            this.wmpa6.TabIndex = 4;
+            this.wmpa6.Visible = false;
+            // 
+            // wmpa8
+            // 
+            this.wmpa8.Enabled = true;
+            this.wmpa8.Location = new System.Drawing.Point(257, 140);
+            this.wmpa8.Name = "wmpa8";
+            this.wmpa8.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa8.OcxState")));
+            this.wmpa8.Size = new System.Drawing.Size(11, 11);
+            this.wmpa8.TabIndex = 4;
+            this.wmpa8.Visible = false;
+            // 
+            // wmpa5
+            // 
+            this.wmpa5.Enabled = true;
+            this.wmpa5.Location = new System.Drawing.Point(64, 140);
+            this.wmpa5.Name = "wmpa5";
+            this.wmpa5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa5.OcxState")));
+            this.wmpa5.Size = new System.Drawing.Size(11, 11);
+            this.wmpa5.TabIndex = 4;
+            this.wmpa5.Visible = false;
+            // 
+            // wmpa7
+            // 
+            this.wmpa7.Enabled = true;
+            this.wmpa7.Location = new System.Drawing.Point(192, 140);
+            this.wmpa7.Name = "wmpa7";
+            this.wmpa7.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa7.OcxState")));
+            this.wmpa7.Size = new System.Drawing.Size(11, 11);
+            this.wmpa7.TabIndex = 4;
+            this.wmpa7.Visible = false;
+            // 
+            // wmpa4
+            // 
+            this.wmpa4.Enabled = true;
+            this.wmpa4.Location = new System.Drawing.Point(257, 79);
+            this.wmpa4.Name = "wmpa4";
+            this.wmpa4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa4.OcxState")));
+            this.wmpa4.Size = new System.Drawing.Size(11, 11);
+            this.wmpa4.TabIndex = 4;
+            this.wmpa4.Visible = false;
+            // 
+            // wmpa3
+            // 
+            this.wmpa3.Enabled = true;
+            this.wmpa3.Location = new System.Drawing.Point(192, 79);
+            this.wmpa3.Name = "wmpa3";
+            this.wmpa3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa3.OcxState")));
+            this.wmpa3.Size = new System.Drawing.Size(11, 11);
+            this.wmpa3.TabIndex = 4;
+            this.wmpa3.Visible = false;
+            // 
+            // wmpa2
+            // 
+            this.wmpa2.Enabled = true;
+            this.wmpa2.Location = new System.Drawing.Point(127, 79);
+            this.wmpa2.Name = "wmpa2";
+            this.wmpa2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa2.OcxState")));
+            this.wmpa2.Size = new System.Drawing.Size(11, 11);
+            this.wmpa2.TabIndex = 4;
+            this.wmpa2.Visible = false;
+            // 
+            // wmpb16
+            // 
+            this.wmpb16.Enabled = true;
+            this.wmpb16.Location = new System.Drawing.Point(524, 263);
+            this.wmpb16.Name = "wmpb16";
+            this.wmpb16.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb16.OcxState")));
+            this.wmpb16.Size = new System.Drawing.Size(11, 11);
+            this.wmpb16.TabIndex = 4;
+            this.wmpb16.Visible = false;
+            // 
+            // wmpb8
+            // 
+            this.wmpb8.Enabled = true;
+            this.wmpb8.Location = new System.Drawing.Point(524, 140);
+            this.wmpb8.Name = "wmpb8";
+            this.wmpb8.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb8.OcxState")));
+            this.wmpb8.Size = new System.Drawing.Size(11, 11);
+            this.wmpb8.TabIndex = 4;
+            this.wmpb8.Visible = false;
+            // 
+            // wmpb12
+            // 
+            this.wmpb12.Enabled = true;
+            this.wmpb12.Location = new System.Drawing.Point(524, 203);
+            this.wmpb12.Name = "wmpb12";
+            this.wmpb12.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb12.OcxState")));
+            this.wmpb12.Size = new System.Drawing.Size(11, 11);
+            this.wmpb12.TabIndex = 4;
+            this.wmpb12.Visible = false;
+            // 
+            // wmpl6
+            // 
+            this.wmpl6.Enabled = true;
+            this.wmpl6.Location = new System.Drawing.Point(647, 489);
+            this.wmpl6.Name = "wmpl6";
+            this.wmpl6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl6.OcxState")));
+            this.wmpl6.Size = new System.Drawing.Size(11, 11);
+            this.wmpl6.TabIndex = 4;
+            this.wmpl6.Visible = false;
+            // 
+            // wmpl5
+            // 
+            this.wmpl5.Enabled = true;
+            this.wmpl5.Location = new System.Drawing.Point(647, 402);
+            this.wmpl5.Name = "wmpl5";
+            this.wmpl5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl5.OcxState")));
+            this.wmpl5.Size = new System.Drawing.Size(11, 11);
+            this.wmpl5.TabIndex = 4;
+            this.wmpl5.Visible = false;
+            // 
+            // wmpl4
+            // 
+            this.wmpl4.Enabled = true;
+            this.wmpl4.Location = new System.Drawing.Point(647, 327);
+            this.wmpl4.Name = "wmpl4";
+            this.wmpl4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl4.OcxState")));
+            this.wmpl4.Size = new System.Drawing.Size(11, 11);
+            this.wmpl4.TabIndex = 4;
+            this.wmpl4.Visible = false;
+            // 
+            // wmpl2
+            // 
+            this.wmpl2.Enabled = true;
+            this.wmpl2.Location = new System.Drawing.Point(643, 161);
+            this.wmpl2.Name = "wmpl2";
+            this.wmpl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl2.OcxState")));
+            this.wmpl2.Size = new System.Drawing.Size(11, 11);
+            this.wmpl2.TabIndex = 4;
+            this.wmpl2.Visible = false;
+            this.wmpl2.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.wmpl2_PlayStateChange);
+            // 
+            // wmpl3
+            // 
+            this.wmpl3.Enabled = true;
+            this.wmpl3.Location = new System.Drawing.Point(647, 248);
+            this.wmpl3.Name = "wmpl3";
+            this.wmpl3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl3.OcxState")));
+            this.wmpl3.Size = new System.Drawing.Size(11, 11);
+            this.wmpl3.TabIndex = 4;
+            this.wmpl3.Visible = false;
+            // 
+            // wmpl1
+            // 
+            this.wmpl1.Enabled = true;
+            this.wmpl1.Location = new System.Drawing.Point(643, 81);
+            this.wmpl1.Name = "wmpl1";
+            this.wmpl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl1.OcxState")));
+            this.wmpl1.Size = new System.Drawing.Size(11, 11);
+            this.wmpl1.TabIndex = 4;
+            this.wmpl1.Visible = false;
+            this.wmpl1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.wmpl1_PlayStateChange);
+            // 
+            // wmpb4
+            // 
+            this.wmpb4.Enabled = true;
+            this.wmpb4.Location = new System.Drawing.Point(524, 80);
+            this.wmpb4.Name = "wmpb4";
+            this.wmpb4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb4.OcxState")));
+            this.wmpb4.Size = new System.Drawing.Size(11, 11);
+            this.wmpb4.TabIndex = 4;
+            this.wmpb4.Visible = false;
+            // 
+            // wmpb15
+            // 
+            this.wmpb15.Enabled = true;
+            this.wmpb15.Location = new System.Drawing.Point(461, 263);
+            this.wmpb15.Name = "wmpb15";
+            this.wmpb15.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb15.OcxState")));
+            this.wmpb15.Size = new System.Drawing.Size(11, 11);
+            this.wmpb15.TabIndex = 4;
+            this.wmpb15.Visible = false;
+            // 
+            // wmpb7
+            // 
+            this.wmpb7.Enabled = true;
+            this.wmpb7.Location = new System.Drawing.Point(461, 140);
+            this.wmpb7.Name = "wmpb7";
+            this.wmpb7.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb7.OcxState")));
+            this.wmpb7.Size = new System.Drawing.Size(11, 11);
+            this.wmpb7.TabIndex = 4;
+            this.wmpb7.Visible = false;
+            // 
+            // wmpb11
+            // 
+            this.wmpb11.Enabled = true;
+            this.wmpb11.Location = new System.Drawing.Point(461, 203);
+            this.wmpb11.Name = "wmpb11";
+            this.wmpb11.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb11.OcxState")));
+            this.wmpb11.Size = new System.Drawing.Size(11, 11);
+            this.wmpb11.TabIndex = 4;
+            this.wmpb11.Visible = false;
+            // 
+            // wmpb3
+            // 
+            this.wmpb3.Enabled = true;
+            this.wmpb3.Location = new System.Drawing.Point(461, 80);
+            this.wmpb3.Name = "wmpb3";
+            this.wmpb3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb3.OcxState")));
+            this.wmpb3.Size = new System.Drawing.Size(11, 11);
+            this.wmpb3.TabIndex = 4;
+            this.wmpb3.Visible = false;
+            // 
+            // wmpb14
+            // 
+            this.wmpb14.Enabled = true;
+            this.wmpb14.Location = new System.Drawing.Point(396, 263);
+            this.wmpb14.Name = "wmpb14";
+            this.wmpb14.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb14.OcxState")));
+            this.wmpb14.Size = new System.Drawing.Size(11, 11);
+            this.wmpb14.TabIndex = 4;
+            this.wmpb14.Visible = false;
+            // 
+            // wmpb6
+            // 
+            this.wmpb6.Enabled = true;
+            this.wmpb6.Location = new System.Drawing.Point(396, 140);
+            this.wmpb6.Name = "wmpb6";
+            this.wmpb6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb6.OcxState")));
+            this.wmpb6.Size = new System.Drawing.Size(11, 11);
+            this.wmpb6.TabIndex = 4;
+            this.wmpb6.Visible = false;
+            // 
+            // wmpb10
+            // 
+            this.wmpb10.Enabled = true;
+            this.wmpb10.Location = new System.Drawing.Point(396, 203);
+            this.wmpb10.Name = "wmpb10";
+            this.wmpb10.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb10.OcxState")));
+            this.wmpb10.Size = new System.Drawing.Size(11, 11);
+            this.wmpb10.TabIndex = 4;
+            this.wmpb10.Visible = false;
+            // 
+            // wmpb2
+            // 
+            this.wmpb2.Enabled = true;
+            this.wmpb2.Location = new System.Drawing.Point(396, 80);
+            this.wmpb2.Name = "wmpb2";
+            this.wmpb2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb2.OcxState")));
+            this.wmpb2.Size = new System.Drawing.Size(11, 11);
+            this.wmpb2.TabIndex = 4;
+            this.wmpb2.Visible = false;
+            // 
+            // wmpb13
+            // 
+            this.wmpb13.Enabled = true;
+            this.wmpb13.Location = new System.Drawing.Point(333, 263);
+            this.wmpb13.Name = "wmpb13";
+            this.wmpb13.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb13.OcxState")));
+            this.wmpb13.Size = new System.Drawing.Size(11, 11);
+            this.wmpb13.TabIndex = 4;
+            this.wmpb13.Visible = false;
+            // 
+            // wmpb5
+            // 
+            this.wmpb5.Enabled = true;
+            this.wmpb5.Location = new System.Drawing.Point(333, 140);
+            this.wmpb5.Name = "wmpb5";
+            this.wmpb5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb5.OcxState")));
+            this.wmpb5.Size = new System.Drawing.Size(11, 11);
+            this.wmpb5.TabIndex = 4;
+            this.wmpb5.Visible = false;
+            // 
+            // wmpb9
+            // 
+            this.wmpb9.Enabled = true;
+            this.wmpb9.Location = new System.Drawing.Point(333, 203);
+            this.wmpb9.Name = "wmpb9";
+            this.wmpb9.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb9.OcxState")));
+            this.wmpb9.Size = new System.Drawing.Size(11, 11);
+            this.wmpb9.TabIndex = 4;
+            this.wmpb9.Visible = false;
+            // 
+            // wmpb1
+            // 
+            this.wmpb1.Enabled = true;
+            this.wmpb1.Location = new System.Drawing.Point(333, 80);
+            this.wmpb1.Name = "wmpb1";
+            this.wmpb1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpb1.OcxState")));
+            this.wmpb1.Size = new System.Drawing.Size(11, 11);
+            this.wmpb1.TabIndex = 4;
+            this.wmpb1.Visible = false;
+            // 
+            // wmpa1
+            // 
+            this.wmpa1.Enabled = true;
+            this.wmpa1.Location = new System.Drawing.Point(64, 79);
+            this.wmpa1.Name = "wmpa1";
+            this.wmpa1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpa1.OcxState")));
+            this.wmpa1.Size = new System.Drawing.Size(11, 11);
+            this.wmpa1.TabIndex = 4;
+            this.wmpa1.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(634, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.TabIndex = 93;
+            this.label1.Text = "Loop";
+            // 
+            // pbsecB
+            // 
+            this.pbsecB.Image = global::mixboard.Properties.Resources.sectorB;
+            this.pbsecB.Location = new System.Drawing.Point(573, 268);
+            this.pbsecB.Name = "pbsecB";
+            this.pbsecB.Size = new System.Drawing.Size(46, 40);
+            this.pbsecB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbsecB.TabIndex = 94;
+            this.pbsecB.TabStop = false;
+            // 
+            // pbsecD
+            // 
+            this.pbsecD.Image = global::mixboard.Properties.Resources.sectorDoff;
+            this.pbsecD.Location = new System.Drawing.Point(573, 336);
+            this.pbsecD.Name = "pbsecD";
+            this.pbsecD.Size = new System.Drawing.Size(46, 40);
+            this.pbsecD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbsecD.TabIndex = 94;
+            this.pbsecD.TabStop = false;
+            // 
+            // pbsecC
+            // 
+            this.pbsecC.Image = global::mixboard.Properties.Resources.sectorCoff;
+            this.pbsecC.Location = new System.Drawing.Point(8, 336);
+            this.pbsecC.Name = "pbsecC";
+            this.pbsecC.Size = new System.Drawing.Size(46, 40);
+            this.pbsecC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbsecC.TabIndex = 94;
+            this.pbsecC.TabStop = false;
+            // 
+            // pbsecA
+            // 
+            this.pbsecA.Image = global::mixboard.Properties.Resources.sectorA;
+            this.pbsecA.Location = new System.Drawing.Point(8, 268);
+            this.pbsecA.Name = "pbsecA";
+            this.pbsecA.Size = new System.Drawing.Size(46, 40);
+            this.pbsecA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbsecA.TabIndex = 94;
+            this.pbsecA.TabStop = false;
+            // 
+            // btnd16
+            // 
+            this.btnd16.AllowDrop = true;
+            this.btnd16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd16.BackColor = System.Drawing.Color.Transparent;
+            this.btnd16.FlatAppearance.BorderSize = 0;
+            this.btnd16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd16.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd16.Location = new System.Drawing.Point(514, 508);
+            this.btnd16.Name = "btnd16";
+            this.btnd16.Size = new System.Drawing.Size(64, 64);
+            this.btnd16.TabIndex = 89;
+            this.btnd16.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd16.UseVisualStyleBackColor = false;
+            // 
+            // btnd14
+            // 
+            this.btnd14.AllowDrop = true;
+            this.btnd14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd14.BackColor = System.Drawing.Color.Transparent;
+            this.btnd14.FlatAppearance.BorderSize = 0;
+            this.btnd14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd14.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd14.Location = new System.Drawing.Point(385, 508);
+            this.btnd14.Name = "btnd14";
+            this.btnd14.Size = new System.Drawing.Size(64, 64);
+            this.btnd14.TabIndex = 90;
+            this.btnd14.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd14.UseVisualStyleBackColor = false;
+            // 
+            // btnd15
+            // 
+            this.btnd15.AllowDrop = true;
+            this.btnd15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd15.BackColor = System.Drawing.Color.Transparent;
+            this.btnd15.FlatAppearance.BorderSize = 0;
+            this.btnd15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd15.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd15.Location = new System.Drawing.Point(450, 508);
+            this.btnd15.Name = "btnd15";
+            this.btnd15.Size = new System.Drawing.Size(64, 64);
+            this.btnd15.TabIndex = 91;
+            this.btnd15.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd15.UseVisualStyleBackColor = false;
+            // 
+            // btnd13
+            // 
+            this.btnd13.AllowDrop = true;
+            this.btnd13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd13.BackColor = System.Drawing.Color.Transparent;
+            this.btnd13.FlatAppearance.BorderSize = 0;
+            this.btnd13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd13.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd13.Location = new System.Drawing.Point(321, 508);
+            this.btnd13.Name = "btnd13";
+            this.btnd13.Size = new System.Drawing.Size(64, 64);
+            this.btnd13.TabIndex = 92;
+            this.btnd13.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd13.UseVisualStyleBackColor = false;
+            // 
+            // btnd12
+            // 
+            this.btnd12.AllowDrop = true;
+            this.btnd12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd12.BackColor = System.Drawing.Color.Transparent;
+            this.btnd12.FlatAppearance.BorderSize = 0;
+            this.btnd12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd12.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd12.Location = new System.Drawing.Point(514, 446);
+            this.btnd12.Name = "btnd12";
+            this.btnd12.Size = new System.Drawing.Size(64, 64);
+            this.btnd12.TabIndex = 85;
+            this.btnd12.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd12.UseVisualStyleBackColor = false;
+            // 
+            // btnd10
+            // 
+            this.btnd10.AllowDrop = true;
+            this.btnd10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd10.BackColor = System.Drawing.Color.Transparent;
+            this.btnd10.FlatAppearance.BorderSize = 0;
+            this.btnd10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd10.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd10.Location = new System.Drawing.Point(385, 446);
+            this.btnd10.Name = "btnd10";
+            this.btnd10.Size = new System.Drawing.Size(64, 64);
+            this.btnd10.TabIndex = 86;
+            this.btnd10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd10.UseVisualStyleBackColor = false;
+            // 
+            // btnd11
+            // 
+            this.btnd11.AllowDrop = true;
+            this.btnd11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd11.BackColor = System.Drawing.Color.Transparent;
+            this.btnd11.FlatAppearance.BorderSize = 0;
+            this.btnd11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd11.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd11.Location = new System.Drawing.Point(450, 446);
+            this.btnd11.Name = "btnd11";
+            this.btnd11.Size = new System.Drawing.Size(64, 64);
+            this.btnd11.TabIndex = 87;
+            this.btnd11.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd11.UseVisualStyleBackColor = false;
+            // 
+            // btnd9
+            // 
+            this.btnd9.AllowDrop = true;
+            this.btnd9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd9.BackColor = System.Drawing.Color.Transparent;
+            this.btnd9.FlatAppearance.BorderSize = 0;
+            this.btnd9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd9.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd9.Location = new System.Drawing.Point(321, 446);
+            this.btnd9.Name = "btnd9";
+            this.btnd9.Size = new System.Drawing.Size(64, 64);
+            this.btnd9.TabIndex = 88;
+            this.btnd9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd9.UseVisualStyleBackColor = false;
+            // 
+            // btnd8
+            // 
+            this.btnd8.AllowDrop = true;
+            this.btnd8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd8.BackColor = System.Drawing.Color.Transparent;
+            this.btnd8.FlatAppearance.BorderSize = 0;
+            this.btnd8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd8.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd8.Location = new System.Drawing.Point(514, 385);
+            this.btnd8.Name = "btnd8";
+            this.btnd8.Size = new System.Drawing.Size(64, 64);
+            this.btnd8.TabIndex = 81;
+            this.btnd8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd8.UseVisualStyleBackColor = false;
+            // 
+            // btnd6
+            // 
+            this.btnd6.AllowDrop = true;
+            this.btnd6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd6.BackColor = System.Drawing.Color.Transparent;
+            this.btnd6.FlatAppearance.BorderSize = 0;
+            this.btnd6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd6.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd6.Location = new System.Drawing.Point(385, 385);
+            this.btnd6.Name = "btnd6";
+            this.btnd6.Size = new System.Drawing.Size(64, 64);
+            this.btnd6.TabIndex = 82;
+            this.btnd6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd6.UseVisualStyleBackColor = false;
+            // 
+            // btnd7
+            // 
+            this.btnd7.AllowDrop = true;
+            this.btnd7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd7.BackColor = System.Drawing.Color.Transparent;
+            this.btnd7.FlatAppearance.BorderSize = 0;
+            this.btnd7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd7.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd7.Location = new System.Drawing.Point(450, 385);
+            this.btnd7.Name = "btnd7";
+            this.btnd7.Size = new System.Drawing.Size(64, 64);
+            this.btnd7.TabIndex = 83;
+            this.btnd7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd7.UseVisualStyleBackColor = false;
+            // 
+            // btnd5
+            // 
+            this.btnd5.AllowDrop = true;
+            this.btnd5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd5.BackColor = System.Drawing.Color.Transparent;
+            this.btnd5.FlatAppearance.BorderSize = 0;
+            this.btnd5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd5.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd5.Location = new System.Drawing.Point(321, 385);
+            this.btnd5.Name = "btnd5";
+            this.btnd5.Size = new System.Drawing.Size(64, 64);
+            this.btnd5.TabIndex = 84;
+            this.btnd5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd5.UseVisualStyleBackColor = false;
+            // 
+            // btnd4
+            // 
+            this.btnd4.AllowDrop = true;
+            this.btnd4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd4.BackColor = System.Drawing.Color.Transparent;
+            this.btnd4.FlatAppearance.BorderSize = 0;
+            this.btnd4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd4.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd4.Location = new System.Drawing.Point(514, 325);
+            this.btnd4.Name = "btnd4";
+            this.btnd4.Size = new System.Drawing.Size(64, 64);
+            this.btnd4.TabIndex = 78;
+            this.btnd4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd4.UseVisualStyleBackColor = false;
+            // 
+            // btnd2
+            // 
+            this.btnd2.AllowDrop = true;
+            this.btnd2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd2.BackColor = System.Drawing.Color.Transparent;
+            this.btnd2.FlatAppearance.BorderSize = 0;
+            this.btnd2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd2.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd2.Location = new System.Drawing.Point(385, 325);
+            this.btnd2.Name = "btnd2";
+            this.btnd2.Size = new System.Drawing.Size(64, 64);
+            this.btnd2.TabIndex = 77;
+            this.btnd2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd2.UseVisualStyleBackColor = false;
+            // 
+            // btnd1
+            // 
+            this.btnd1.AllowDrop = true;
+            this.btnd1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd1.BackColor = System.Drawing.Color.Transparent;
+            this.btnd1.CausesValidation = false;
+            this.btnd1.FlatAppearance.BorderSize = 0;
+            this.btnd1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd1.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd1.Location = new System.Drawing.Point(321, 325);
+            this.btnd1.Name = "btnd1";
+            this.btnd1.Size = new System.Drawing.Size(64, 64);
+            this.btnd1.TabIndex = 80;
+            this.btnd1.TabStop = false;
+            this.btnd1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd1.UseMnemonic = false;
+            this.btnd1.UseVisualStyleBackColor = false;
+            // 
+            // btnd3
+            // 
+            this.btnd3.AllowDrop = true;
+            this.btnd3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnd3.BackColor = System.Drawing.Color.Transparent;
+            this.btnd3.FlatAppearance.BorderSize = 0;
+            this.btnd3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnd3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnd3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnd3.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnd3.Location = new System.Drawing.Point(450, 325);
+            this.btnd3.Name = "btnd3";
+            this.btnd3.Size = new System.Drawing.Size(64, 64);
+            this.btnd3.TabIndex = 79;
+            this.btnd3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnd3.UseVisualStyleBackColor = false;
+            // 
+            // btnc16
+            // 
+            this.btnc16.AllowDrop = true;
+            this.btnc16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc16.BackColor = System.Drawing.Color.Transparent;
+            this.btnc16.FlatAppearance.BorderSize = 0;
+            this.btnc16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc16.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc16.Location = new System.Drawing.Point(245, 508);
+            this.btnc16.Name = "btnc16";
+            this.btnc16.Size = new System.Drawing.Size(64, 64);
+            this.btnc16.TabIndex = 57;
+            this.btnc16.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc16.UseVisualStyleBackColor = false;
+            this.btnc16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc16_MouseDown);
+            this.btnc16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc16_MouseUp);
+            // 
+            // btnc14
+            // 
+            this.btnc14.AllowDrop = true;
+            this.btnc14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc14.BackColor = System.Drawing.Color.Transparent;
+            this.btnc14.FlatAppearance.BorderSize = 0;
+            this.btnc14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc14.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc14.Location = new System.Drawing.Point(116, 508);
+            this.btnc14.Name = "btnc14";
+            this.btnc14.Size = new System.Drawing.Size(64, 64);
+            this.btnc14.TabIndex = 58;
+            this.btnc14.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc14.UseVisualStyleBackColor = false;
+            this.btnc14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc14_MouseDown);
+            this.btnc14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc14_MouseUp);
+            // 
+            // btnc15
+            // 
+            this.btnc15.AllowDrop = true;
+            this.btnc15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc15.BackColor = System.Drawing.Color.Transparent;
+            this.btnc15.FlatAppearance.BorderSize = 0;
+            this.btnc15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc15.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc15.Location = new System.Drawing.Point(181, 508);
+            this.btnc15.Name = "btnc15";
+            this.btnc15.Size = new System.Drawing.Size(64, 64);
+            this.btnc15.TabIndex = 59;
+            this.btnc15.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc15.UseVisualStyleBackColor = false;
+            this.btnc15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc15_MouseDown);
+            this.btnc15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc15_MouseUp);
+            // 
+            // btnc13
+            // 
+            this.btnc13.AllowDrop = true;
+            this.btnc13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc13.BackColor = System.Drawing.Color.Transparent;
+            this.btnc13.FlatAppearance.BorderSize = 0;
+            this.btnc13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc13.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc13.Location = new System.Drawing.Point(52, 508);
+            this.btnc13.Name = "btnc13";
+            this.btnc13.Size = new System.Drawing.Size(64, 64);
+            this.btnc13.TabIndex = 60;
+            this.btnc13.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc13.UseVisualStyleBackColor = false;
+            this.btnc13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc13_MouseDown);
+            this.btnc13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc13_MouseUp);
+            // 
+            // btnc12
+            // 
+            this.btnc12.AllowDrop = true;
+            this.btnc12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc12.BackColor = System.Drawing.Color.Transparent;
+            this.btnc12.FlatAppearance.BorderSize = 0;
+            this.btnc12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc12.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc12.Location = new System.Drawing.Point(245, 446);
+            this.btnc12.Name = "btnc12";
+            this.btnc12.Size = new System.Drawing.Size(64, 64);
+            this.btnc12.TabIndex = 53;
+            this.btnc12.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc12.UseVisualStyleBackColor = false;
+            this.btnc12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc12_MouseDown);
+            this.btnc12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc12_MouseUp);
+            // 
+            // btnc10
+            // 
+            this.btnc10.AllowDrop = true;
+            this.btnc10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc10.BackColor = System.Drawing.Color.Transparent;
+            this.btnc10.FlatAppearance.BorderSize = 0;
+            this.btnc10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc10.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc10.Location = new System.Drawing.Point(116, 446);
+            this.btnc10.Name = "btnc10";
+            this.btnc10.Size = new System.Drawing.Size(64, 64);
+            this.btnc10.TabIndex = 54;
+            this.btnc10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc10.UseVisualStyleBackColor = false;
+            this.btnc10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc10_MouseDown);
+            this.btnc10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc10_MouseUp);
+            // 
+            // btnc11
+            // 
+            this.btnc11.AllowDrop = true;
+            this.btnc11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc11.BackColor = System.Drawing.Color.Transparent;
+            this.btnc11.FlatAppearance.BorderSize = 0;
+            this.btnc11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc11.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc11.Location = new System.Drawing.Point(181, 446);
+            this.btnc11.Name = "btnc11";
+            this.btnc11.Size = new System.Drawing.Size(64, 64);
+            this.btnc11.TabIndex = 55;
+            this.btnc11.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc11.UseVisualStyleBackColor = false;
+            this.btnc11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc11_MouseDown);
+            this.btnc11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc11_MouseUp);
+            // 
+            // btnc9
+            // 
+            this.btnc9.AllowDrop = true;
+            this.btnc9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc9.BackColor = System.Drawing.Color.Transparent;
+            this.btnc9.FlatAppearance.BorderSize = 0;
+            this.btnc9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc9.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc9.Location = new System.Drawing.Point(52, 446);
+            this.btnc9.Name = "btnc9";
+            this.btnc9.Size = new System.Drawing.Size(64, 64);
+            this.btnc9.TabIndex = 56;
+            this.btnc9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc9.UseVisualStyleBackColor = false;
+            this.btnc9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc9_MouseDown);
+            this.btnc9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc9_MouseUp);
+            // 
+            // btnc8
+            // 
+            this.btnc8.AllowDrop = true;
+            this.btnc8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc8.BackColor = System.Drawing.Color.Transparent;
+            this.btnc8.FlatAppearance.BorderSize = 0;
+            this.btnc8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc8.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc8.Location = new System.Drawing.Point(245, 385);
+            this.btnc8.Name = "btnc8";
+            this.btnc8.Size = new System.Drawing.Size(64, 64);
+            this.btnc8.TabIndex = 49;
+            this.btnc8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc8.UseVisualStyleBackColor = false;
+            this.btnc8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc8_MouseDown);
+            this.btnc8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc8_MouseUp);
+            // 
+            // btnc6
+            // 
+            this.btnc6.AllowDrop = true;
+            this.btnc6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc6.BackColor = System.Drawing.Color.Transparent;
+            this.btnc6.FlatAppearance.BorderSize = 0;
+            this.btnc6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc6.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc6.Location = new System.Drawing.Point(116, 385);
+            this.btnc6.Name = "btnc6";
+            this.btnc6.Size = new System.Drawing.Size(64, 64);
+            this.btnc6.TabIndex = 50;
+            this.btnc6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc6.UseVisualStyleBackColor = false;
+            this.btnc6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc6_MouseDown);
+            this.btnc6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc6_MouseUp);
+            // 
+            // btnc7
+            // 
+            this.btnc7.AllowDrop = true;
+            this.btnc7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc7.BackColor = System.Drawing.Color.Transparent;
+            this.btnc7.FlatAppearance.BorderSize = 0;
+            this.btnc7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc7.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc7.Location = new System.Drawing.Point(181, 385);
+            this.btnc7.Name = "btnc7";
+            this.btnc7.Size = new System.Drawing.Size(64, 64);
+            this.btnc7.TabIndex = 51;
+            this.btnc7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc7.UseVisualStyleBackColor = false;
+            this.btnc7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc7_MouseDown);
+            this.btnc7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc7_MouseUp);
+            // 
+            // btnc5
+            // 
+            this.btnc5.AllowDrop = true;
+            this.btnc5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc5.BackColor = System.Drawing.Color.Transparent;
+            this.btnc5.FlatAppearance.BorderSize = 0;
+            this.btnc5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc5.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc5.Location = new System.Drawing.Point(52, 385);
+            this.btnc5.Name = "btnc5";
+            this.btnc5.Size = new System.Drawing.Size(64, 64);
+            this.btnc5.TabIndex = 52;
+            this.btnc5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc5.UseVisualStyleBackColor = false;
+            this.btnc5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc5_MouseDown);
+            this.btnc5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc5_MouseUp);
+            // 
+            // btnc4
+            // 
+            this.btnc4.AllowDrop = true;
+            this.btnc4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc4.BackColor = System.Drawing.Color.Transparent;
+            this.btnc4.FlatAppearance.BorderSize = 0;
+            this.btnc4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc4.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc4.Location = new System.Drawing.Point(245, 325);
+            this.btnc4.Name = "btnc4";
+            this.btnc4.Size = new System.Drawing.Size(64, 64);
+            this.btnc4.TabIndex = 46;
+            this.btnc4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc4.UseVisualStyleBackColor = false;
+            this.btnc4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc4_MouseDown);
+            this.btnc4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc4_MouseUp);
+            // 
+            // btnc2
+            // 
+            this.btnc2.AllowDrop = true;
+            this.btnc2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc2.BackColor = System.Drawing.Color.Transparent;
+            this.btnc2.FlatAppearance.BorderSize = 0;
+            this.btnc2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc2.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc2.Location = new System.Drawing.Point(116, 325);
+            this.btnc2.Name = "btnc2";
+            this.btnc2.Size = new System.Drawing.Size(64, 64);
+            this.btnc2.TabIndex = 45;
+            this.btnc2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc2.UseVisualStyleBackColor = false;
+            this.btnc2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc2_MouseDown);
+            this.btnc2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc2_MouseUp);
+            // 
+            // btnc1
+            // 
+            this.btnc1.AllowDrop = true;
+            this.btnc1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc1.BackColor = System.Drawing.Color.Transparent;
+            this.btnc1.CausesValidation = false;
+            this.btnc1.FlatAppearance.BorderSize = 0;
+            this.btnc1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc1.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc1.Location = new System.Drawing.Point(52, 325);
+            this.btnc1.Name = "btnc1";
+            this.btnc1.Size = new System.Drawing.Size(64, 64);
+            this.btnc1.TabIndex = 48;
+            this.btnc1.TabStop = false;
+            this.btnc1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc1.UseMnemonic = false;
+            this.btnc1.UseVisualStyleBackColor = false;
+            this.btnc1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc1_MouseDown);
+            this.btnc1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc1_MouseUp);
+            // 
+            // btnc3
+            // 
+            this.btnc3.AllowDrop = true;
+            this.btnc3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnc3.BackColor = System.Drawing.Color.Transparent;
+            this.btnc3.FlatAppearance.BorderSize = 0;
+            this.btnc3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnc3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnc3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnc3.Image = global::mixboard.Properties.Resources.btndefault;
+            this.btnc3.Location = new System.Drawing.Point(181, 325);
+            this.btnc3.Name = "btnc3";
+            this.btnc3.Size = new System.Drawing.Size(64, 64);
+            this.btnc3.TabIndex = 47;
+            this.btnc3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnc3.UseVisualStyleBackColor = false;
+            this.btnc3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnc3_MouseDown);
+            this.btnc3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnc3_MouseUp);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::mixboard.Properties.Resources.mixboardtitulo;
+            this.pictureBox2.Location = new System.Drawing.Point(238, 27);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(148, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -1016,83 +2140,6 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // tm
-            // 
-            this.tm.Interval = 13;
-            this.tm.Tick += new System.EventHandler(this.tm_Tick);
-            // 
-            // wmpl1
-            // 
-            this.wmpl1.Enabled = true;
-            this.wmpl1.Location = new System.Drawing.Point(643, 75);
-            this.wmpl1.Name = "wmpl1";
-            this.wmpl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl1.OcxState")));
-            this.wmpl1.Size = new System.Drawing.Size(11, 11);
-            this.wmpl1.TabIndex = 4;
-            this.wmpl1.Visible = false;
-            this.wmpl1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.wmpl1_PlayStateChange);
-            // 
-            // wmpl2
-            // 
-            this.wmpl2.Enabled = true;
-            this.wmpl2.Location = new System.Drawing.Point(643, 155);
-            this.wmpl2.Name = "wmpl2";
-            this.wmpl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl2.OcxState")));
-            this.wmpl2.Size = new System.Drawing.Size(11, 11);
-            this.wmpl2.TabIndex = 4;
-            this.wmpl2.Visible = false;
-            this.wmpl2.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.wmpl2_PlayStateChange);
-            // 
-            // wmpl3
-            // 
-            this.wmpl3.Enabled = true;
-            this.wmpl3.Location = new System.Drawing.Point(647, 242);
-            this.wmpl3.Name = "wmpl3";
-            this.wmpl3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl3.OcxState")));
-            this.wmpl3.Size = new System.Drawing.Size(11, 11);
-            this.wmpl3.TabIndex = 4;
-            this.wmpl3.Visible = false;
-            // 
-            // wmpl4
-            // 
-            this.wmpl4.Enabled = true;
-            this.wmpl4.Location = new System.Drawing.Point(647, 321);
-            this.wmpl4.Name = "wmpl4";
-            this.wmpl4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl4.OcxState")));
-            this.wmpl4.Size = new System.Drawing.Size(11, 11);
-            this.wmpl4.TabIndex = 4;
-            this.wmpl4.Visible = false;
-            // 
-            // wmpl5
-            // 
-            this.wmpl5.Enabled = true;
-            this.wmpl5.Location = new System.Drawing.Point(647, 396);
-            this.wmpl5.Name = "wmpl5";
-            this.wmpl5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl5.OcxState")));
-            this.wmpl5.Size = new System.Drawing.Size(11, 11);
-            this.wmpl5.TabIndex = 4;
-            this.wmpl5.Visible = false;
-            // 
-            // wmpl6
-            // 
-            this.wmpl6.Enabled = true;
-            this.wmpl6.Location = new System.Drawing.Point(647, 483);
-            this.wmpl6.Name = "wmpl6";
-            this.wmpl6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpl6.OcxState")));
-            this.wmpl6.Size = new System.Drawing.Size(11, 11);
-            this.wmpl6.TabIndex = 4;
-            this.wmpl6.Visible = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::mixboard.Properties.Resources.mixboardtitulo;
-            this.pictureBox2.Location = new System.Drawing.Point(283, 31);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(148, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
-            // 
             // btna16
             // 
             this.btna16.AllowDrop = true;
@@ -1103,7 +2150,7 @@
             this.btna16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna16.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna16.Location = new System.Drawing.Point(281, 251);
+            this.btna16.Location = new System.Drawing.Point(245, 251);
             this.btna16.Name = "btna16";
             this.btna16.Size = new System.Drawing.Size(64, 64);
             this.btna16.TabIndex = 23;
@@ -1126,7 +2173,7 @@
             this.btna14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna14.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna14.Location = new System.Drawing.Point(152, 251);
+            this.btna14.Location = new System.Drawing.Point(116, 251);
             this.btna14.Name = "btna14";
             this.btna14.Size = new System.Drawing.Size(64, 64);
             this.btna14.TabIndex = 24;
@@ -1149,7 +2196,7 @@
             this.btna15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna15.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna15.Location = new System.Drawing.Point(217, 251);
+            this.btna15.Location = new System.Drawing.Point(181, 251);
             this.btna15.Name = "btna15";
             this.btna15.Size = new System.Drawing.Size(64, 64);
             this.btna15.TabIndex = 25;
@@ -1172,7 +2219,7 @@
             this.btna13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna13.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna13.Location = new System.Drawing.Point(88, 251);
+            this.btna13.Location = new System.Drawing.Point(52, 251);
             this.btna13.Name = "btna13";
             this.btna13.Size = new System.Drawing.Size(64, 64);
             this.btna13.TabIndex = 26;
@@ -1195,7 +2242,7 @@
             this.btna12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna12.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna12.Location = new System.Drawing.Point(281, 189);
+            this.btna12.Location = new System.Drawing.Point(245, 189);
             this.btna12.Name = "btna12";
             this.btna12.Size = new System.Drawing.Size(64, 64);
             this.btna12.TabIndex = 19;
@@ -1218,7 +2265,7 @@
             this.btna10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna10.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna10.Location = new System.Drawing.Point(152, 189);
+            this.btna10.Location = new System.Drawing.Point(116, 189);
             this.btna10.Name = "btna10";
             this.btna10.Size = new System.Drawing.Size(64, 64);
             this.btna10.TabIndex = 20;
@@ -1241,7 +2288,7 @@
             this.btna11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna11.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna11.Location = new System.Drawing.Point(217, 189);
+            this.btna11.Location = new System.Drawing.Point(181, 189);
             this.btna11.Name = "btna11";
             this.btna11.Size = new System.Drawing.Size(64, 64);
             this.btna11.TabIndex = 21;
@@ -1264,7 +2311,7 @@
             this.btna9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna9.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna9.Location = new System.Drawing.Point(88, 189);
+            this.btna9.Location = new System.Drawing.Point(52, 189);
             this.btna9.Name = "btna9";
             this.btna9.Size = new System.Drawing.Size(64, 64);
             this.btna9.TabIndex = 22;
@@ -1287,7 +2334,7 @@
             this.btna8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna8.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna8.Location = new System.Drawing.Point(281, 128);
+            this.btna8.Location = new System.Drawing.Point(245, 128);
             this.btna8.Name = "btna8";
             this.btna8.Size = new System.Drawing.Size(64, 64);
             this.btna8.TabIndex = 15;
@@ -1310,7 +2357,7 @@
             this.btna6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna6.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna6.Location = new System.Drawing.Point(152, 128);
+            this.btna6.Location = new System.Drawing.Point(116, 128);
             this.btna6.Name = "btna6";
             this.btna6.Size = new System.Drawing.Size(64, 64);
             this.btna6.TabIndex = 16;
@@ -1333,7 +2380,7 @@
             this.btna7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna7.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna7.Location = new System.Drawing.Point(217, 128);
+            this.btna7.Location = new System.Drawing.Point(181, 128);
             this.btna7.Name = "btna7";
             this.btna7.Size = new System.Drawing.Size(64, 64);
             this.btna7.TabIndex = 17;
@@ -1356,7 +2403,7 @@
             this.btna5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna5.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna5.Location = new System.Drawing.Point(88, 128);
+            this.btna5.Location = new System.Drawing.Point(52, 128);
             this.btna5.Name = "btna5";
             this.btna5.Size = new System.Drawing.Size(64, 64);
             this.btna5.TabIndex = 18;
@@ -1379,7 +2426,7 @@
             this.btna4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna4.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna4.Location = new System.Drawing.Point(281, 68);
+            this.btna4.Location = new System.Drawing.Point(245, 68);
             this.btna4.Name = "btna4";
             this.btna4.Size = new System.Drawing.Size(64, 64);
             this.btna4.TabIndex = 14;
@@ -1402,7 +2449,7 @@
             this.btna2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna2.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna2.Location = new System.Drawing.Point(152, 68);
+            this.btna2.Location = new System.Drawing.Point(116, 68);
             this.btna2.Name = "btna2";
             this.btna2.Size = new System.Drawing.Size(64, 64);
             this.btna2.TabIndex = 14;
@@ -1426,7 +2473,7 @@
             this.btnloop6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnloop6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnloop6.Image = global::mixboard.Properties.Resources.btnloop2;
-            this.btnloop6.Location = new System.Drawing.Point(616, 480);
+            this.btnloop6.Location = new System.Drawing.Point(616, 486);
             this.btnloop6.Name = "btnloop6";
             this.btnloop6.Size = new System.Drawing.Size(72, 70);
             this.btnloop6.TabIndex = 14;
@@ -1452,7 +2499,7 @@
             this.btnloop5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnloop5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnloop5.Image = global::mixboard.Properties.Resources.btnloop2;
-            this.btnloop5.Location = new System.Drawing.Point(616, 393);
+            this.btnloop5.Location = new System.Drawing.Point(616, 399);
             this.btnloop5.Name = "btnloop5";
             this.btnloop5.Size = new System.Drawing.Size(72, 70);
             this.btnloop5.TabIndex = 14;
@@ -1478,7 +2525,7 @@
             this.btnloop4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnloop4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnloop4.Image = global::mixboard.Properties.Resources.btnloop2;
-            this.btnloop4.Location = new System.Drawing.Point(616, 312);
+            this.btnloop4.Location = new System.Drawing.Point(616, 318);
             this.btnloop4.Name = "btnloop4";
             this.btnloop4.Size = new System.Drawing.Size(72, 70);
             this.btnloop4.TabIndex = 14;
@@ -1505,7 +2552,7 @@
             this.btnloop2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnloop2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnloop2.Image = global::mixboard.Properties.Resources.btnloop2;
-            this.btnloop2.Location = new System.Drawing.Point(616, 152);
+            this.btnloop2.Location = new System.Drawing.Point(616, 158);
             this.btnloop2.Name = "btnloop2";
             this.btnloop2.Size = new System.Drawing.Size(72, 70);
             this.btnloop2.TabIndex = 14;
@@ -1520,25 +2567,6 @@
             this.btnloop2.MouseLeave += new System.EventHandler(this.btnb16_MouseLeave);
             this.btnloop2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnb16_MouseUp);
             // 
-            // stripTicks
-            // 
-            this.stripTicks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmbtiempo});
-            this.stripTicks.Name = "stripTicks";
-            this.stripTicks.Size = new System.Drawing.Size(153, 31);
-            // 
-            // cmbtiempo
-            // 
-            this.cmbtiempo.Items.AddRange(new object[] {
-            "1 Tick",
-            "2 Ticks",
-            "4 Ticks",
-            "8 Ticks",
-            "Default"});
-            this.cmbtiempo.Name = "cmbtiempo";
-            this.cmbtiempo.Size = new System.Drawing.Size(92, 23);
-            this.cmbtiempo.Text = "Tiempo loop";
-            // 
             // btnloop3
             // 
             this.btnloop3.AllowDrop = true;
@@ -1550,7 +2578,7 @@
             this.btnloop3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnloop3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnloop3.Image = global::mixboard.Properties.Resources.btnloop2;
-            this.btnloop3.Location = new System.Drawing.Point(616, 232);
+            this.btnloop3.Location = new System.Drawing.Point(616, 238);
             this.btnloop3.Name = "btnloop3";
             this.btnloop3.Size = new System.Drawing.Size(72, 70);
             this.btnloop3.TabIndex = 14;
@@ -1577,7 +2605,7 @@
             this.btnloop1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnloop1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnloop1.Image = global::mixboard.Properties.Resources.btnloop2;
-            this.btnloop1.Location = new System.Drawing.Point(616, 72);
+            this.btnloop1.Location = new System.Drawing.Point(616, 78);
             this.btnloop1.Name = "btnloop1";
             this.btnloop1.Size = new System.Drawing.Size(72, 70);
             this.btnloop1.TabIndex = 14;
@@ -1600,7 +2628,7 @@
             this.btnb16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb16.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb16.Location = new System.Drawing.Point(548, 251);
+            this.btnb16.Location = new System.Drawing.Point(512, 251);
             this.btnb16.Name = "btnb16";
             this.btnb16.Size = new System.Drawing.Size(64, 64);
             this.btnb16.TabIndex = 14;
@@ -1626,7 +2654,7 @@
             this.btnb15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb15.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb15.Location = new System.Drawing.Point(485, 251);
+            this.btnb15.Location = new System.Drawing.Point(449, 251);
             this.btnb15.Name = "btnb15";
             this.btnb15.Size = new System.Drawing.Size(64, 64);
             this.btnb15.TabIndex = 14;
@@ -1652,7 +2680,7 @@
             this.btnb8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb8.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb8.Location = new System.Drawing.Point(548, 128);
+            this.btnb8.Location = new System.Drawing.Point(512, 128);
             this.btnb8.Name = "btnb8";
             this.btnb8.Size = new System.Drawing.Size(64, 64);
             this.btnb8.TabIndex = 14;
@@ -1678,7 +2706,7 @@
             this.btnb12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb12.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb12.Location = new System.Drawing.Point(548, 191);
+            this.btnb12.Location = new System.Drawing.Point(512, 191);
             this.btnb12.Name = "btnb12";
             this.btnb12.Size = new System.Drawing.Size(64, 64);
             this.btnb12.TabIndex = 14;
@@ -1704,7 +2732,7 @@
             this.btnb7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb7.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb7.Location = new System.Drawing.Point(485, 128);
+            this.btnb7.Location = new System.Drawing.Point(449, 128);
             this.btnb7.Name = "btnb7";
             this.btnb7.Size = new System.Drawing.Size(64, 64);
             this.btnb7.TabIndex = 14;
@@ -1730,7 +2758,7 @@
             this.btnb14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb14.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb14.Location = new System.Drawing.Point(420, 251);
+            this.btnb14.Location = new System.Drawing.Point(384, 251);
             this.btnb14.Name = "btnb14";
             this.btnb14.Size = new System.Drawing.Size(64, 64);
             this.btnb14.TabIndex = 14;
@@ -1756,7 +2784,7 @@
             this.btnb4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb4.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb4.Location = new System.Drawing.Point(548, 68);
+            this.btnb4.Location = new System.Drawing.Point(512, 68);
             this.btnb4.Name = "btnb4";
             this.btnb4.Size = new System.Drawing.Size(64, 64);
             this.btnb4.TabIndex = 14;
@@ -1782,7 +2810,7 @@
             this.btnb11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb11.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb11.Location = new System.Drawing.Point(485, 191);
+            this.btnb11.Location = new System.Drawing.Point(449, 191);
             this.btnb11.Name = "btnb11";
             this.btnb11.Size = new System.Drawing.Size(64, 64);
             this.btnb11.TabIndex = 14;
@@ -1808,7 +2836,7 @@
             this.btnb6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb6.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb6.Location = new System.Drawing.Point(420, 128);
+            this.btnb6.Location = new System.Drawing.Point(384, 128);
             this.btnb6.Name = "btnb6";
             this.btnb6.Size = new System.Drawing.Size(64, 64);
             this.btnb6.TabIndex = 14;
@@ -1834,7 +2862,7 @@
             this.btnb13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb13.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb13.Location = new System.Drawing.Point(357, 251);
+            this.btnb13.Location = new System.Drawing.Point(321, 251);
             this.btnb13.Name = "btnb13";
             this.btnb13.Size = new System.Drawing.Size(64, 64);
             this.btnb13.TabIndex = 14;
@@ -1860,7 +2888,7 @@
             this.btnb3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb3.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb3.Location = new System.Drawing.Point(485, 68);
+            this.btnb3.Location = new System.Drawing.Point(449, 68);
             this.btnb3.Name = "btnb3";
             this.btnb3.Size = new System.Drawing.Size(64, 64);
             this.btnb3.TabIndex = 14;
@@ -1886,7 +2914,7 @@
             this.btnb10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb10.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb10.Location = new System.Drawing.Point(420, 191);
+            this.btnb10.Location = new System.Drawing.Point(384, 191);
             this.btnb10.Name = "btnb10";
             this.btnb10.Size = new System.Drawing.Size(64, 64);
             this.btnb10.TabIndex = 14;
@@ -1912,7 +2940,7 @@
             this.btnb5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb5.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb5.Location = new System.Drawing.Point(357, 128);
+            this.btnb5.Location = new System.Drawing.Point(321, 128);
             this.btnb5.Name = "btnb5";
             this.btnb5.Size = new System.Drawing.Size(64, 64);
             this.btnb5.TabIndex = 14;
@@ -1938,7 +2966,7 @@
             this.btnb9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb9.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb9.Location = new System.Drawing.Point(357, 191);
+            this.btnb9.Location = new System.Drawing.Point(321, 191);
             this.btnb9.Name = "btnb9";
             this.btnb9.Size = new System.Drawing.Size(64, 64);
             this.btnb9.TabIndex = 14;
@@ -1964,7 +2992,7 @@
             this.btnb2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb2.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb2.Location = new System.Drawing.Point(420, 68);
+            this.btnb2.Location = new System.Drawing.Point(384, 68);
             this.btnb2.Name = "btnb2";
             this.btnb2.Size = new System.Drawing.Size(64, 64);
             this.btnb2.TabIndex = 14;
@@ -1990,7 +3018,7 @@
             this.btnb1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnb1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnb1.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btnb1.Location = new System.Drawing.Point(357, 68);
+            this.btnb1.Location = new System.Drawing.Point(321, 68);
             this.btnb1.Name = "btnb1";
             this.btnb1.Size = new System.Drawing.Size(64, 64);
             this.btnb1.TabIndex = 14;
@@ -2016,7 +3044,7 @@
             this.btna1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna1.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna1.Location = new System.Drawing.Point(88, 68);
+            this.btna1.Location = new System.Drawing.Point(52, 68);
             this.btna1.Name = "btna1";
             this.btna1.Size = new System.Drawing.Size(64, 64);
             this.btna1.TabIndex = 14;
@@ -2041,7 +3069,7 @@
             this.btna3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btna3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btna3.Image = global::mixboard.Properties.Resources.btndefault;
-            this.btna3.Location = new System.Drawing.Point(217, 68);
+            this.btna3.Location = new System.Drawing.Point(181, 68);
             this.btna3.Name = "btna3";
             this.btna3.Size = new System.Drawing.Size(64, 64);
             this.btna3.TabIndex = 14;
@@ -2066,34 +3094,63 @@
             this.pbmodo.TabStop = false;
             this.pbmodo.Click += new System.EventHandler(this.pbmodo_Click);
             // 
-            // tmloop1
+            // barra
             // 
-            this.tmloop1.Interval = 150;
-            this.tmloop1.Tick += new System.EventHandler(this.tmloop_Tick);
+            this.barra.Image = global::mixboard.Properties.Resources.barra;
+            this.barra.Location = new System.Drawing.Point(188, 262);
+            this.barra.Name = "barra";
+            this.barra.Size = new System.Drawing.Size(24, 322);
+            this.barra.TabIndex = 11;
+            this.barra.TabStop = false;
             // 
-            // tmloop2
+            // ayudacarga2
             // 
-            this.tmloop2.Interval = 150;
-            this.tmloop2.Tick += new System.EventHandler(this.tmloop2_Tick);
+            this.ayudacarga2.Image = global::mixboard.Properties.Resources.ayuda;
+            this.ayudacarga2.Location = new System.Drawing.Point(174, 111);
+            this.ayudacarga2.Name = "ayudacarga2";
+            this.ayudacarga2.Size = new System.Drawing.Size(19, 18);
+            this.ayudacarga2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ayudacarga2.TabIndex = 9;
+            this.ayudacarga2.TabStop = false;
             // 
-            // stripTicks2
+            // ayudacarga1
             // 
-            this.stripTicks2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmbtiempo2});
-            this.stripTicks2.Name = "stripTicks";
-            this.stripTicks2.Size = new System.Drawing.Size(153, 31);
+            this.ayudacarga1.Image = global::mixboard.Properties.Resources.ayuda;
+            this.ayudacarga1.Location = new System.Drawing.Point(188, 49);
+            this.ayudacarga1.Name = "ayudacarga1";
+            this.ayudacarga1.Size = new System.Drawing.Size(19, 18);
+            this.ayudacarga1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ayudacarga1.TabIndex = 9;
+            this.ayudacarga1.TabStop = false;
+            this.ayudacarga1.Click += new System.EventHandler(this.ayudacarga1_Click);
+            this.ayudacarga1.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
+            this.ayudacarga1.MouseLeave += new System.EventHandler(this.leave_ayuda);
             // 
-            // cmbtiempo2
+            // pbdesplegado
             // 
-            this.cmbtiempo2.Items.AddRange(new object[] {
-            "1 Tick",
-            "2 Ticks",
-            "4 Ticks",
-            "8 Ticks",
-            "Default"});
-            this.cmbtiempo2.Name = "cmbtiempo2";
-            this.cmbtiempo2.Size = new System.Drawing.Size(92, 23);
-            this.cmbtiempo2.Text = "Tiempo loop";
+            this.pbdesplegado.Image = global::mixboard.Properties.Resources.logoedicion1;
+            this.pbdesplegado.Location = new System.Drawing.Point(1, -1);
+            this.pbdesplegado.Name = "pbdesplegado";
+            this.pbdesplegado.Size = new System.Drawing.Size(37, 38);
+            this.pbdesplegado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbdesplegado.TabIndex = 5;
+            this.pbdesplegado.TabStop = false;
+            this.pbdesplegado.Click += new System.EventHandler(this.pbmodo_Click);
+            this.pbdesplegado.MouseEnter += new System.EventHandler(this.pbdesplegado_MouseEnter);
+            this.pbdesplegado.MouseLeave += new System.EventHandler(this.pbdesplegado_MouseLeave);
+            // 
+            // pbdesplegar
+            // 
+            this.pbdesplegar.Image = global::mixboard.Properties.Resources.logoedicionorange;
+            this.pbdesplegar.Location = new System.Drawing.Point(0, 0);
+            this.pbdesplegar.Name = "pbdesplegar";
+            this.pbdesplegar.Size = new System.Drawing.Size(38, 37);
+            this.pbdesplegar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbdesplegar.TabIndex = 6;
+            this.pbdesplegar.TabStop = false;
+            this.pbdesplegar.Click += new System.EventHandler(this.pbmodo_Click);
+            this.pbdesplegar.MouseEnter += new System.EventHandler(this.pbdesplegar_MouseEnter);
+            this.pbdesplegar.MouseLeave += new System.EventHandler(this.pbdesplegar_MouseLeave);
             // 
             // form1
             // 
@@ -2103,6 +3160,75 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(913, 633);
+            this.Controls.Add(this.pbsecB);
+            this.Controls.Add(this.pbsecD);
+            this.Controls.Add(this.pbsecC);
+            this.Controls.Add(this.pbsecA);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.wmpd16);
+            this.Controls.Add(this.wmpd15);
+            this.Controls.Add(this.wmpd14);
+            this.Controls.Add(this.wmpd13);
+            this.Controls.Add(this.wmpd12);
+            this.Controls.Add(this.wmpd11);
+            this.Controls.Add(this.wmpd10);
+            this.Controls.Add(this.wmpd9);
+            this.Controls.Add(this.wmpd6);
+            this.Controls.Add(this.wmpd8);
+            this.Controls.Add(this.wmpd5);
+            this.Controls.Add(this.wmpd7);
+            this.Controls.Add(this.wmpd4);
+            this.Controls.Add(this.wmpd3);
+            this.Controls.Add(this.wmpd2);
+            this.Controls.Add(this.wmpd1);
+            this.Controls.Add(this.btnd16);
+            this.Controls.Add(this.btnd14);
+            this.Controls.Add(this.btnd15);
+            this.Controls.Add(this.btnd13);
+            this.Controls.Add(this.btnd12);
+            this.Controls.Add(this.btnd10);
+            this.Controls.Add(this.btnd11);
+            this.Controls.Add(this.btnd9);
+            this.Controls.Add(this.btnd8);
+            this.Controls.Add(this.btnd6);
+            this.Controls.Add(this.btnd7);
+            this.Controls.Add(this.btnd5);
+            this.Controls.Add(this.btnd4);
+            this.Controls.Add(this.btnd2);
+            this.Controls.Add(this.btnd1);
+            this.Controls.Add(this.btnd3);
+            this.Controls.Add(this.wmpc16);
+            this.Controls.Add(this.wmpc15);
+            this.Controls.Add(this.wmpc14);
+            this.Controls.Add(this.wmpc13);
+            this.Controls.Add(this.wmpc12);
+            this.Controls.Add(this.wmpc11);
+            this.Controls.Add(this.wmpc10);
+            this.Controls.Add(this.wmpc9);
+            this.Controls.Add(this.wmpc6);
+            this.Controls.Add(this.wmpc8);
+            this.Controls.Add(this.wmpc5);
+            this.Controls.Add(this.wmpc7);
+            this.Controls.Add(this.wmpc4);
+            this.Controls.Add(this.wmpc3);
+            this.Controls.Add(this.wmpc2);
+            this.Controls.Add(this.wmpc1);
+            this.Controls.Add(this.btnc16);
+            this.Controls.Add(this.btnc14);
+            this.Controls.Add(this.btnc15);
+            this.Controls.Add(this.btnc13);
+            this.Controls.Add(this.btnc12);
+            this.Controls.Add(this.btnc10);
+            this.Controls.Add(this.btnc11);
+            this.Controls.Add(this.btnc9);
+            this.Controls.Add(this.btnc8);
+            this.Controls.Add(this.btnc6);
+            this.Controls.Add(this.btnc7);
+            this.Controls.Add(this.btnc5);
+            this.Controls.Add(this.btnc4);
+            this.Controls.Add(this.btnc2);
+            this.Controls.Add(this.btnc1);
+            this.Controls.Add(this.btnc3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.wmpa16);
@@ -2184,8 +3310,8 @@
             this.Controls.Add(this.lblmodo);
             this.Controls.Add(this.pbmodo);
             this.Controls.Add(this.msopciones);
-            this.Controls.Add(this.panelvacio);
             this.Controls.Add(this.panelmenu);
+            this.Controls.Add(this.panelvacio);
             this.KeyPreview = true;
             this.MainMenuStrip = this.msopciones;
             this.MaximizeBox = false;
@@ -2200,14 +3326,45 @@
             this.msopciones.ResumeLayout(false);
             this.msopciones.PerformLayout();
             this.panelvacio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).EndInit();
             this.panelmenu.ResumeLayout(false);
             this.panelmenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barra)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmplist)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.stripTicks2.ResumeLayout(false);
+            this.stripTicks.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpd1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpc1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa14)).EndInit();
@@ -2223,36 +3380,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpa4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpa2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpa1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpb12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpb16)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpl5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpl4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpl5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpb1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpa1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbsecB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbsecD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbsecC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbsecA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.stripTicks.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).EndInit();
-            this.stripTicks2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.barra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2363,7 +3525,7 @@
         private System.Windows.Forms.PictureBox ayudacarga1;
         private System.Windows.Forms.PictureBox ayudacarga2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListBox listasonidos;
+        private System.Windows.Forms.ListBox lblista;
         private System.Windows.Forms.Button btncargarlista;
         private AxWMPLib.AxWindowsMediaPlayer wmplist;
         private System.Windows.Forms.Label label6;
@@ -2391,6 +3553,75 @@
         private System.Windows.Forms.ToolStripComboBox cmbtiempo;
         private System.Windows.Forms.ContextMenuStrip stripTicks2;
         private System.Windows.Forms.ToolStripComboBox cmbtiempo2;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc16;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc15;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc14;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc13;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc12;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc11;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc10;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc9;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc6;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc8;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc5;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc7;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc4;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc3;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc2;
+        private AxWMPLib.AxWindowsMediaPlayer wmpc1;
+        private System.Windows.Forms.Button btnc16;
+        private System.Windows.Forms.Button btnc14;
+        private System.Windows.Forms.Button btnc15;
+        private System.Windows.Forms.Button btnc13;
+        private System.Windows.Forms.Button btnc12;
+        private System.Windows.Forms.Button btnc10;
+        private System.Windows.Forms.Button btnc11;
+        private System.Windows.Forms.Button btnc9;
+        private System.Windows.Forms.Button btnc8;
+        private System.Windows.Forms.Button btnc6;
+        private System.Windows.Forms.Button btnc7;
+        private System.Windows.Forms.Button btnc5;
+        private System.Windows.Forms.Button btnc4;
+        private System.Windows.Forms.Button btnc2;
+        private System.Windows.Forms.Button btnc1;
+        private System.Windows.Forms.Button btnc3;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd16;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd15;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd14;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd13;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd12;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd11;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd10;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd9;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd6;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd8;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd5;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd7;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd4;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd3;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd2;
+        private AxWMPLib.AxWindowsMediaPlayer wmpd1;
+        private System.Windows.Forms.Button btnd16;
+        private System.Windows.Forms.Button btnd14;
+        private System.Windows.Forms.Button btnd15;
+        private System.Windows.Forms.Button btnd13;
+        private System.Windows.Forms.Button btnd12;
+        private System.Windows.Forms.Button btnd10;
+        private System.Windows.Forms.Button btnd11;
+        private System.Windows.Forms.Button btnd9;
+        private System.Windows.Forms.Button btnd8;
+        private System.Windows.Forms.Button btnd6;
+        private System.Windows.Forms.Button btnd7;
+        private System.Windows.Forms.Button btnd5;
+        private System.Windows.Forms.Button btnd4;
+        private System.Windows.Forms.Button btnd2;
+        private System.Windows.Forms.Button btnd1;
+        private System.Windows.Forms.Button btnd3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbsecA;
+        private System.Windows.Forms.PictureBox pbsecB;
+        private System.Windows.Forms.PictureBox pbsecC;
+        private System.Windows.Forms.PictureBox pbsecD;
     }
 }
 

@@ -42,6 +42,9 @@ namespace mixboard
 
         Button[] botonesLoop = new Button[7];
 
+        bool sectorswitch = false;
+        string sectorAoC = "A";
+        string sectorBoD = "B";
 
         Color[] colores = new Color[6];
 
@@ -50,6 +53,8 @@ namespace mixboard
         //Array de objetos windows media player
         AxWMPLib.AxWindowsMediaPlayer[] WMPA = new AxWMPLib.AxWindowsMediaPlayer[17];
         AxWMPLib.AxWindowsMediaPlayer[] WMPB = new AxWMPLib.AxWindowsMediaPlayer[17];
+        AxWMPLib.AxWindowsMediaPlayer[] WMPC = new AxWMPLib.AxWindowsMediaPlayer[17];
+
 
         //loop
         AxWMPLib.AxWindowsMediaPlayer[] WMPLoop = new AxWMPLib.AxWindowsMediaPlayer[7];
@@ -135,6 +140,24 @@ namespace mixboard
             botonesB[15] = btnb15;
             botonesB[16] = btnb16;
 
+            botonesC[1] = btnc1;
+            botonesC[2] = btnc2;
+            botonesC[3] = btnc3;
+            botonesC[4] = btnc4;
+            botonesC[5] = btnc5;
+            botonesC[6] = btnc6;
+            botonesC[7] = btnc7;
+            botonesC[8] = btnc8;
+            botonesC[9] = btnc9;
+            botonesC[10] = btnc10;
+            botonesC[11] = btnc11;
+            botonesC[12] = btnc12;
+            botonesC[13] = btnc13;
+            botonesC[14] = btnc14;
+            botonesC[15] = btnc15;
+            botonesC[16] = btnc16;
+
+
             botonesLoop[1] = btnloop1;
             botonesLoop[2] = btnloop2;
             botonesLoop[3] = btnloop3;
@@ -192,6 +215,25 @@ namespace mixboard
             WMPB[14] = wmpb14;
             WMPB[15] = wmpb15;
             WMPB[16] = wmpb16;
+
+            WMPC[1] = wmpc1;
+            WMPC[2] = wmpc2;
+            WMPC[3] = wmpc3;
+            WMPC[4] = wmpc4;
+            WMPC[5] = wmpc5;
+            WMPC[6] = wmpc6;
+            WMPC[7] = wmpc7;
+            WMPC[8] = wmpc8;
+            WMPC[8] = wmpc8;
+            WMPC[9] = wmpc9;
+            WMPC[10] = wmpc10;
+            WMPC[11] = wmpc11;
+            WMPC[12] = wmpc12;
+            WMPC[13] = wmpc13;
+            WMPC[14] = wmpc14;
+            WMPC[15] = wmpc15;
+            WMPC[16] = wmpc16;
+
 
             WMPLoop[1] = wmpl1;
             WMPLoop[2] = wmpl2;
@@ -300,6 +342,29 @@ namespace mixboard
 
                     }
                     break;
+                case "C":
+                    if (direcC[indice] == null)
+                    {
+                        //MessageBox.Show("El boton no tiene un sonido asignado");
+                        botonesC[indice].Image = Properties.Resources.btnsinsonido;
+
+                    }
+                    else
+                    {
+                        if (WMPC[indice].playState == WMPLib.WMPPlayState.wmppsPlaying)
+                        {
+                            return;
+                        }
+                        WMPC[indice].URL = direcC[indice];
+                        WMPC[indice].Ctlcontrols.play();
+                        Random random = new Random();
+                        int randomNumber = random.Next(0, 5);
+                        btncolores[5] = btncolores[randomNumber];
+                        botonesC[indice].Image = btncolores[colorselecC];
+                        // LOOP: wmpa1.settings.setMode("loop", true);
+
+                    }
+                    break;
             }
 
 
@@ -394,6 +459,14 @@ namespace mixboard
                                 botonesLoop[indice].Image = Properties.Resources.btnloopcargado;
                             }
                             break;
+                        case "C":
+                            direcC[indice] = direccionactual;
+                            if (direcC[indice] != null)
+                            {
+                                //botonesA[indice].ForeColor = Color.GreenYellow;
+                                botonesC[indice].Image = Properties.Resources.btnverde;
+                            }
+                            break;
                     }
                 }
 
@@ -436,6 +509,21 @@ namespace mixboard
                         }
                         WMPB[indice].Ctlcontrols.stop();
                         break;
+                    case "C":
+                        if (direcC[indice] == null)
+                        {
+                            botonesC[indice].Image = Properties.Resources.btndefault;
+                        }
+                        else
+                        {
+                            botonesC[indice].Image = Properties.Resources.btncargado;
+                        }
+                        if (WMPC[indice].playState != WMPLib.WMPPlayState.wmppsPlaying)
+                        {
+                            return;
+                        }
+                        WMPC[indice].Ctlcontrols.stop();
+                        break;
                 }
             }
         }
@@ -449,7 +537,7 @@ namespace mixboard
                 {
                     botonesA[i].ForeColor = Color.White;
                     botonesB[i].ForeColor = Color.White;
-
+                    botonesC[i].ForeColor = Color.White;
                 }
                 btna1.Text = "1";
                 btna2.Text = "2";
@@ -485,6 +573,23 @@ namespace mixboard
                 btnb15.Text = "m";
                 btnb16.Text = ",";
 
+                btnc1.Text = "1";
+                btnc2.Text = "2";
+                btnc3.Text = "3";
+                btnc4.Text = "4";
+                btnc5.Text = "q";
+                btnc6.Text = "w";
+                btnc7.Text = "e";
+                btnc8.Text = "r";
+                btnc9.Text = "a";
+                btnc10.Text = "s";
+                btnc11.Text = "d";
+                btnc12.Text = "f";
+                btnc13.Text = "z";
+                btnc14.Text = "x";
+                btnc15.Text = "c";
+                btnc16.Text = "v";
+
             }
             else
             {
@@ -492,7 +597,8 @@ namespace mixboard
                 {
                     botonesA[i].Text = "•";
                     botonesB[i].Text = "•";
-
+                    botonesC[i].Text = "•";
+                    
                 }
             }
         }
@@ -552,106 +658,128 @@ namespace mixboard
 
         public void form1_KeyDown(object sender, KeyEventArgs e)
         {
+            
             //SECTOR A
             switch (e.KeyCode)
             {
+                case Keys.CapsLock:
+                    if (sectorswitch == false)
+                    {
+                        sectorswitch = true;
+                        sectorAoC = "C";
+                        sectorBoD = "D";
+                        pbsecA.Image = Properties.Resources.sectorAoff1;
+                        pbsecB.Image = Properties.Resources.sectorBoff;
+                        pbsecC.Image = Properties.Resources.sectorC;
+                        pbsecD.Image = Properties.Resources.sectorD;
+                    }
+                    else
+                    {
+                        sectorswitch = false;
+                        sectorAoC = "A";
+                        sectorBoD = "B";
+                        pbsecA.Image = Properties.Resources.sectorA;
+                        pbsecB.Image = Properties.Resources.sectorB;
+                        pbsecC.Image = Properties.Resources.sectorCoff;
+                        pbsecD.Image = Properties.Resources.sectorDoff;
+                    }
+                    break;
                 case Keys.D1:
-                    if (modoplay == true) playbotonA(1, "A");
-
+                    if (modoplay == true) playbotonA(1, sectorAoC);
                     break;
                 case Keys.D2:
-                    if (modoplay == true) playbotonA(2, "A");
+                    if (modoplay == true) playbotonA(2, sectorAoC);
                     break;
                 case Keys.D3:
-                    if (modoplay == true) playbotonA(3, "A");
+                    if (modoplay == true) playbotonA(3, sectorAoC);
                     break;
                 case Keys.D4:
-                    if (modoplay == true) playbotonA(4, "A");
+                    if (modoplay == true) playbotonA(4, sectorAoC);
                     break;
                 case Keys.Q:
-                    if (modoplay == true) playbotonA(5, "A");
+                    if (modoplay == true) playbotonA(5, sectorAoC);
                     break;
                 case Keys.W:
-                    if (modoplay == true) playbotonA(6, "A");
+                    if (modoplay == true) playbotonA(6, sectorAoC);
                     break;
                 case Keys.E:
-                    if (modoplay == true) playbotonA(7, "A");
+                    if (modoplay == true) playbotonA(7, sectorAoC);
                     break;
                 case Keys.R:
-                    if (modoplay == true) playbotonA(8, "A");
+                    if (modoplay == true) playbotonA(8, sectorAoC);
                     break;
                 case Keys.A:
-                    if (modoplay == true) playbotonA(9, "A");
+                    if (modoplay == true) playbotonA(9, sectorAoC);
                     break;
                 case Keys.S:
-                    if (modoplay == true) playbotonA(10, "A");
+                    if (modoplay == true) playbotonA(10, sectorAoC);
                     break;
                 case Keys.D:
-                    if (modoplay == true) playbotonA(11, "A");
+                    if (modoplay == true) playbotonA(11, sectorAoC);
                     break;
                 case Keys.F:
-                    if (modoplay == true) playbotonA(12, "A");
+                    if (modoplay == true) playbotonA(12, sectorAoC);
                     break;
                 case Keys.Z:
-                    if (modoplay == true) playbotonA(13, "A");
+                    if (modoplay == true) playbotonA(13, sectorAoC);
                     break;
                 case Keys.X:
-                    if (modoplay == true) playbotonA(14, "A");
+                    if (modoplay == true) playbotonA(14, sectorAoC);
                     break;
                 case Keys.C:
-                    if (modoplay == true) playbotonA(15, "A");
+                    if (modoplay == true) playbotonA(15, sectorAoC);
                     break;
                 case Keys.V:
-                    if (modoplay == true) playbotonA(16, "A");
+                    if (modoplay == true) playbotonA(16, sectorAoC);
                     break;
 
                 case Keys.D5:
-                    if (modoplay == true) playbotonA(1, "B");
+                    if (modoplay == true) playbotonA(1, sectorBoD);
                     break;
                 case Keys.D6:
-                    if (modoplay == true) playbotonA(2, "B");
+                    if (modoplay == true) playbotonA(2, sectorBoD);
                     break;
                 case Keys.D7:
-                    if (modoplay == true) playbotonA(3, "B");
+                    if (modoplay == true) playbotonA(3, sectorBoD);
                     break;
                 case Keys.D8:
-                    if (modoplay == true) playbotonA(4, "B");
+                    if (modoplay == true) playbotonA(4, sectorBoD);
                     break;
                 case Keys.T:
-                    if (modoplay == true) playbotonA(5, "B");
+                    if (modoplay == true) playbotonA(5, sectorBoD);
                     break;
                 case Keys.Y:
-                    if (modoplay == true) playbotonA(6, "B");
+                    if (modoplay == true) playbotonA(6, sectorBoD);
                     break;
                 case Keys.U:
-                    if (modoplay == true) playbotonA(7, "B");
+                    if (modoplay == true) playbotonA(7, sectorBoD);
                     break;
                 case Keys.I:
-                    if (modoplay == true) playbotonA(8, "B");
+                    if (modoplay == true) playbotonA(8, sectorBoD);
                     break;
                 case Keys.G:
-                    if (modoplay == true) playbotonA(9, "B");
+                    if (modoplay == true) playbotonA(9, sectorBoD);
                     break;
                 case Keys.H:
-                    if (modoplay == true) playbotonA(10, "B");
+                    if (modoplay == true) playbotonA(10, sectorBoD);
                     break;
                 case Keys.J:
-                    if (modoplay == true) playbotonA(11, "B");
+                    if (modoplay == true) playbotonA(11, sectorBoD);
                     break;
                 case Keys.K:
-                    if (modoplay == true) playbotonA(12, "B");
+                    if (modoplay == true) playbotonA(12, sectorBoD);
                     break;
                 case Keys.B:
-                    if (modoplay == true) playbotonA(13, "B");
+                    if (modoplay == true) playbotonA(13, sectorBoD);
                     break;
                 case Keys.N:
-                    if (modoplay == true) playbotonA(14, "B");
+                    if (modoplay == true) playbotonA(14, sectorBoD);
                     break;
                 case Keys.M:
-                    if (modoplay == true) playbotonA(15, "B");
+                    if (modoplay == true) playbotonA(15, sectorBoD);
                     break;
                 case Keys.Oemcomma:
-                    if (modoplay == true) playbotonA(16, "B");
+                    if (modoplay == true) playbotonA(16, sectorBoD);
                     break;
             }
 
@@ -662,102 +790,102 @@ namespace mixboard
             switch (e.KeyCode)
             {
                 case Keys.D1:
-                    soltarbotonA(1, "A");
+                    soltarbotonA(1, sectorAoC);
                     break;
                 case Keys.D2:
-                    soltarbotonA(2, "A");
+                    soltarbotonA(2, sectorAoC);
                     break;
                 case Keys.D3:
-                    soltarbotonA(3, "A");
+                    soltarbotonA(3, sectorAoC);
                     break;
                 case Keys.D4:
-                    soltarbotonA(4, "A");
+                    soltarbotonA(4, sectorAoC);
                     break;
                 case Keys.Q:
-                    soltarbotonA(5, "A");
+                    soltarbotonA(5, sectorAoC);
                     break;
                 case Keys.W:
-                    soltarbotonA(6, "A");
+                    soltarbotonA(6, sectorAoC);
                     break;
                 case Keys.E:
-                    soltarbotonA(7, "A");
+                    soltarbotonA(7, sectorAoC);
                     break;
                 case Keys.R:
-                    soltarbotonA(8, "A");
+                    soltarbotonA(8, sectorAoC);
                     break;
                 case Keys.A:
-                    soltarbotonA(9, "A");
+                    soltarbotonA(9, sectorAoC);
                     break;
                 case Keys.S:
-                    soltarbotonA(10, "A");
+                    soltarbotonA(10, sectorAoC);
                     break;
                 case Keys.D:
-                    soltarbotonA(11, "A");
+                    soltarbotonA(11, sectorAoC);
                     break;
                 case Keys.F:
-                    soltarbotonA(12, "A");
+                    soltarbotonA(12, sectorAoC);
                     break;
                 case Keys.Z:
-                    soltarbotonA(13, "A");
+                    soltarbotonA(13, sectorAoC);
                     break;
                 case Keys.X:
-                    soltarbotonA(14, "A");
+                    soltarbotonA(14, sectorAoC);
                     break;
                 case Keys.C:
-                    soltarbotonA(15, "A");
+                    soltarbotonA(15, sectorAoC);
                     break;
                 case Keys.V:
-                    soltarbotonA(16, "A");
+                    soltarbotonA(16, sectorAoC);
                     break;
 
 
                 case Keys.D5:
-                    soltarbotonA(1, "B");
+                    soltarbotonA(1, sectorBoD);
                     break;
                 case Keys.D6:
-                    soltarbotonA(2, "B");
+                    soltarbotonA(2, sectorBoD);
                     break;
                 case Keys.D7:
-                    soltarbotonA(3, "B");
+                    soltarbotonA(3, sectorBoD);
                     break;
                 case Keys.D8:
-                    soltarbotonA(4, "B");
+                    soltarbotonA(4, sectorBoD);
                     break;
                 case Keys.T:
-                    soltarbotonA(5, "B");
+                    soltarbotonA(5, sectorBoD);
                     break;
                 case Keys.Y:
-                    soltarbotonA(6, "B");
+                    soltarbotonA(6, sectorBoD);
                     break;
                 case Keys.U:
-                    soltarbotonA(7, "B");
+                    soltarbotonA(7, sectorBoD);
                     break;
                 case Keys.I:
-                    soltarbotonA(8, "B");
+                    soltarbotonA(8, sectorBoD);
                     break;
                 case Keys.G:
-                    soltarbotonA(9, "B");
+                    soltarbotonA(9, sectorBoD);
                     break;
                 case Keys.H:
-                    soltarbotonA(10, "B");
+                    soltarbotonA(10, sectorBoD);
                     break;
                 case Keys.J:
-                    soltarbotonA(11, "B");
+                    soltarbotonA(11, sectorBoD);
                     break;
                 case Keys.K:
-                    soltarbotonA(12, "B");
+                    soltarbotonA(12, sectorBoD);
                     break;
                 case Keys.B:
-                    soltarbotonA(13, "B");
+                    soltarbotonA(13, sectorBoD);
                     break;
                 case Keys.N:
-                    soltarbotonA(14, "B");
+                    soltarbotonA(14, sectorBoD);
                     break;
                 case Keys.M:
-                    soltarbotonA(15, "B");
+                    soltarbotonA(15, sectorBoD);
                     break;
                 case Keys.Oemcomma:
-                    soltarbotonA(16, "B");
+                    soltarbotonA(16, sectorBoD);
                     break;
             }
 
@@ -1181,6 +1309,8 @@ namespace mixboard
                 {
                     botonesA[i].ForeColor = Color.Black;
                     botonesB[i].ForeColor = Color.Black;
+                    botonesC[i].ForeColor = Color.Black;
+
 
                     if (direcA[i] != null)
                     {
@@ -1198,6 +1328,14 @@ namespace mixboard
                     {
                         botonesB[i].Image = Properties.Resources.btnamarillo;
                     }
+                    if (direcC[i] != null)
+                    {
+                        botonesC[i].Image = Properties.Resources.btnverde;
+                    }
+                    else
+                    {
+                        botonesC[i].Image = Properties.Resources.btnamarillo;
+                    }
                 }
 
 
@@ -1214,6 +1352,7 @@ namespace mixboard
                 {
                     botonesA[i].ForeColor = Color.White;
                     botonesB[i].ForeColor = Color.White;
+                    botonesC[i].ForeColor = Color.White;
 
                     if (direcA[i] != null)
                     {
@@ -1230,6 +1369,14 @@ namespace mixboard
                     else
                     {
                         botonesB[i].Image = Properties.Resources.btndefault;
+                    }
+                    if (direcC[i] != null)
+                    {
+                        botonesC[i].Image = Properties.Resources.btncargado;
+                    }
+                    else
+                    {
+                        botonesC[i].Image = Properties.Resources.btndefault;
                     }
                 }
                 if (estadorestablecer == true)
@@ -1370,12 +1517,12 @@ namespace mixboard
                             case 2:
                                 //SECTOR C
                                 direcC[numeroboton] = file;
-                                botonesC[numeroboton].ForeColor = Color.GreenYellow;
+                                botonesC[numeroboton].Image = Properties.Resources.btnverde;
                                 break;
                             case 3:
                                 //SECTOR D
                                 direcD[numeroboton] = file;
-                                botonesD[numeroboton].ForeColor = Color.GreenYellow;
+                                botonesD[numeroboton].Image = Properties.Resources.btnverde;
                                 break;
                         }
 
@@ -2222,7 +2369,7 @@ namespace mixboard
                 foreach (string file in open.FileNames)
                 {
                     titulosonido = System.IO.Path.GetFileNameWithoutExtension(file);
-                    listasonidos.Items.Add(titulosonido);
+                    lblista.Items.Add(titulosonido);
                     if (direclista[k] == null)
                     {
                         direclista[k] = file;
@@ -2238,13 +2385,13 @@ namespace mixboard
             //mousedown
             string direccion = "";
             string titulo = "";
-            if (listasonidos.SelectedItem != null)
+            if (lblista.SelectedItem != null)
             {
                 //MessageBox.Show(listasonidos.SelectedItem.ToString());
                 for (int i = 1; i < 100; i++)
                 {
                     direccion = direclista[i];
-                    titulo = Convert.ToString(listasonidos.SelectedItem);
+                    titulo = Convert.ToString(lblista.SelectedItem);
                     if (System.IO.Path.GetFileNameWithoutExtension(direccion) == titulo)
                     {
                         wmplist.URL = direclista[i];
@@ -2253,7 +2400,7 @@ namespace mixboard
 
 
                 }
-                DoDragDrop(listasonidos.SelectedIndices.ToString(), DragDropEffects.Copy);
+                DoDragDrop(lblista.SelectedIndices.ToString(), DragDropEffects.Copy);
             }
 
 
@@ -2275,7 +2422,7 @@ namespace mixboard
             for (int i = 1; i < 100; i++)
             {
                 direccion = direclista[i];
-                titulo = Convert.ToString(listasonidos.SelectedItem);
+                titulo = Convert.ToString(lblista.SelectedItem);
                 if (System.IO.Path.GetFileNameWithoutExtension(direccion) == titulo)
                 {
                     switch (sector)
@@ -2479,7 +2626,7 @@ namespace mixboard
             // Draw the background of the ListBox control for each item.
             e.DrawBackground();
             // Draw the current item text
-            e.Graphics.DrawString(listasonidos.Items[e.Index].ToString(), e.Font, Brushes.White, e.Bounds, StringFormat.GenericDefault);
+            e.Graphics.DrawString(lblista.Items[e.Index].ToString(), e.Font, Brushes.White, e.Bounds, StringFormat.GenericDefault);
             // If the ListBox has focus, draw a focus rectangle around the selected item.
             e.DrawFocusRectangle();
         }
@@ -2488,11 +2635,11 @@ namespace mixboard
         {
 
             //listasonidos.Items.Remove(listasonidos.SelectedItems);
-            for (int x = listasonidos.SelectedIndices.Count - 1; x >= 0; x--)
+            for (int x = lblista.SelectedIndices.Count - 1; x >= 0; x--)
             {
-                int idx = listasonidos.SelectedIndices[x];
+                int idx = lblista.SelectedIndices[x];
                 //listasonidos.Items.Add(listasonidos.Items[idx]);
-                listasonidos.Items.RemoveAt(idx);
+                lblista.Items.RemoveAt(idx);
             }
         }
 
@@ -2706,6 +2853,166 @@ namespace mixboard
             }
             
 
+        }
+
+        private void btnc1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(1, "C"); else cargarconclick(1, "C");
+        }
+
+        private void btnc2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(2, "C"); else cargarconclick(2, "C");
+        }
+
+        private void btnc3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(3, "C"); else cargarconclick(3, "C");
+        }
+
+        private void btnc4_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(4, "C"); else cargarconclick(1, "C");
+        }
+
+        private void btnc5_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(5, "C"); else cargarconclick(5, "C");
+        }
+
+        private void btnc6_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(6, "C"); else cargarconclick(6, "C");
+        }
+
+        private void btnc7_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(7, "C"); else cargarconclick(7, "C");
+        }
+
+        private void btnc8_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(8, "C"); else cargarconclick(8, "C");
+        }
+
+        private void btnc9_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(9, "C"); else cargarconclick(9, "C");
+        }
+
+        private void btnc10_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(10, "C"); else cargarconclick(10, "C");
+        }
+
+        private void btnc11_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(11, "C"); else cargarconclick(11, "C");
+        }
+
+        private void btnc12_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(12, "C"); else cargarconclick(12, "C");
+        }
+
+        private void btnc13_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(13, "C"); else cargarconclick(13, "C");
+        }
+
+        private void btnc14_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(14, "C"); else cargarconclick(14, "C");
+        }
+
+        private void btnc15_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(15, "C"); else cargarconclick(15, "C");
+        }
+
+        private void btnc16_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(16, "C"); else cargarconclick(16, "C");
+        }
+
+        private void btnc1_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(1, "C");
+        }
+
+        private void btnc2_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(2, "C");
+        }
+
+        private void btnc3_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(3, "C");
+        }
+
+        private void btnc4_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(4, "C");
+        }
+
+        private void btnc5_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(5, "C");
+        }
+
+        private void btnc6_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(6, "C");
+        }
+
+        private void btnc7_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(7, "C");
+        }
+
+        private void btnc8_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(8, "C");
+        }
+
+        private void btnc9_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(9, "C");
+        }
+
+        private void btnc10_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(10, "C");
+        }
+
+        private void btnc11_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(11, "C");
+        }
+
+        private void btnc12_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(12, "C");
+        }
+
+        private void btnc13_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(13, "C");
+        }
+
+        private void btnc14_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(14, "C");
+        }
+
+        private void btnc15_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(15, "C");
+        }
+
+        private void btnc16_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(16, "C");
         }
     }
 }

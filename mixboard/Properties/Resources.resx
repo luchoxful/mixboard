@@ -142,14 +142,17 @@
   <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnloopon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnloopon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnverde" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnverde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoedicion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoedicion1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btndefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btndefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ayuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,11 +163,14 @@
   <data name="btnrojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnrojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Record" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Record.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoedicionhover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoedicionhover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoedicion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoedicion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnceleste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnceleste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnloop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnloop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,17 +181,20 @@
   <data name="botonedicion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\botonedicion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnrestablecerOK" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnrestablecerOK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnsinsonido" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnsinsonido1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnverde" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnverde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sectorAoff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sectorAoff1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoedicionorange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoedicionorange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnonloop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnonloop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnrestablecer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnrestablecer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sectorB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sectorB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ayuda2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ayuda2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,11 +214,20 @@
   <data name="btnnaranja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnnaranja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="barra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sectorA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sectorA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnloopon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnloopon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sectorAoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sectorAoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoedicionhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoedicionhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sectorCoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sectorCoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="boton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,17 +238,20 @@
   <data name="botonedicion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\botonedicion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoedicionhover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoedicionhover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnrestablecerOK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnrestablecerOK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnrestablecer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnrestablecer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoedicionorange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoedicionorange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sectorDoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sectorDoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="playoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\playoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnceleste" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnceleste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Record" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Record.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botonsesion2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\botonsesion2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,7 +259,13 @@
   <data name="btnamarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnamarillo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnonloop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnonloop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sectorBoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sectorBoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sectorC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sectorC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sectorD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sectorD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
