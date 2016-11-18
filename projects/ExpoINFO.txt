@@ -1,0 +1,36 @@
+5
+0
+4
+5
+A01@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\01.wav
+B01@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Libreria de Rap\Kick 8.WAV
+A02@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\02.wav
+B02@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Libreria de Rap\Instru - Kicks (11).wav
+A03@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\03.wav
+B03@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Libreria de Rap\Clap 5.wav
+A04@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\04.wav
+B04@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Snare y claps\Instru - Snares (300).wav
+A05@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\05.wav
+B05@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Libreria de Rap\Kick 11.wav
+A06@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\06.wav
+B06@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Snare y claps\Snare 4.wav
+A07@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\07.wav
+B07@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Snare y claps\Clap 6.wav
+A08@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\08.wav
+B08@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Snare y claps\Instru - Snares (339).wav
+A09@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\09.wav
+B09@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Hats\Instru - Hat (331).wav
+A10@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\10.wav
+B10@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Percs\Instru - Perc (94).wav
+A11@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\11.wav
+B11@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Percs\Instru - Perc (38).wav
+A12@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\12.wav
+B12@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Percs\Instru - Perc (97).wav
+A13@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\13.wav
+B13@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Percs\Instru - Perc (98).wav
+A14@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\14.wav
+B14@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\Percs\Instru - Perc (18).wav
+A15@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\15.wav
+B15@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\kicks\Instru - Kicks (220).wav
+A16@C:\Proyecto Final\mixboard\sounds\Electronica y Dubstep\Skrillex & Damian Jr. Gong Marley - Make It Bun Dem\16.wav
+B16@C:\Proyecto Final\mixboard\sounds\RAP - Hip Hop\kicks\Instru - Kicks (226).wav

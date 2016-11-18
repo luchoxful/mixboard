@@ -54,6 +54,8 @@ namespace mixboard
         AxWMPLib.AxWindowsMediaPlayer[] WMPA = new AxWMPLib.AxWindowsMediaPlayer[17];
         AxWMPLib.AxWindowsMediaPlayer[] WMPB = new AxWMPLib.AxWindowsMediaPlayer[17];
         AxWMPLib.AxWindowsMediaPlayer[] WMPC = new AxWMPLib.AxWindowsMediaPlayer[17];
+        AxWMPLib.AxWindowsMediaPlayer[] WMPD = new AxWMPLib.AxWindowsMediaPlayer[17];
+
 
 
         //loop
@@ -157,6 +159,22 @@ namespace mixboard
             botonesC[15] = btnc15;
             botonesC[16] = btnc16;
 
+            botonesD[1] = btnd1;
+            botonesD[2] = btnd2;
+            botonesD[3] = btnd3;
+            botonesD[4] = btnd4;
+            botonesD[5] = btnd5;
+            botonesD[6] = btnd6;
+            botonesD[7] = btnd7;
+            botonesD[8] = btnd8;
+            botonesD[9] = btnd9;
+            botonesD[10] = btnd10;
+            botonesD[11] = btnd11;
+            botonesD[12] = btnd12;
+            botonesD[13] = btnd13;
+            botonesD[14] = btnd14;
+            botonesD[15] = btnd15;
+            botonesD[16] = btnd16;
 
             botonesLoop[1] = btnloop1;
             botonesLoop[2] = btnloop2;
@@ -234,6 +252,23 @@ namespace mixboard
             WMPC[15] = wmpc15;
             WMPC[16] = wmpc16;
 
+            WMPD[1] = wmpd1;
+            WMPD[2] = wmpd2;
+            WMPD[3] = wmpd3;
+            WMPD[4] = wmpd4;
+            WMPD[5] = wmpd5;
+            WMPD[6] = wmpd6;
+            WMPD[7] = wmpd7;
+            WMPD[8] = wmpd8;
+            WMPD[8] = wmpd8;
+            WMPD[9] = wmpd9;
+            WMPD[10] = wmpd10;
+            WMPD[11] = wmpd11;
+            WMPD[12] = wmpd12;
+            WMPD[13] = wmpd13;
+            WMPD[14] = wmpd14;
+            WMPD[15] = wmpd15;
+            WMPD[16] = wmpd16;
 
             WMPLoop[1] = wmpl1;
             WMPLoop[2] = wmpl2;
@@ -365,6 +400,29 @@ namespace mixboard
 
                     }
                     break;
+                case "D":
+                    if (direcD[indice] == null)
+                    {
+                        //MessageBox.Show("El boton no tiene un sonido asignado");
+                        botonesD[indice].Image = Properties.Resources.btnsinsonido;
+
+                    }
+                    else
+                    {
+                        if (WMPD[indice].playState == WMPLib.WMPPlayState.wmppsPlaying)
+                        {
+                            return;
+                        }
+                        WMPD[indice].URL = direcD[indice];
+                        WMPD[indice].Ctlcontrols.play();
+                        Random random = new Random();
+                        int randomNumber = random.Next(0, 5);
+                        btncolores[5] = btncolores[randomNumber];
+                        botonesD[indice].Image = btncolores[colorselecD];
+                        // LOOP: wmpa1.settings.setMode("loop", true);
+
+                    }
+                    break;
             }
 
 
@@ -420,6 +478,14 @@ namespace mixboard
                         direcB[indice] = null;
                         botonesB[indice].Image = Properties.Resources.btnamarillo;
                         break;
+                    case "C":
+                        direcC[indice] = null;
+                        botonesC[indice].Image = Properties.Resources.btnamarillo;
+                        break;
+                    case "D":
+                        direcD[indice] = null;
+                        botonesD[indice].Image = Properties.Resources.btnamarillo;
+                        break;
                 }
             }
             else
@@ -452,19 +518,29 @@ namespace mixboard
                                 botonesB[indice].Image = Properties.Resources.btnverde;
                             }
                             break;
-                        case "Loop":
-                            direcLoops[indice] = direccionactual;
-                            if (direcLoops[indice] != null)
-                            {
-                                botonesLoop[indice].Image = Properties.Resources.btnloopcargado;
-                            }
-                            break;
+                        
                         case "C":
                             direcC[indice] = direccionactual;
                             if (direcC[indice] != null)
                             {
                                 //botonesA[indice].ForeColor = Color.GreenYellow;
                                 botonesC[indice].Image = Properties.Resources.btnverde;
+                            }
+                            break;
+                        case "D":
+                            direcD[indice] = direccionactual;
+                            if (direcD[indice] != null)
+                            {
+                                //botonesA[indice].ForeColor = Color.GreenYellow;
+                                botonesD[indice].Image = Properties.Resources.btnverde;
+                            }
+                            break;
+
+                        case "Loop":
+                            direcLoops[indice] = direccionactual;
+                            if (direcLoops[indice] != null)
+                            {
+                                botonesLoop[indice].Image = Properties.Resources.btnloopcargado;
                             }
                             break;
                     }
@@ -524,6 +600,21 @@ namespace mixboard
                         }
                         WMPC[indice].Ctlcontrols.stop();
                         break;
+                    case "D":
+                        if (direcD[indice] == null)
+                        {
+                            botonesD[indice].Image = Properties.Resources.btndefault;
+                        }
+                        else
+                        {
+                            botonesD[indice].Image = Properties.Resources.btncargado;
+                        }
+                        if (WMPD[indice].playState != WMPLib.WMPPlayState.wmppsPlaying)
+                        {
+                            return;
+                        }
+                        WMPD[indice].Ctlcontrols.stop();
+                        break;
                 }
             }
         }
@@ -538,6 +629,8 @@ namespace mixboard
                     botonesA[i].ForeColor = Color.White;
                     botonesB[i].ForeColor = Color.White;
                     botonesC[i].ForeColor = Color.White;
+                    botonesD[i].ForeColor = Color.White;
+
                 }
                 btna1.Text = "1";
                 btna2.Text = "2";
@@ -590,6 +683,22 @@ namespace mixboard
                 btnc15.Text = "c";
                 btnc16.Text = "v";
 
+                btnd1.Text = "5";
+                btnd2.Text = "6";
+                btnd3.Text = "7";
+                btnd4.Text = "8";
+                btnd5.Text = "t";
+                btnd6.Text = "y";
+                btnd7.Text = "u";
+                btnd8.Text = "i";
+                btnd9.Text = "g";
+                btnd10.Text = "h";
+                btnd11.Text = "j";
+                btnd12.Text = "k";
+                btnd13.Text = "b";
+                btnd14.Text = "n";
+                btnd15.Text = "m";
+                btnd16.Text = ",";
             }
             else
             {
@@ -598,7 +707,9 @@ namespace mixboard
                     botonesA[i].Text = "•";
                     botonesB[i].Text = "•";
                     botonesC[i].Text = "•";
-                    
+                    botonesD[i].Text = "•";
+
+
                 }
             }
         }
@@ -620,6 +731,14 @@ namespace mixboard
                     {
                         botonesB[i].Image = Properties.Resources.btnrestablecer;
                     }
+                    if (direcC[i] != null)
+                    {
+                        botonesC[i].Image = Properties.Resources.btnrestablecer;
+                    }
+                    if (direcD[i] != null)
+                    {
+                        botonesD[i].Image = Properties.Resources.btnrestablecer;
+                    }
                 }
             }
             else
@@ -635,6 +754,14 @@ namespace mixboard
                     if (direcB[i] != null)
                     {
                         botonesB[i].Image = Properties.Resources.btnverde;
+                    }
+                    if (direcC[i] != null)
+                    {
+                        botonesC[i].Image = Properties.Resources.btnverde;
+                    }
+                    if (direcD[i] != null)
+                    {
+                        botonesD[i].Image = Properties.Resources.btnverde;
                     }
                 }
             }
@@ -917,15 +1044,24 @@ namespace mixboard
                 {
                     direcA[i] = null;
                     direcB[i] = null;
+                    direcC[i] = null;
+                    direcD[i] = null;
+
                     if (modoplay == true)
                     {
                         botonesA[i].Image = Properties.Resources.btndefault;
                         botonesB[i].Image = Properties.Resources.btndefault;
+                        botonesC[i].Image = Properties.Resources.btndefault;
+                        botonesD[i].Image = Properties.Resources.btndefault;
+
                     }
                     else
                     {
                         botonesA[i].Image = Properties.Resources.btnamarillo;
                         botonesB[i].Image = Properties.Resources.btnamarillo;
+                        botonesC[i].Image = Properties.Resources.btnamarillo;
+                        botonesD[i].Image = Properties.Resources.btnamarillo;
+
                     }
                     //botonesC[i].ForeColor = Color.White;
                     //botonesD[i].ForeColor = Color.White;
@@ -1310,6 +1446,7 @@ namespace mixboard
                     botonesA[i].ForeColor = Color.Black;
                     botonesB[i].ForeColor = Color.Black;
                     botonesC[i].ForeColor = Color.Black;
+                    botonesD[i].ForeColor = Color.Black;
 
 
                     if (direcA[i] != null)
@@ -1336,6 +1473,14 @@ namespace mixboard
                     {
                         botonesC[i].Image = Properties.Resources.btnamarillo;
                     }
+                    if (direcD[i] != null)
+                    {
+                        botonesD[i].Image = Properties.Resources.btnverde;
+                    }
+                    else
+                    {
+                        botonesD[i].Image = Properties.Resources.btnamarillo;
+                    }
                 }
 
 
@@ -1353,7 +1498,8 @@ namespace mixboard
                     botonesA[i].ForeColor = Color.White;
                     botonesB[i].ForeColor = Color.White;
                     botonesC[i].ForeColor = Color.White;
-
+                    botonesD[i].ForeColor = Color.White;
+                    
                     if (direcA[i] != null)
                     {
                         botonesA[i].Image = Properties.Resources.btncargado;
@@ -1377,6 +1523,14 @@ namespace mixboard
                     else
                     {
                         botonesC[i].Image = Properties.Resources.btndefault;
+                    }
+                    if (direcD[i] != null)
+                    {
+                        botonesD[i].Image = Properties.Resources.btncargado;
+                    }
+                    else
+                    {
+                        botonesD[i].Image = Properties.Resources.btndefault;
                     }
                 }
                 if (estadorestablecer == true)
@@ -3013,6 +3167,166 @@ namespace mixboard
         private void btnc16_MouseUp(object sender, MouseEventArgs e)
         {
             soltarbotonA(16, "C");
+        }
+
+        private void btnd1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(1, "D"); else cargarconclick(1, "D");
+        }
+
+        private void btnd2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(2, "D"); else cargarconclick(2, "D");
+        }
+
+        private void btnd3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(3, "D"); else cargarconclick(3, "D");
+        }
+
+        private void btnd4_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(4, "D"); else cargarconclick(4, "D");
+        }
+
+        private void btnd5_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(5, "D"); else cargarconclick(5, "D");
+        }
+
+        private void btnd6_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(6, "D"); else cargarconclick(6, "D");
+        }
+
+        private void btnd7_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(7, "D"); else cargarconclick(7, "D");
+        }
+
+        private void btnd8_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(8, "D"); else cargarconclick(8, "D");
+        }
+
+        private void btnd9_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(9, "D"); else cargarconclick(9, "D");
+        }
+
+        private void btnd10_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(10, "D"); else cargarconclick(10, "D");
+        }
+
+        private void btnd11_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(11, "D"); else cargarconclick(11, "D");
+        }
+
+        private void btnd12_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(12, "D"); else cargarconclick(12, "D");
+        }
+
+        private void btnd13_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(13, "D"); else cargarconclick(13, "D");
+        }
+
+        private void btnd14_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(14, "D"); else cargarconclick(14, "D");
+        }
+
+        private void btnd16_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(16, "D"); else cargarconclick(16, "D");
+        }
+
+        private void btnd1_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(1, "D");
+        }
+
+        private void btnd2_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(2, "D");
+        }
+
+        private void btnd3_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(3, "D");
+        }
+
+        private void btnd4_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(4, "D");
+        }
+
+        private void btnd5_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(5, "D");
+        }
+
+        private void btnd6_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(6, "D");
+        }
+
+        private void btnd7_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(7, "D");
+        }
+
+        private void btnd8_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(8, "D");
+        }
+
+        private void btnd9_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(9, "D");
+        }
+
+        private void btnd10_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(10, "D");
+        }
+
+        private void btnd11_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(11, "D");
+        }
+
+        private void btnd12_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(12, "D");
+        }
+
+        private void btnd13_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(13, "D");
+        }
+
+        private void btnd14_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(14, "D");
+        }
+
+        private void btnd15_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (modoplay == true) playbotonA(15, "D"); else cargarconclick(15, "D");
+        }
+
+        private void btnd15_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(15, "D");
+        }
+
+        private void btnd16_MouseUp(object sender, MouseEventArgs e)
+        {
+            soltarbotonA(16, "D");
         }
     }
 }

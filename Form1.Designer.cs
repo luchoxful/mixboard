@@ -53,9 +53,14 @@
             this.RecordarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelvacio = new System.Windows.Forms.Panel();
+            this.pbdesplegar = new System.Windows.Forms.PictureBox();
             this.lblmodo = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.barra = new System.Windows.Forms.PictureBox();
             this.lblista = new System.Windows.Forms.ListBox();
+            this.ayudacarga2 = new System.Windows.Forms.PictureBox();
+            this.ayudacarga1 = new System.Windows.Forms.PictureBox();
+            this.pbdesplegado = new System.Windows.Forms.PictureBox();
             this.txtseleccionarcarpeta2 = new System.Windows.Forms.TextBox();
             this.txtseleccionarcarpeta = new System.Windows.Forms.TextBox();
             this.btnaleatorio = new System.Windows.Forms.Button();
@@ -71,6 +76,7 @@
             this.wmplist = new AxWMPLib.AxWindowsMediaPlayer();
             this.lblayuda = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tm = new System.Windows.Forms.Timer(this.components);
             this.stripTicks2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmbtiempo2 = new System.Windows.Forms.ToolStripComboBox();
@@ -186,7 +192,6 @@
             this.btnc1 = new System.Windows.Forms.Button();
             this.btnc3 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btna16 = new System.Windows.Forms.Button();
             this.btna14 = new System.Windows.Forms.Button();
             this.btna15 = new System.Windows.Forms.Button();
@@ -226,16 +231,17 @@
             this.btna1 = new System.Windows.Forms.Button();
             this.btna3 = new System.Windows.Forms.Button();
             this.pbmodo = new System.Windows.Forms.PictureBox();
-            this.barra = new System.Windows.Forms.PictureBox();
-            this.ayudacarga2 = new System.Windows.Forms.PictureBox();
-            this.ayudacarga1 = new System.Windows.Forms.PictureBox();
-            this.pbdesplegado = new System.Windows.Forms.PictureBox();
-            this.pbdesplegar = new System.Windows.Forms.PictureBox();
             this.msopciones.SuspendLayout();
             this.panelvacio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
             this.panelmenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmplist)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.stripTicks2.SuspendLayout();
             this.stripTicks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wmpd16)).BeginInit();
@@ -313,13 +319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbsecC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbsecA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barra)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).BeginInit();
             this.SuspendLayout();
             // 
             // msopciones
@@ -500,6 +500,19 @@
             this.panelvacio.Size = new System.Drawing.Size(225, 578);
             this.panelvacio.TabIndex = 8;
             // 
+            // pbdesplegar
+            // 
+            this.pbdesplegar.Image = global::mixboard.Properties.Resources.logoedicionorange;
+            this.pbdesplegar.Location = new System.Drawing.Point(0, 0);
+            this.pbdesplegar.Name = "pbdesplegar";
+            this.pbdesplegar.Size = new System.Drawing.Size(38, 37);
+            this.pbdesplegar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbdesplegar.TabIndex = 6;
+            this.pbdesplegar.TabStop = false;
+            this.pbdesplegar.Click += new System.EventHandler(this.pbmodo_Click);
+            this.pbdesplegar.MouseEnter += new System.EventHandler(this.pbdesplegar_MouseEnter);
+            this.pbdesplegar.MouseLeave += new System.EventHandler(this.pbdesplegar_MouseLeave);
+            // 
             // lblmodo
             // 
             this.lblmodo.AutoSize = true;
@@ -537,6 +550,15 @@
             this.panelmenu.Size = new System.Drawing.Size(225, 580);
             this.panelmenu.TabIndex = 11;
             // 
+            // barra
+            // 
+            this.barra.Image = global::mixboard.Properties.Resources.barra;
+            this.barra.Location = new System.Drawing.Point(188, 262);
+            this.barra.Name = "barra";
+            this.barra.Size = new System.Drawing.Size(24, 322);
+            this.barra.TabIndex = 11;
+            this.barra.TabStop = false;
+            // 
             // lblista
             // 
             this.lblista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -551,6 +573,42 @@
             this.lblista.TabIndex = 10;
             this.lblista.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listasonidos_DrawItem);
             this.lblista.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listasonidos_MouseDown);
+            // 
+            // ayudacarga2
+            // 
+            this.ayudacarga2.Image = global::mixboard.Properties.Resources.ayuda;
+            this.ayudacarga2.Location = new System.Drawing.Point(174, 111);
+            this.ayudacarga2.Name = "ayudacarga2";
+            this.ayudacarga2.Size = new System.Drawing.Size(19, 18);
+            this.ayudacarga2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ayudacarga2.TabIndex = 9;
+            this.ayudacarga2.TabStop = false;
+            // 
+            // ayudacarga1
+            // 
+            this.ayudacarga1.Image = global::mixboard.Properties.Resources.ayuda;
+            this.ayudacarga1.Location = new System.Drawing.Point(188, 49);
+            this.ayudacarga1.Name = "ayudacarga1";
+            this.ayudacarga1.Size = new System.Drawing.Size(19, 18);
+            this.ayudacarga1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ayudacarga1.TabIndex = 9;
+            this.ayudacarga1.TabStop = false;
+            this.ayudacarga1.Click += new System.EventHandler(this.ayudacarga1_Click);
+            this.ayudacarga1.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
+            this.ayudacarga1.MouseLeave += new System.EventHandler(this.leave_ayuda);
+            // 
+            // pbdesplegado
+            // 
+            this.pbdesplegado.Image = global::mixboard.Properties.Resources.logoedicion1;
+            this.pbdesplegado.Location = new System.Drawing.Point(1, -1);
+            this.pbdesplegado.Name = "pbdesplegado";
+            this.pbdesplegado.Size = new System.Drawing.Size(37, 38);
+            this.pbdesplegado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbdesplegado.TabIndex = 5;
+            this.pbdesplegado.TabStop = false;
+            this.pbdesplegado.Click += new System.EventHandler(this.pbmodo_Click);
+            this.pbdesplegado.MouseEnter += new System.EventHandler(this.pbdesplegado_MouseEnter);
+            this.pbdesplegado.MouseLeave += new System.EventHandler(this.pbdesplegado_MouseLeave);
             // 
             // txtseleccionarcarpeta2
             // 
@@ -732,6 +790,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(915, 32);
             this.panel1.TabIndex = 27;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::mixboard.Properties.Resources.ayuda2;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // tm
             // 
@@ -1554,6 +1622,8 @@
             this.btnd16.TabIndex = 89;
             this.btnd16.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd16.UseVisualStyleBackColor = false;
+            this.btnd16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd16_MouseDown);
+            this.btnd16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd16_MouseUp);
             // 
             // btnd14
             // 
@@ -1571,6 +1641,8 @@
             this.btnd14.TabIndex = 90;
             this.btnd14.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd14.UseVisualStyleBackColor = false;
+            this.btnd14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd14_MouseDown);
+            this.btnd14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd14_MouseUp);
             // 
             // btnd15
             // 
@@ -1588,6 +1660,8 @@
             this.btnd15.TabIndex = 91;
             this.btnd15.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd15.UseVisualStyleBackColor = false;
+            this.btnd15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd15_MouseDown);
+            this.btnd15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd15_MouseUp);
             // 
             // btnd13
             // 
@@ -1605,6 +1679,8 @@
             this.btnd13.TabIndex = 92;
             this.btnd13.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd13.UseVisualStyleBackColor = false;
+            this.btnd13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd13_MouseDown);
+            this.btnd13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd13_MouseUp);
             // 
             // btnd12
             // 
@@ -1622,6 +1698,8 @@
             this.btnd12.TabIndex = 85;
             this.btnd12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd12.UseVisualStyleBackColor = false;
+            this.btnd12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd12_MouseDown);
+            this.btnd12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd12_MouseUp);
             // 
             // btnd10
             // 
@@ -1639,6 +1717,8 @@
             this.btnd10.TabIndex = 86;
             this.btnd10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd10.UseVisualStyleBackColor = false;
+            this.btnd10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd10_MouseDown);
+            this.btnd10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd10_MouseUp);
             // 
             // btnd11
             // 
@@ -1656,6 +1736,8 @@
             this.btnd11.TabIndex = 87;
             this.btnd11.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd11.UseVisualStyleBackColor = false;
+            this.btnd11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd11_MouseDown);
+            this.btnd11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd11_MouseUp);
             // 
             // btnd9
             // 
@@ -1673,6 +1755,8 @@
             this.btnd9.TabIndex = 88;
             this.btnd9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd9.UseVisualStyleBackColor = false;
+            this.btnd9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd9_MouseDown);
+            this.btnd9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd9_MouseUp);
             // 
             // btnd8
             // 
@@ -1690,6 +1774,8 @@
             this.btnd8.TabIndex = 81;
             this.btnd8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd8.UseVisualStyleBackColor = false;
+            this.btnd8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd8_MouseDown);
+            this.btnd8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd8_MouseUp);
             // 
             // btnd6
             // 
@@ -1707,6 +1793,8 @@
             this.btnd6.TabIndex = 82;
             this.btnd6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd6.UseVisualStyleBackColor = false;
+            this.btnd6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd6_MouseDown);
+            this.btnd6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd6_MouseUp);
             // 
             // btnd7
             // 
@@ -1724,6 +1812,8 @@
             this.btnd7.TabIndex = 83;
             this.btnd7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd7.UseVisualStyleBackColor = false;
+            this.btnd7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd7_MouseDown);
+            this.btnd7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd7_MouseUp);
             // 
             // btnd5
             // 
@@ -1741,6 +1831,8 @@
             this.btnd5.TabIndex = 84;
             this.btnd5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd5.UseVisualStyleBackColor = false;
+            this.btnd5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd5_MouseDown);
+            this.btnd5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd5_MouseUp);
             // 
             // btnd4
             // 
@@ -1758,6 +1850,8 @@
             this.btnd4.TabIndex = 78;
             this.btnd4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd4.UseVisualStyleBackColor = false;
+            this.btnd4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd4_MouseDown);
+            this.btnd4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd4_MouseUp);
             // 
             // btnd2
             // 
@@ -1775,6 +1869,8 @@
             this.btnd2.TabIndex = 77;
             this.btnd2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd2.UseVisualStyleBackColor = false;
+            this.btnd2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd2_MouseDown);
+            this.btnd2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd2_MouseUp);
             // 
             // btnd1
             // 
@@ -1795,6 +1891,8 @@
             this.btnd1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd1.UseMnemonic = false;
             this.btnd1.UseVisualStyleBackColor = false;
+            this.btnd1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd1_MouseDown);
+            this.btnd1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd1_MouseUp);
             // 
             // btnd3
             // 
@@ -1812,6 +1910,8 @@
             this.btnd3.TabIndex = 79;
             this.btnd3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnd3.UseVisualStyleBackColor = false;
+            this.btnd3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnd3_MouseDown);
+            this.btnd3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnd3_MouseUp);
             // 
             // btnc16
             // 
@@ -2129,16 +2229,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 28;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::mixboard.Properties.Resources.ayuda2;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
             // 
             // btna16
             // 
@@ -3094,64 +3184,6 @@
             this.pbmodo.TabStop = false;
             this.pbmodo.Click += new System.EventHandler(this.pbmodo_Click);
             // 
-            // barra
-            // 
-            this.barra.Image = global::mixboard.Properties.Resources.barra;
-            this.barra.Location = new System.Drawing.Point(188, 262);
-            this.barra.Name = "barra";
-            this.barra.Size = new System.Drawing.Size(24, 322);
-            this.barra.TabIndex = 11;
-            this.barra.TabStop = false;
-            // 
-            // ayudacarga2
-            // 
-            this.ayudacarga2.Image = global::mixboard.Properties.Resources.ayuda;
-            this.ayudacarga2.Location = new System.Drawing.Point(174, 111);
-            this.ayudacarga2.Name = "ayudacarga2";
-            this.ayudacarga2.Size = new System.Drawing.Size(19, 18);
-            this.ayudacarga2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ayudacarga2.TabIndex = 9;
-            this.ayudacarga2.TabStop = false;
-            // 
-            // ayudacarga1
-            // 
-            this.ayudacarga1.Image = global::mixboard.Properties.Resources.ayuda;
-            this.ayudacarga1.Location = new System.Drawing.Point(188, 49);
-            this.ayudacarga1.Name = "ayudacarga1";
-            this.ayudacarga1.Size = new System.Drawing.Size(19, 18);
-            this.ayudacarga1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ayudacarga1.TabIndex = 9;
-            this.ayudacarga1.TabStop = false;
-            this.ayudacarga1.Click += new System.EventHandler(this.ayudacarga1_Click);
-            this.ayudacarga1.MouseEnter += new System.EventHandler(this.ayudacarga1_MouseEnter);
-            this.ayudacarga1.MouseLeave += new System.EventHandler(this.leave_ayuda);
-            // 
-            // pbdesplegado
-            // 
-            this.pbdesplegado.Image = global::mixboard.Properties.Resources.logoedicion1;
-            this.pbdesplegado.Location = new System.Drawing.Point(1, -1);
-            this.pbdesplegado.Name = "pbdesplegado";
-            this.pbdesplegado.Size = new System.Drawing.Size(37, 38);
-            this.pbdesplegado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbdesplegado.TabIndex = 5;
-            this.pbdesplegado.TabStop = false;
-            this.pbdesplegado.Click += new System.EventHandler(this.pbmodo_Click);
-            this.pbdesplegado.MouseEnter += new System.EventHandler(this.pbdesplegado_MouseEnter);
-            this.pbdesplegado.MouseLeave += new System.EventHandler(this.pbdesplegado_MouseLeave);
-            // 
-            // pbdesplegar
-            // 
-            this.pbdesplegar.Image = global::mixboard.Properties.Resources.logoedicionorange;
-            this.pbdesplegar.Location = new System.Drawing.Point(0, 0);
-            this.pbdesplegar.Name = "pbdesplegar";
-            this.pbdesplegar.Size = new System.Drawing.Size(38, 37);
-            this.pbdesplegar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbdesplegar.TabIndex = 6;
-            this.pbdesplegar.TabStop = false;
-            this.pbdesplegar.Click += new System.EventHandler(this.pbmodo_Click);
-            this.pbdesplegar.MouseEnter += new System.EventHandler(this.pbdesplegar_MouseEnter);
-            this.pbdesplegar.MouseLeave += new System.EventHandler(this.pbdesplegar_MouseLeave);
-            // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3310,8 +3342,8 @@
             this.Controls.Add(this.lblmodo);
             this.Controls.Add(this.pbmodo);
             this.Controls.Add(this.msopciones);
-            this.Controls.Add(this.panelmenu);
             this.Controls.Add(this.panelvacio);
+            this.Controls.Add(this.panelmenu);
             this.KeyPreview = true;
             this.MainMenuStrip = this.msopciones;
             this.MaximizeBox = false;
@@ -3326,11 +3358,17 @@
             this.msopciones.ResumeLayout(false);
             this.msopciones.PerformLayout();
             this.panelvacio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).EndInit();
             this.panelmenu.ResumeLayout(false);
             this.panelmenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmplist)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.stripTicks2.ResumeLayout(false);
             this.stripTicks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.wmpd16)).EndInit();
@@ -3408,13 +3446,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbsecC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbsecA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbmodo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barra)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayudacarga1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdesplegar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

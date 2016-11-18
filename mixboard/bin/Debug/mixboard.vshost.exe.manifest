@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Wp1Io3XpgUSiyp9SeguesiZL2KYfzCs4eRBkHx/cg54=</dsig:DigestValue>
+        <dsig:DigestValue>zRry2gUVEnpLkquS4WpQ3gihWR+wXYIM38tfrTljwfQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ka+f+oNMsJ9YSHjuRQ4GLHK2v7fAxfBX3KV/iXReMCo=</dsig:DigestValue>
+        <dsig:DigestValue>4nuhsqRewRQl6fdnIi43pGV9gDBXt928qRJxImvNdgk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="mixboard.exe" size="443840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="mixboard.exe" size="448960">
       <assemblyIdentity name="mixboard" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EHvlC8CnR5vhJLfcxVI5mG5aUidil1Fw3AodCGsGuFY=</dsig:DigestValue>
+        <dsig:DigestValue>bgQ/T37mhE234/CL9JO47f4xrlz3Asm8LFfoB2PE6UI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
