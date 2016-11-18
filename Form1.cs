@@ -340,10 +340,12 @@ namespace mixboard
                     }
                     else
                     {
+                        
                         if (WMPA[indice].playState == WMPLib.WMPPlayState.wmppsPlaying)
                         {
                             return;
                         }
+                        
                         WMPA[indice].URL = direcA[indice];
                         WMPA[indice].Ctlcontrols.play();
                         Random random = new Random();
@@ -564,10 +566,12 @@ namespace mixboard
                         {
                             botonesA[indice].Image = Properties.Resources.btncargado;
                         }
+                        
                         if (WMPA[indice].playState != WMPLib.WMPPlayState.wmppsPlaying)
                         {
                             return;
                         }
+                        
                         WMPA[indice].Ctlcontrols.stop();
                         break;
                     case "B":
@@ -1028,7 +1032,6 @@ namespace mixboard
             //tecla maneteniendose presionada
 
         }
-
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -2414,6 +2417,28 @@ namespace mixboard
                                 escritor.WriteLine("B" + i + "@" + direcB[i]);
                             }
                         }
+                        if (direcC[i] != null)
+                        {
+                            if (i < 10)
+                            {
+                                escritor.WriteLine("C" + "0" + i + "@" + direcC[i]);
+                            }
+                            else
+                            {
+                                escritor.WriteLine("C" + i + "@" + direcC[i]);
+                            }
+                        }
+                        if (direcD[i] != null)
+                        {
+                            if (i < 10)
+                            {
+                                escritor.WriteLine("D" + "0" + i + "@" + direcD[i]);
+                            }
+                            else
+                            {
+                                escritor.WriteLine("D" + i + "@" + direcD[i]);
+                            }
+                        }
                     }
                 }
             }
@@ -2435,7 +2460,7 @@ namespace mixboard
             {
                 for (int i = 1; i < 17; i++)
                 {
-                    if (direcA[i] != null || direcB[i] != null)
+                    if (direcA[i] != null || direcB[i] != null || direcC[i] != null || direcD[i] != null)
                     {
                         preguntar = true;
                     }
@@ -2458,6 +2483,10 @@ namespace mixboard
                     botonesA[i].Image = Properties.Resources.btndefault;
                     direcB[i] = null;
                     botonesB[i].Image = Properties.Resources.btndefault;
+                    direcC[i] = null;
+                    botonesC[i].Image = Properties.Resources.btndefault;
+                    direcD[i] = null;
+                    botonesD[i].Image = Properties.Resources.btndefault;
                 }
                 nombreproyecto = System.IO.Path.GetFileNameWithoutExtension(abrir.FileName);
                 direcproyecto = abrir.FileName;
@@ -2481,7 +2510,7 @@ namespace mixboard
                                 colorselecC = Convert.ToInt16(line.Substring(0, 1));
                                 break;
                             case 4:
-                                colorselecA = Convert.ToInt16(line.Substring(0, 1));
+                                colorselecD = Convert.ToInt16(line.Substring(0, 1));
                                 break;
                         }
 
@@ -2499,6 +2528,14 @@ namespace mixboard
                                 case "B":
                                     direcB[numboton] = ruta;
                                     botonesB[numboton].Image = Properties.Resources.btncargado;
+                                    break;
+                                case "C":
+                                    direcC[numboton] = ruta;
+                                    botonesC[numboton].Image = Properties.Resources.btncargado;
+                                    break;
+                                case "D":
+                                    direcD[numboton] = ruta;
+                                    botonesD[numboton].Image = Properties.Resources.btncargado;
                                     break;
                             }
                         }
@@ -2588,6 +2625,14 @@ namespace mixboard
                         case "B":
                             direcB[indice] = direclista[i];
                             botonesB[indice].Image = Properties.Resources.btnverde;
+                            break;
+                        case "C":
+                            direcC[indice] = direclista[i];
+                            botonesC[indice].Image = Properties.Resources.btnverde;
+                            break;
+                        case "D":
+                            direcD[indice] = direclista[i];
+                            botonesD[indice].Image = Properties.Resources.btnverde;
                             break;
                     }
 
@@ -2821,7 +2866,7 @@ namespace mixboard
             bool preguntar = false;
             for (int i = 1; i < 17; i++)
             {
-                if (direcA[i] != null || direcB[i] != null)
+                if (direcA[i] != null || direcB[i] != null || direcC[i] != null || direcD[i] != null)
                 {
                     preguntar = true;
                 }
@@ -2889,6 +2934,28 @@ namespace mixboard
                         else
                         {
                             escritor.WriteLine("B" + i + "@" + direcB[i]);
+                        }
+                    }
+                    if (direcC[i] != null)
+                    {
+                        if (i < 10)
+                        {
+                            escritor.WriteLine("C" + "0" + i + "@" + direcC[i]);
+                        }
+                        else
+                        {
+                            escritor.WriteLine("C" + i + "@" + direcC[i]);
+                        }
+                    }
+                    if (direcD[i] != null)
+                    {
+                        if (i < 10)
+                        {
+                            escritor.WriteLine("D" + "0" + i + "@" + direcD[i]);
+                        }
+                        else
+                        {
+                            escritor.WriteLine("D" + i + "@" + direcD[i]);
                         }
                     }
                 }
@@ -3327,6 +3394,50 @@ namespace mixboard
         private void btnd16_MouseUp(object sender, MouseEventArgs e)
         {
             soltarbotonA(16, "D");
+        }
+
+        private void pbsecA_Click(object sender, EventArgs e)
+        {
+            sectorswitch = false;
+            sectorAoC = "A";
+            sectorBoD = "B";
+            pbsecA.Image = Properties.Resources.sectorA;
+            pbsecB.Image = Properties.Resources.sectorB;
+            pbsecC.Image = Properties.Resources.sectorCoff;
+            pbsecD.Image = Properties.Resources.sectorDoff;
+        }
+
+        private void pbsecC_Click(object sender, EventArgs e)
+        {
+            sectorswitch = true;
+            sectorAoC = "C";
+            sectorBoD = "D";
+            pbsecA.Image = Properties.Resources.sectorAoff1;
+            pbsecB.Image = Properties.Resources.sectorBoff;
+            pbsecC.Image = Properties.Resources.sectorC;
+            pbsecD.Image = Properties.Resources.sectorD;
+        }
+
+        private void pbsecD_Click(object sender, EventArgs e)
+        {
+            sectorswitch = true;
+            sectorAoC = "C";
+            sectorBoD = "D";
+            pbsecA.Image = Properties.Resources.sectorAoff1;
+            pbsecB.Image = Properties.Resources.sectorBoff;
+            pbsecC.Image = Properties.Resources.sectorC;
+            pbsecD.Image = Properties.Resources.sectorD;
+        }
+
+        private void pbsecB_Click(object sender, EventArgs e)
+        {
+            sectorswitch = false;
+            sectorAoC = "A";
+            sectorBoD = "B";
+            pbsecA.Image = Properties.Resources.sectorA;
+            pbsecB.Image = Properties.Resources.sectorB;
+            pbsecC.Image = Properties.Resources.sectorCoff;
+            pbsecD.Image = Properties.Resources.sectorDoff;
         }
     }
 }
